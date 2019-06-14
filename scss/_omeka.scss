@@ -1,0 +1,137 @@
+//  Omeka Styles
+//  -----------------------------
+//
+//  Table of Contents:
+//
+
+// #. Global
+// ---------
+
+#skipnav {
+  @include element-invisible;
+}
+
+header {
+  @include top-bar-container;
+}
+
+#search-container {
+  display: none;
+}
+
+#content {
+  padding-top: 3 * $global-margin;
+}
+
+#content,
+footer {
+  @include xy-grid-container;
+}
+
+.hentry h2 {
+  @extend .h5;
+}
+
+.browse-controls {
+  @include top-bar-container;
+  margin: $global-margin 0;
+  padding: 0;
+}
+
+.browse-controls,
+.browse-controls ul {
+    background-color: transparent;
+}
+
+.pagination,
+.page-input form {
+  display: flex;
+}
+
+.page-input form,
+.page-input input {
+  height: 100%;
+}
+
+.page-input input {
+  margin-bottom: 0;
+}
+
+.pagination_previous,
+.pagination_next {
+  @include button;
+  margin-bottom: 0;
+}
+
+#sort-links {
+  display: flex;
+}
+
+#sort-links-list {
+  @include style-type-unordered(none);
+  display: flex;
+}
+
+#sort-links-list li {
+  margin: 0 $global-margin;
+}
+
+.item-file > a {
+  @extend .thumbnail;
+}
+
+// #. Show
+// -----------
+
+.element-set {
+  @extend dl;
+}
+
+.element-set h2 {
+  @extend h3;
+}
+
+.element h3 {
+  @extend h6;
+  @extend dt;
+}
+
+.element-text {
+  @extend dd;
+}
+
+.element {
+  margin-bottom: $global-margin;
+}
+
+#collection h3,
+#item-tags h3,
+#item-citation h3,
+#item-output-formats h3,
+#itemfiles h3 {
+  font-weight: bold;
+}
+
+// #. Exhibits
+// -----------
+
+.exhibits .grid-x {
+  padding: (3 * $global-padding) 0;
+}
+
+.exhibits .grid-x h1 {
+  margin-top: 0;
+}
+
+#exhibit-pages ul {
+  @extend .vertical;
+  @extend .menu;
+}
+
+#exhibit-pages ul ul {
+  @extend .nested;
+}
+
+#exhibit-pages .current {
+  @extend .active;
+}
