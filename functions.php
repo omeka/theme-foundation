@@ -1,6 +1,5 @@
 <?php 
 
-
 function use_foundation_navigation() {
     $view = get_view();
     $nav = new Omeka_Navigation;
@@ -51,5 +50,71 @@ function foundation_exhibit_page_tree($exhibit, $currentPage = null) {
         }
         $html .= '</li>';    }
     $html .= '</ul>';
+    return $html;
+}
+
+function foundation_homepage_intro_background() {
+    $backgroundImage = get_theme_option('Homepage Intro Background');
+    if ($backgroundImage) {
+        $storage = Zend_Registry::get('storage');
+        $backgroundImage = $storage->getUri($storage->getPathByType($backgroundImage, 'theme_uploads'));
+        return $backgroundImage;
+    }
+}
+
+/**
+ * Returns a breadcrumb for a given page.
+ *
+ * @uses public_url(), html_escape()
+ * @param integer|null The id of the page.  If null, it uses the current simple page.
+ * @param string $separator The string used to separate each section of the breadcrumb.
+ * @param boolean $includePage Whether to include the title of the current page.
+ */
+
+function foundation_breadcrumbs($pageId = null, $seperator=null, $includePage=true)
+{
+    $html = '';
+    
+    if ($seperator) {
+      $html .= '<style>.breadcrumbs li:not(:last-child)::after { content: "' . $seperator . '"; }</style>';
+    }
+  
+    $html .= '<nav aria-label="You are here:" role="navigation"><ul class="breadcrumbs">';
+
+    if ($pageId === null) {
+        $page = get_current_record('simple_pages_page', false);
+    } else {
+        $page = get_db()->getTable('SimplePagesPage')->find($pageId);
+    }
+
+    if ($page) {
+        $ancestorPages = get_db()->getTable('SimplePagesPage')->findAncestorPages($page->id);
+        $bPages = array_merge(array($page), $ancestorPages);
+
+        // make sure all of the ancestors and the current page are published
+        foreach($bPages as $bPage) {
+            if (!$bPage->is_published) {
+                $html = '';
+                return $html;
+            }
+        }
+
+        // find the page links
+        $pageLinks = array();
+        foreach($bPages as $bPage) {
+            if ($bPage->id == $page->id) {
+                if ($includePage) {
+                    $pageLinks[] = '<li><span class="current">' . html_escape($bPage->title) . '</span></li>';
+                }
+            } else {
+                $pageLinks[] = '<li><a href="' . public_url($bPage->slug) .  '">' . html_escape($bPage->title) . '</a></li>';
+            }
+        }
+        $pageLinks[] = '<li><a href="'. public_url('') . '">' . __('Home') . '</a></li>';
+
+        // create the bread crumb
+        $html .= implode('', array_reverse($pageLinks));
+    }
+    $html .= '</ul></nav>';
     return $html;
 }
