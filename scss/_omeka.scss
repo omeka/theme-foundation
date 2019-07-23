@@ -15,8 +15,63 @@ header {
   @include top-bar-container;
 }
 
+#primary-nav {
+  display: flex;
+}
+
+.search-toggle {
+  margin: (-.5 * $global-margin);
+  margin-left: (2 * $global-margin);
+  padding: $global-padding;
+}
+
 #search-container {
-  display: none;
+  @include xy-grid-container;
+  padding: $global-padding 0;
+  margin-bottom: (-3 * $global-margin);
+  
+  &.closed {
+    display: none;
+  }
+}
+
+#search-form button,
+#search-form .button,
+#query {
+  margin-bottom: 0;
+}
+
+#search-form {
+  @include xy-grid;
+}
+
+#query {
+  order: 1;
+  height: 100%;
+}
+
+#search-form button {
+  order: 2;
+}
+
+#advanced-form {
+  order: 3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $global-padding;
+}
+
+#query-types {
+  display: flex;
+}
+
+#query-types label {
+  margin-right: $global-margin;
+}
+
+#submit_search {
+  @extend .button;
 }
 
 #content {
