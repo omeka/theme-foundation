@@ -142,11 +142,11 @@ footer {
 
 .page-input input {
   margin-bottom: 0;
+  width: auto;
 }
 
-.pagination_previous,
-.pagination_next {
-  @include button;
+.pagination_previous a,
+.pagination_next a {
   margin-bottom: 0;
 }
 
