@@ -1,15 +1,20 @@
 <?php
 $pageTitle = __('Browse Items');
+queue_js_url('//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js');
+queue_js_file('browse');
 echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 ?>
 
 <h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
 
 <nav class="items-nav navigation secondary-nav">
-    <?php echo public_nav_items(); ?>
+    <div class="top-bar-left">
+        <?php echo public_nav_items(); ?>
+    </div>
+    <div class="top-bar-right">
+        <?php echo item_search_filters(); ?>
+    </div>
 </nav>
-
-<?php echo item_search_filters(); ?>
 
 <div class="browse-controls">
     <div class="top-bar-left">
@@ -30,34 +35,35 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
     </div>
 </div>
 
-
-<?php foreach (loop('items') as $item): ?>
-<div class="item hentry media-object grid-x">
-    <div class="item-img media-object-section cell small-3">
-    <?php if (metadata('item', 'has files')): ?>
-        <?php echo link_to_item(item_image(), array('class' => 'thumbnail')); ?>
-    <?php endif; ?>
-    </div>
-
-    <div class="item-meta media-object-section cell small-9">
-        <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h2>
-    
-        <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
-        <div class="item-description">
-            <?php echo $description; ?>
+<div id="resource-list" class="grid-x grid-margin-x">
+    <?php foreach (loop('items') as $item): ?>
+    <div class="item card cell small-12 medium-6 large-3">
+        <div class="card-divider">
+            <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h2>
         </div>
+        <?php if (metadata('item', 'has files')): ?>
+            <?php echo link_to_item(item_image()); ?>
         <?php endif; ?>
     
-        <?php if (metadata('item', 'has tags')): ?>
-        <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
-            <?php echo tag_string('items'); ?></p>
+        <div class="item-meta card-section">
+        
+            <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
+            <div class="item-description">
+                <?php echo $description; ?>
+            </div>
+            <?php endif; ?>
+        
+            <?php if (metadata('item', 'has tags')): ?>
+            <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
+                <?php echo tag_string('items'); ?></p>
+            </div>
+            <?php endif; ?>
+        
+            <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
         </div>
-        <?php endif; ?>
-    
-        <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
     </div>
+    <?php endforeach; ?>
 </div>
-<?php endforeach; ?>
 
 <?php echo pagination_links(); ?>
 

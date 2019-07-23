@@ -83,24 +83,56 @@ footer {
   @include xy-grid-container;
 }
 
-.hentry h2 {
+#resource-list {
+  padding: (2 * $global-padding) 0;
+}
+
+#resource-list .card {
+  align-self: flex-start;
+}
+
+#resource-list .card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h2 {
   @extend .h5;
 }
 
-.browse-controls {
+.browse-controls,
+.secondary-nav {
   @include top-bar-container;
   margin: $global-margin 0;
   padding: 0;
 }
 
 .browse-controls,
-.browse-controls ul {
+.browse-controls ul,
+.secondary-nav,
+.secondary-nav ul {
     background-color: transparent;
 }
 
-.pagination,
+#item-filters ul {
+    @include style-type-unordered(no-bullet);
+}
+
+#item-filters li {
+  @extend .label;
+}
+
+.pagination-nav {
+  display: flex;
+}
+
+.page-input {
+  margin-right: $global-margin;
+}
+
 .page-input form {
   display: flex;
+  align-items: center;
 }
 
 .page-input form,
