@@ -202,10 +202,6 @@ footer {
 // #. Exhibits
 // -----------
 
-.exhibits .grid-x {
-  padding: (3 * $global-padding) 0;
-}
-
 .exhibits .grid-x h1 {
   margin-top: 0;
 }
@@ -221,4 +217,32 @@ footer {
 
 #exhibit-pages .current {
   @extend .active;
+}
+
+.exhibit-item {
+  text-align: center;
+}
+
+.layout-file-text .exhibit-items .download-file,
+.layout-gallery a.exhibit-item-link {
+  @extend .thumbnail;
+}
+
+.layout-gallery .gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.layout-gallery .gallery .exhibit-item, 
+.layout-gallery .gallery .exhibit-item:nth-of-type(2n) {
+  width: auto;
+  margin: 0 6px;
+}
+
+.layout-gallery .exhibit-item-link *, 
+.layout-gallery .download-file * {
+  margin: 0;
+  display: block;
 }
