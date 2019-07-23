@@ -38,9 +38,6 @@ $container = $this->container;
                 ?>
                 <li class="dropdown<?php if ($page->isActive(true)) echo ' active' ?>">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <?php if ($page->get("icon") !== ""): ?>
-                            <span class="<?php echo $page->get("icon"); ?>"></span>
-                        <?php endif; ?>
                         <?php echo html_escape($this->translate($page->getLabel())); ?>
                         <b class="caret"></b>
                     </a>
