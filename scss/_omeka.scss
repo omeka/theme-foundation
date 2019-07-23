@@ -15,8 +15,63 @@ header {
   @include top-bar-container;
 }
 
+#primary-nav {
+  display: flex;
+}
+
+.search-toggle {
+  margin: (-.5 * $global-margin);
+  margin-left: (2 * $global-margin);
+  padding: $global-padding;
+}
+
 #search-container {
-  display: none;
+  @include xy-grid-container;
+  padding: $global-padding 0;
+  margin-bottom: (-3 * $global-margin);
+  
+  &.closed {
+    display: none;
+  }
+}
+
+#search-form button,
+#search-form .button,
+#query {
+  margin-bottom: 0;
+}
+
+#search-form {
+  @include xy-grid;
+}
+
+#query {
+  order: 1;
+  height: 100%;
+}
+
+#search-form button {
+  order: 2;
+}
+
+#advanced-form {
+  order: 3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $global-padding;
+}
+
+#query-types {
+  display: flex;
+}
+
+#query-types label {
+  margin-right: $global-margin;
+}
+
+#submit_search {
+  @extend .button;
 }
 
 #content {
@@ -28,24 +83,56 @@ footer {
   @include xy-grid-container;
 }
 
-.hentry h2 {
+#resource-list {
+  padding: (2 * $global-padding) 0;
+}
+
+#resource-list .card {
+  align-self: flex-start;
+}
+
+#resource-list .card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h2 {
   @extend .h5;
 }
 
-.browse-controls {
+.browse-controls,
+.secondary-nav {
   @include top-bar-container;
   margin: $global-margin 0;
   padding: 0;
 }
 
 .browse-controls,
-.browse-controls ul {
+.browse-controls ul,
+.secondary-nav,
+.secondary-nav ul {
     background-color: transparent;
 }
 
-.pagination,
+#item-filters ul {
+    @include style-type-unordered(no-bullet);
+}
+
+#item-filters li {
+  @extend .label;
+}
+
+.pagination-nav {
+  display: flex;
+}
+
+.page-input {
+  margin-right: $global-margin;
+}
+
 .page-input form {
   display: flex;
+  align-items: center;
 }
 
 .page-input form,
@@ -55,11 +142,11 @@ footer {
 
 .page-input input {
   margin-bottom: 0;
+  width: auto;
 }
 
-.pagination_previous,
-.pagination_next {
-  @include button;
+.pagination_previous a,
+.pagination_next a {
   margin-bottom: 0;
 }
 
@@ -115,10 +202,6 @@ footer {
 // #. Exhibits
 // -----------
 
-.exhibits .grid-x {
-  padding: (3 * $global-padding) 0;
-}
-
 .exhibits .grid-x h1 {
   margin-top: 0;
 }
@@ -134,4 +217,32 @@ footer {
 
 #exhibit-pages .current {
   @extend .active;
+}
+
+.exhibit-item {
+  text-align: center;
+}
+
+.layout-file-text .exhibit-items .download-file,
+.layout-gallery a.exhibit-item-link {
+  @extend .thumbnail;
+}
+
+.layout-gallery .gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.layout-gallery .gallery .exhibit-item, 
+.layout-gallery .gallery .exhibit-item:nth-of-type(2n) {
+  width: auto;
+  margin: 0 6px;
+}
+
+.layout-gallery .exhibit-item-link *, 
+.layout-gallery .download-file * {
+  margin: 0;
+  display: block;
 }

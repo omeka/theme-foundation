@@ -19,9 +19,12 @@
 
     <script type="text/javascript">
     jQuery(document).ready(function () {
-        Omeka.showAdvancedForm();
         Omeka.skipNav();
         jQuery(document).foundation();
+
+        jQuery('#resource-list').masonry({
+          itemSelector: '#resource-list .card',
+        });
     });
     </script>
 
