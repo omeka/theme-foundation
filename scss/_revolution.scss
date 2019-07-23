@@ -1,0 +1,22 @@
+.section {
+  padding: (3 * $global-padding) $global-padding;
+  border-bottom: 1px solid #ccc;
+  
+  &.features {
+    border-bottom-color: transparent;
+    
+    .row {
+      display: flex;
+      margin: $global-margin (-1 * $global-margin);
+    }
+    
+    .feature {
+      margin: $global-margin;
+    }
+    
+    .thumbnail {
+      width: 100%;
+      padding-bottom: 66.66%;
+    }
+  }
+}
