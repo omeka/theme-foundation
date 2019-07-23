@@ -23,7 +23,7 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_file(array('iconfonts','app'));
+    queue_css_file('app');
     echo head_css();
 
     echo theme_header_background();
@@ -31,7 +31,8 @@
 
     <!-- JavaScripts -->
     <?php
-    queue_js_file('globals');
+    queue_js_file(array('globals', 'app'));
+    queue_js_url('//kit.fontawesome.com/22a8f33cc1.js');
     queue_js_url('//cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js', array(
       'integrity' => 'sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==',
       'crossorigin' => 'anonymous',
