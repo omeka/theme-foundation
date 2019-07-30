@@ -239,6 +239,11 @@ footer {
   margin-top: 0;
 }
 
+#exhibit-blocks {
+  float: right;
+  margin: $global-margin 0;
+}
+
 #exhibit-pages ul {
   @extend .vertical;
   @extend .menu;
@@ -318,6 +323,11 @@ footer {
   text-align: right;
 }
 
+.layout-gallery .exhibit-item-link *, 
+.layout-gallery .download-file * {
+  margin-bottom: 0;
+}
+
 .layout-file-text .exhibit-items .download-file img,
 .layout-gallery a.exhibit-item-link {
   @extend .thumbnail;
@@ -330,10 +340,19 @@ footer {
   align-items: center;
 }
 
+.layout-gallery .gallery.captions-center {
+  text-align: center;
+}
+
+.layout-gallery .gallery.captions-right {
+  text-align: right;
+}
+
 .layout-gallery .gallery .exhibit-item, 
 .layout-gallery .gallery .exhibit-item:nth-of-type(2n) {
   width: auto;
-  margin: 0 6px;
+  max-width: 30%;
+  margin: $global-margin;
 }
 
 .layout-gallery .exhibit-item-link *, 
