@@ -22,19 +22,30 @@ echo head(array(
         </div>
         
         <div id="exhibit-page-navigation">
-            <?php if ($prevLink = exhibit_builder_link_to_previous_page()): ?>
+            <?php if ($prevPage = $exhibit_page->previousOrParent()): ?>
             <div id="exhibit-nav-prev">
-            <?php echo $prevLink; ?>
+            <?php 
+              $prevLabel = 'Previous: ' . metadata($prevPage, 'menu_title');
+              echo exhibit_builder_link_to_previous_page(' ', array(
+                  'aria-label' => $prevLabel,
+                  'class' => 'previous-page',
+                  'title' => $prevLabel,
+              ));
+            ?>
             </div>
             <?php endif; ?>
-            <?php if ($nextLink = exhibit_builder_link_to_next_page()): ?>
+            <?php if ($nextPage = $exhibit_page->firstChildOrNext()): ?>
             <div id="exhibit-nav-next">
-            <?php echo $nextLink; ?>
+            <?php 
+              $nextLabel = 'Next: ' . metadata($nextPage, 'menu_title');
+              echo exhibit_builder_link_to_next_page(' ', array(
+                    'aria-label' => $nextLabel,
+                    'class' => 'next-page',
+                    'title' => $nextLabel,
+              )); 
+            ?>
             </div>
             <?php endif; ?>
-            <div id="exhibit-nav-up">
-            <?php echo exhibit_builder_page_trail(); ?>
-            </div>
         </div>
     
     </div>

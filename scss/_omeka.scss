@@ -252,6 +252,52 @@ footer {
   @extend .active;
 }
 
+#exhibit-page-navigation {
+  margin: (2 * $global-margin) 0;
+  display: flex;
+}
+
+#exhibit-page-navigation div {
+  width: auto;
+  margin-right: $global-margin;
+}
+
+#exhibit-page-navigation .next-page,
+#exhibit-page-navigation .previous-page {
+  @extend .button;
+}
+
+#exhibit-page-navigation .next-page,
+#exhibit-page-navigation .previous-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+#exhibit-page-navigation .previous-page:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f053";
+  font-weight: 900;
+}
+
+#exhibit-page-navigation .next-page:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f054";
+  font-weight: 900;
+}
+
+
+#exhibit-page-navigation #exhibit-nav-prev {
+  order: 1;
+}
+
+#exhibit-page-navigation #exhibit-nav-next {
+  order: 2;
+}
+
 .layout-file-text .exhibit-items.left {
   margin: 0 (2 * $global-margin) $global-margin 0;
 }
