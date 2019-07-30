@@ -252,11 +252,19 @@ footer {
   @extend .active;
 }
 
-.exhibit-item {
+.layout-file-text .exhibit-items .download-file {
+  width: 100%;
+}
+
+.layout-file-text .exhibit-items.captions-center .download-file {
   text-align: center;
 }
 
-.layout-file-text .exhibit-items .download-file,
+.layout-file-text .exhibit-items.captions-right .download-file {
+  text-align: right;
+}
+
+.layout-file-text .exhibit-items .download-file img,
 .layout-gallery a.exhibit-item-link {
   @extend .thumbnail;
 }
