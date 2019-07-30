@@ -20,3 +20,17 @@
     }
   }
 }
+
+.exhibit-item-link {
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+.exhibit-item-link:before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f15c";
+  font-weight: 400;
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+}
