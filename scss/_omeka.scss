@@ -252,15 +252,23 @@ footer {
   @extend .active;
 }
 
+.layout-file-text .exhibit-items.left {
+  margin: 0 (2 * $global-margin) $global-margin 0;
+}
+
+.layout-file-text .exhibit-items.right {
+  margin: 0 0 $global-margin (2 * $global-margin);
+}
+
 .layout-file-text .exhibit-items .download-file {
   width: 100%;
 }
 
-.layout-file-text .exhibit-items.captions-center .download-file {
+.layout-file-text .exhibit-items.captions-center {
   text-align: center;
 }
 
-.layout-file-text .exhibit-items.captions-right .download-file {
+.layout-file-text .exhibit-items.captions-right {
   text-align: right;
 }
 
