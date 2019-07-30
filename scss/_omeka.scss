@@ -199,6 +199,39 @@ footer {
   font-weight: bold;
 }
 
+.double #content {
+  @include xy-grid-container;
+}
+
+.double #content > .wrap {
+  @include xy-grid;
+}
+
+.double .wrap > h1,
+.double .item-pagination {
+  @include xy-cell(12);
+}
+
+.double #item-metadata {
+  @include xy-cell(8);
+  order: 1;
+}
+
+.double #item-images {
+  @include xy-cell(4);
+  order: 2;
+}
+
+.double .item-pagination {
+  order: 3;
+}
+
+.item-pagination {
+  display: flex;
+  justify-content: center;
+  margin: $global-margin 0;
+}
+
 // #. Exhibits
 // -----------
 
