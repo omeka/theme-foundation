@@ -1,14 +1,22 @@
 <?php 
 
-function revolution_match_tags($item, $searchArray) {
+function revolution_display_item_type_icons($item) {
     $tags = $item->Tags;
+    $itemTypes = revolution_get_item_type_icons();
     $tagStrings = array();
+    $html = '';
+
     foreach ($tags as $tag) {
         $name = $tag['name'];
         $tagStrings[] = html_escape($name);
     }
-    $foundTags = array_intersect($tagStrings, array_flip($searchArray));
-    return $foundTags;
+
+    $foundTags = array_intersect($tagStrings, array_flip($itemTypes));
+
+    foreach ($foundTags as $foundTagName) {
+        $html .= '<i class="' . $itemTypes[$foundTagName] . '"></i>';
+    }
+    return $html;
 }
 
 function revolution_get_item_type_icons() {

@@ -92,16 +92,13 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 <?php else: ?>
     <div class="resource-list list">
     <?php foreach (loop('items') as $item): ?>
-    <?php $itemTypeTags = revolution_match_tags($item, $itemTypes); ?>
     <div class="item">
         <?php if (metadata('item', 'has files')): ?>
         <?php echo link_to_item(item_image(), array('class' => 'item-image')); ?>
         <?php endif; ?>
         <div class="item-meta">
         <h2>
-            <?php foreach ($itemTypeTags as $itemTypeMatch => $itemTypeTag): ?>
-            <i class="<?php echo $itemTypes[$itemTypeTag]; ?>"></i>
-            <?php endforeach; ?>
+            <?php echo revolution_display_item_type_icons($item); ?>
             <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?>
         </h2>
 

@@ -1,7 +1,7 @@
 <?php $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single'; ?>
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show ' . $layout)); ?>
 <div class="wrap">
-    <h1><?php echo metadata('item', array('Dublin Core','Title')); ?></h1>
+    <h1><?php echo metadata('item', array('Dublin Core','Title')); ?> <small class="item-type subtitle"><?php echo revolution_display_item_type_icons($item); ?></small></h1>
 
     <?php if (metadata('item', 'has files')): ?>
     <div id="item-images">    
