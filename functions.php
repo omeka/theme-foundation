@@ -1,5 +1,47 @@
 <?php 
 
+function revolution_match_tags($item, $searchArray) {
+    $tags = $item->Tags;
+    $tagStrings = array();
+    foreach ($tags as $tag) {
+        $name = $tag['name'];
+        $tagStrings[] = html_escape($name);
+    }
+    $foundTags = array_intersect($tagStrings, array_flip($searchArray));
+    return $foundTags;
+}
+
+function revolution_get_item_type_icons() {
+    $itemTypes = array(
+        'Text' => 'far fa-file-alt',
+        'Image' => 'far fa-file-image',
+        'Map' => 'far fa-map',
+        'Timeline' => 'far fa-calendar-alt',
+        'Song' => 'fas fa-music',
+        'Glossary' => 'fas fa-book',  
+    );
+    return $itemTypes;
+}
+
+function revolution_get_sorted_tags() {
+    $tags = get_records('Tag', array(), 0);
+    $sortedTags = array();
+    $itemTypes = revolution_get_item_type_icons();
+    foreach ($tags as $tag) {
+      $name = $tag['name'];
+      if (strpos($name, 'Chapter') !== false) {
+        $sortedTags['chapters'][] = $tag;
+        natcasesort($sortedTags['chapters']);
+      } else if (array_key_exists($name, $itemTypes)) {
+        $sortedTags['item-types'][] = $tag;
+      } else {
+        $sortedTags['topics'][] = $tag;
+        natcasesort($sortedTags['topics']);
+      } 
+    }
+    return $sortedTags;
+}
+
 function use_foundation_navigation() {
     $view = get_view();
     $nav = new Omeka_Navigation;

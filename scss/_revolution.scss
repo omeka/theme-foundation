@@ -1,3 +1,6 @@
+// #. Home
+// -------
+
 .section {
   padding: (3 * $global-padding) $global-padding;
   border-bottom: 1px solid #ccc;
@@ -21,6 +24,9 @@
   }
 }
 
+// #. Exhibits
+// -----------
+
 .layout-file-text .exhibit-item-link {
   padding-left: 1.5rem;
   text-indent: -1.5rem;
@@ -35,4 +41,100 @@
   text-align: center;
   text-indent: 0;
   margin-right: .5rem;
+}
+
+// #. Browse
+// ---------
+
+.browse-controls {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  
+  .pagination-nav {
+    margin-left: auto;
+  }
+}
+
+#sort-links {
+  align-items: center;
+}
+
+#sort-links-list {
+  margin-bottom:  0;
+}
+
+#item-filters ul {
+  margin: 0;
+}
+
+#revolution-wrap {
+  @include xy-grid;
+}
+
+#revolution-filters {
+  @include xy-cell(3);
+  padding: (1.5 * $global-padding) 0;
+  font-weight: bold;
+    
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  
+  li {
+    margin: 0 0 $global-margin 0;
+  }
+  
+  li li {
+    font-weight: normal;
+    margin: 0;
+  }
+}
+
+.resources {
+  @include xy-cell(auto);
+}
+
+.resource-list.list {
+  border: 1px solid $light-gray;
+  border-width: 1px 0;
+  padding: 0;
+}
+
+.item {
+  @include xy-grid;
+
+  i.far,
+  i.fas {
+    color: $dark-gray;
+  }
+
+  .item-image {
+    @include xy-cell(2 of 9);
+    order: 2;
+  }
+
+  .item-meta:not(:only-child) {
+    @include xy-cell(7 of 9);
+    order: 1;
+  }
+  
+  .item-description {
+    margin-bottom: .25 * $global-margin;
+  }
+  
+  .tags {
+    margin-bottom: (-.25 * $global-margin);
+  }
+  
+  .tags a {
+    @extend .label;
+  }
+  
+  .tags a {
+    cursor: pointer;
+    margin-bottom: .5 * $global-margin;
+  }
 }
