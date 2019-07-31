@@ -83,8 +83,23 @@ footer {
   @include xy-grid-container;
 }
 
-#resource-list {
+// #. Browse
+// ---------
+
+.resource-list {
   padding: (2 * $global-padding) 0;
+}
+
+.resource-list.list .item {
+  padding: $global-padding;
+}
+
+.resource-list.list .item:not(:last-child) {
+  border-bottom: 1px solid $light-gray;
+}
+
+.resource-list.list h2 {
+  font-size: rem-calc(map-deep-get($header-styles, small, h4, font-size));
 }
 
 #resource-list .card {
