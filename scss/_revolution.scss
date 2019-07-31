@@ -15,11 +15,12 @@
     
     .feature {
       margin: $global-margin;
+      @include xy-cell(4);
     }
     
     .thumbnail {
       width: 100%;
-      padding-bottom: 66.66%;
+      padding-bottom: 16rem;
     }
   }
 }
