@@ -1,3 +1,63 @@
+// #. Header
+// -------
+
+header,
+header ul {
+  background-color: transparent;
+}
+
+header {
+  min-height: 20 * $global-padding;
+  background: no-repeat center / cover url('../img/home-intro.jpg');
+  position: relative;
+  align-items: flex-start;
+  padding: $global-padding;
+  
+  a {
+    color: #fff;
+  }
+  
+  li li a {
+    color: $primary-color;
+  }
+  
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 3 * $global-padding;
+    left: 0;
+    right: 0;
+    background: no-repeat top / cover url('../img/paint-border.png');
+  }
+}
+
+header ul a {
+  font-family: $header-font-family;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header #site-title img {
+  height: 3 * $global-padding;
+  width: auto;
+}
+
+#search-container {
+  position: absolute;
+  top: 8 * $global-padding;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 0;
+
+  label {
+    color: #fff;
+  }
+}
+
+
 // #. Home
 // -------
 
