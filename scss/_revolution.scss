@@ -44,6 +44,10 @@ header #site-title img {
   width: auto;
 }
 
+.menu .active a {
+  background-color: transparent;
+}
+
 #search-container {
   position: absolute;
   top: 8 * $global-padding;
