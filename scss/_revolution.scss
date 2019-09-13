@@ -148,6 +148,34 @@ header #site-title img {
     margin: 0;
   }
   
+  & > ul > li {
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: $global-padding;
+  }
+  
+  .revolution-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  a.active:not(.button) {
+    background-color: $primary-color;
+    color: #fff;
+    padding: (.25 * $global-padding) (.5 * $global-padding);
+    margin: (.25 * $global-margin) 0;
+    display: block;
+  }
+  
+  .revolution-filter ~ ul {
+    display: none;
+    margin-top: .5 * $global-margin;
+  }
+  
+  .revolution-filter.collapse ~ ul {
+    display: block;
+  }
+  
   li {
     margin: 0 0 $global-margin 0;
   }
@@ -155,6 +183,18 @@ header #site-title img {
   li li {
     font-weight: normal;
     margin: 0;
+  }
+}
+
+.apply-filters {
+  @extend .button;
+}
+
+.apply-filters {
+  display: none;
+  
+  &.active {
+    display: inline-block;
   }
 }
 

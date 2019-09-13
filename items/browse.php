@@ -1,12 +1,10 @@
 <?php
-$layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
 $pageTitle = __('Browse Items');
-if ($layout == 'grid') {
-  queue_js_url('//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js');  
-}
 queue_js_file('browse');
 $itemTypes = revolution_get_item_type_icons();
 $sortedTags = revolution_get_sorted_tags();
+$currentTags = revolution_get_current_tags();
+$filterState = ($currentTags !== '') ? 'collapse' : 'expand';
 echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout));
 ?>
 
@@ -19,30 +17,29 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 </nav>
 
 <div id="revolution-wrap">
-    <div id="revolution-filters">
+    <div id="revolution-filters" data-current-filters="<?php echo $currentTags; ?>">
+      
+        <h2>Filter by</h2>
         <ul>
-            <li>Browse by type
+            <li><a href="#" class="revolution-filter <?php echo $filterState; ?>">Type <i class="fas fa-caret-right"></i></a>
                 <ul>
                     <?php foreach ($itemTypes as $itemTypeName => $itemTypeClass): ?>
-                    <li><a href="<?php echo html_escape(url('items/browse', array('tags' => $itemTypeName))); ?>"><i class="<?php echo $itemTypeClass; ?>"></i> <?php echo $itemTypeName; ?></a></li>
+                    <?php $activeClass = (strpos($currentTags, $itemTypeName) !== false) ? 'class="active"' : ''; ?>
+                    <li><a href="#" <?php echo $activeClass; ?> data-filter="<?php echo $itemTypeName; ?>"><i class="<?php echo $itemTypeClass; ?>"></i> <?php echo $itemTypeName; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </li>
-            <li>Browse by chapter
-                <ul>
-                    <?php foreach ($sortedTags['chapters'] as $chapterTag): ?>
-                    <li><a href="<?php echo html_escape(url('items/browse', array('tags' => $chapterTag['name']))); ?>"><?php echo $chapterTag['name']; ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </li>
-            <li>Browse by topic
+            <li><a href="#" class="revolution-filter <?php echo $filterState; ?>">Topic <i class="fas fa-caret-right"></i></a>
                 <ul>
                     <?php foreach ($sortedTags['topics'] as $topicTag): ?>
-                    <li><a href="<?php echo html_escape(url('items/browse', array('tags' => $topicTag['name']))); ?>"><?php echo $topicTag['name']; ?></a></li>
+                    <?php $activeClass = (strpos($currentTags, $topicTag['name']) !== false) ? 'class="active"' : ''; ?>
+                    <li><a href="#" <?php echo $activeClass; ?> data-filter="<?php echo $topicTag['name']; ?>"><?php echo $topicTag['name']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </li>
         </ul>
+        <?php echo link_to_items_browse('Apply filters', array(), array('class' => 'apply-filters button')); ?>
+        <?php echo link_to_items_browse('Clear filters', array(), array('class' => 'clear-all button')); ?>
     </div>
 
 <div class="resources">

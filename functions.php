@@ -1,5 +1,22 @@
 <?php 
 
+function revolution_build_search_array() {
+    $request = Zend_Controller_Front::getInstance()->getRequest();
+    $requestArray = $request->getParams();
+    
+    return $requestArray;
+}
+
+function revolution_get_current_tags() {
+    if (isset($_GET['tags'])) {
+      $tags = $_GET['tags'];
+    } else {
+      $tags = '';
+    }
+    
+    return $tags;
+}
+
 function revolution_display_item_type_icons($item) {
     $tags = $item->Tags;
     $itemTypes = revolution_get_item_type_icons();
