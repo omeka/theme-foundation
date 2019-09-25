@@ -52,15 +52,11 @@
                   <?php echo use_foundation_navigation(); ?>
                   <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
             </nav>
-        </header>
 
-        <div id="search-container" role="search" class="closed">
-            <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-            <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('class' => 'grid-x'))); ?>
-            <?php else: ?>
-            <?php echo search_form(); ?>
-            <?php endif; ?>
-        </div>
+            <div id="search-container" role="search" class="closed">
+                <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('class' => 'grid-x'))); ?>
+            </div>
+        </header>
 
         <div id="content" role="main" tabindex="-1">
 

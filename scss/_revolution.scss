@@ -8,10 +8,11 @@ header ul {
 
 header {
   min-height: 10 * $global-padding;
-  background: no-repeat center / cover url('../img/home-intro.jpg');
+  background: no-repeat top center / cover url('../img/home-intro.jpg');
   position: relative;
   align-items: flex-start;
   padding: $global-padding;
+  flex-wrap: wrap;
   
   a {
     color: $white;
@@ -75,12 +76,8 @@ header #site-title img {
 }
 
 #search-container {
-  position: absolute;
-  top: 8 * $global-padding;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  z-index: 0;
+  margin: (2 * $global-margin) auto;
 
   label {
     color: #fff;
@@ -90,6 +87,10 @@ header #site-title img {
 .search-toggle,
 .search-toggle:hover {
   background-color: transparent;
+}
+
+#query {
+  max-width: none;
 }
 
 // #. Home

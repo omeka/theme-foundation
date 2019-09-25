@@ -1,6 +1,5 @@
 <?php echo $this->form('search-form', $options['form_attributes']); ?>
     <?php echo $this->formText('query', $filters['query'], array('title' => __('Search'), 'class' => 'cell large-11')); ?>
-    <?php if ($options['show_advanced']): ?>
     <div id="advanced-form">
         <fieldset id="query-types">
             <legend class="show-for-sr"><?php echo __('Search using this query type:'); ?></legend>
@@ -18,11 +17,5 @@
         <?php endif; ?>
         <p><?php echo link_to_item_search(__('Advanced Search (Items only)')); ?></p>
     </div>
-    <?php else: ?>
-        <?php echo $this->formHidden('query_type', $filters['query_type']); ?>
-        <?php foreach ($filters['record_types'] as $type): ?>
-        <?php echo $this->formHidden('record_types[]', $type); ?>
-        <?php endforeach; ?>
-    <?php endif; ?>
     <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit', 'class' => 'cell large-1')); ?>
 </form>
