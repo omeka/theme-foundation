@@ -14,7 +14,7 @@ header {
   padding: $global-padding;
   
   a {
-    color: #fff;
+    color: $white;
   }
   
   li li a {
@@ -32,11 +32,37 @@ header {
   }
 }
 
-header ul a {
+header .dropdown.menu > li {
+  margin: (.5 * $global-margin) $global-margin;
+  height: 2 * $global-padding;
+}
+
+header .dropdown.menu a {
   font-family: $header-font-family;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: (.5 * $global-padding) 0;
+}
+
+header .dropdown.menu > li > a:hover,
+header .dropdown.menu .is-active > a {
+  color: $white;
+  border-bottom: 2px solid $white;
+}
+
+
+header .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+  border-color: $white transparent transparent;
+}
+
+header .dropdown.menu .is-dropdown-submenu-item a {
+  padding: (.5 * $global-padding);
+  border-bottom: 1px solid $medium-gray;
+}
+
+header .is-dropdown-submenu {
+  border: 0;
 }
 
 header #site-title img {
@@ -61,6 +87,10 @@ header #site-title img {
   }
 }
 
+.search-toggle,
+.search-toggle:hover {
+  background-color: transparent;
+}
 
 // #. Home
 // -------
