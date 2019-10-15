@@ -9,7 +9,7 @@ $container = $this->container;
   <button class="menu-icon" type="button" data-toggle aria-label="Menu"></button>
   <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
 </div>
-<ul id="top-nav" class="dropdown menu" data-dropdown-menu>
+<ul id="top-nav" class="vertical menu" data-responsive-menu="accordion medium-dropdown">
     <?php foreach ($container as $page): ?>
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
@@ -45,7 +45,7 @@ $container = $this->container;
                         <?php echo html_escape($this->translate($page->getLabel())); ?>
                         <b class="caret"></b>
                     </a>
-                    <ul class="menu vertical">
+                    <ul class="dropdown menu">
                         <?php foreach ($page->getPages() as $child): ?>
                             <?php if (!$this->navigation()->accept($child)) continue; ?>
                             <?php if ($child->get("separator") === true): ?>

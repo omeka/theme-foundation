@@ -14,12 +14,21 @@ header {
   padding: $global-padding;
   flex-wrap: wrap;
   
+  @include breakpoint(medium down) {
+    padding-bottom: 3 * $global-padding;
+    background-size: auto;
+  }
+  
   a {
     color: $white;
   }
   
   li li a {
     color: $primary-color;
+    
+    @include breakpoint(medium down) {
+      color: $white;
+    }
   }
   
   &:after {
@@ -44,6 +53,13 @@ header .dropdown.menu a {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: (.5 * $global-padding) 0;
+  
+  @include breakpoint(medium down) {
+    font-family: $body-font-family;
+    text-transform: none;
+    font-weight: 400;
+    padding-left: $global-padding;
+  }
 }
 
 header .dropdown.menu > li > a:hover,
@@ -66,9 +82,21 @@ header .is-dropdown-submenu {
   border: 0;
 }
 
+header #site-title {
+  background-color: transparent;
+  
+  @include breakpoint(medium down) {
+    text-align: center;
+  }
+}
+
 header #site-title img {
   height: 3 * $global-padding;
   width: auto;
+}
+
+.title-bar {
+  background-color: transparent;
 }
 
 .menu .active a {
@@ -81,6 +109,10 @@ header #site-title img {
 
   label {
     color: #fff;
+  }
+  
+  @include breakpoint(medium down) {
+    border-bottom: 0;
   }
 }
 
