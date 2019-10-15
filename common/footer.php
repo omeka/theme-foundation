@@ -1,7 +1,4 @@
-        </div><!-- end content -->
-
-    </div><!-- end wrap -->
-
+    </div><!-- end content -->
 
     <footer role="contentinfo">
 
