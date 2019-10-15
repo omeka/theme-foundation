@@ -5,7 +5,11 @@
 /* @var $container Zend\Navigation\Navigation */
 $container = $this->container;
 ?>
-<ul class="dropdown menu" data-dropdown-menu>
+<div class="title-bar" data-responsive-toggle="top-nav" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle aria-label="Menu"></button>
+  <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
+</div>
+<ul id="top-nav" class="dropdown menu" data-dropdown-menu>
     <?php foreach ($container as $page): ?>
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
