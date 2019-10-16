@@ -151,11 +151,19 @@ header #site-title img {
     .row {
       display: flex;
       margin: $global-margin (-1 * $global-margin);
+      
+      @include breakpoint(medium down) {
+        flex-wrap: wrap;
+      }
     }
     
     .feature {
       margin: $global-margin;
       @include xy-cell(4);
+      
+      @include breakpoint(medium down) {
+        width: 100%;
+      }
     }
     
     .thumbnail {
