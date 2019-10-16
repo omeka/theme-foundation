@@ -275,12 +275,17 @@ footer {
 
 .double .wrap > h1,
 .double .item-pagination {
-  @include xy-cell(12);
+  width: 100%;
 }
 
 .double #item-metadata {
   @include xy-cell(8);
   order: 1;
+  
+  @include breakpoint(medium down) {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .double #item-images {
@@ -310,6 +315,23 @@ footer {
   margin: $global-margin 0;
 }
 
+@include breakpoint(medium down) {
+  .exhibits.show #content > .grid-x {
+    flex-wrap: wrap;
+  }
+  
+  #exhibit-pages {
+    order: 2;
+    width: 100%;
+    margin: 0;
+  }
+  
+  #exhibit-content {
+    order: 1;
+    width: 100%;
+    margin: 0;
+  }
+}
 #exhibit-pages ul {
   @extend .vertical;
   @extend .menu;
