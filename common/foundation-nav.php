@@ -9,7 +9,7 @@ $container = $this->container;
   <button class="menu-icon" type="button" data-toggle aria-label="Menu"></button>
   <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
 </div>
-<ul id="top-nav" class="vertical menu" data-responsive-menu="accordion medium-dropdown">
+<ul id="top-nav" class="horizontal menu" data-responsive-menu="accordion medium-dropdown">
     <?php foreach ($container as $page): ?>
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>

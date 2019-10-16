@@ -62,12 +62,19 @@ header .dropdown.menu a {
   }
 }
 
-header .dropdown.menu > li > a:hover,
-header .dropdown.menu .is-active > a {
+header .menu > li > a:focus {
+  color: $white;
+}
+
+header .menu > li > a:hover,
+header .menu .is-active > a {
   color: $white;
   border-bottom: 2px solid $white;
 }
 
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a:after {
+  border-color: $white transparent transparent;
+}
 
 header .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
   border-color: $white transparent transparent;
@@ -112,6 +119,8 @@ header #site-title img {
   }
   
   @include breakpoint(medium down) {
+    margin-top: 0;
+    padding: 0;
     border-bottom: 0;
   }
 }
@@ -131,6 +140,10 @@ header #site-title img {
 .section {
   padding: (3 * $global-padding) $global-padding;
   border-bottom: 1px solid #ccc;
+  
+  @include breakpoint(medium down) {
+    padding: $global-padding;
+  }
   
   &.features {
     border-bottom-color: transparent;
