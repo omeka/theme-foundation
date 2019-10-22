@@ -5,7 +5,9 @@ function use_foundation_navigation() {
     $nav = new Omeka_Navigation;
     $nav->loadAsOption(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_OPTION_NAME);
     $nav->addPagesFromFilter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME);
-    return $view->navigation()->menu($nav)->setPartial('common/foundation-nav.php')->render();
+    $html = $view->navigation()->menu($nav)->setPartial('common/foundation-nav.php')->render();
+    $view->navigation()->menu($nav)->setPartial(null);
+    return $html;
 }
 
 function foundation_exhibit_page_tree($exhibit, $currentPage = null) {
