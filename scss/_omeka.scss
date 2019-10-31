@@ -448,3 +448,37 @@ footer {
   margin: 0;
   display: block;
 }
+
+// #. Search
+// -----------
+
+#search-filters > ul {
+  list-style: none;
+  margin-left: 0;
+  
+  li,
+  ul {
+    display: inline;
+    margin: 0;
+  }
+  
+  & > li {
+    @extend .label;
+  }
+  
+  & > li {
+    @extend .secondary;
+  }
+  
+  li li {
+    text-transform: lowercase;
+    
+    &:not(:last-child):after {
+      content: ", "
+    }
+  }
+}
+
+#search-results {
+  margin: $global-margin 0;
+}
