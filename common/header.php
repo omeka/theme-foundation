@@ -23,7 +23,7 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_file('app');
+    queue_css_file(array('app', 'iconfonts'));
     queue_css_url('//fonts.googleapis.com/css?family=Alegreya+Sans|Playfair+Display+SC:900|Playfair+Display:900i&display=swap');
     echo head_css();
 

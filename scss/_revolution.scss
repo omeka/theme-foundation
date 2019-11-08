@@ -24,6 +24,14 @@
   background-color: $primary-color;
 }
 
+button {
+  @extend .button;
+}
+
+label {
+  font-size: 100%;
+}
+
 // #. Header
 // -------
 
@@ -198,8 +206,68 @@ header #site-title img {
     
     .thumbnail {
       width: 100%;
-      padding-bottom: 16rem;
     }
+  }
+}
+
+.intro.section,
+.second.section {
+  background-color: $primary-color;
+  color: $white;
+  padding-right: 50%;
+  margin-top: 2 * $global-margin;
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: right center / cover no-repeat url(../img/intro-bg.jpg);
+  }
+  
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    background: center center / cover no-repeat url(../img/paint-border-red.png);
+    width: 2 * $global-margin;
+  }
+  
+  .button {
+    font-size: 1.125 * $global-font-size;
+    text-align: left;
+    padding-left: 0;
+    
+    &:after {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.second.section {
+  background-color: $secondary-color;
+  
+  &:before {
+    background: right center / cover no-repeat url(../img/second-bg.jpg);
+  }
+
+  &:after {
+    background: center center / cover no-repeat url(../img/paint-border-gray.png);
+  }
+
+  
+  .button {
+    background-color: $secondary-color;
   }
 }
 
@@ -405,8 +473,63 @@ header #site-title img {
 // Search
 // ======
 
+#advanced-search-form label {
+  @extend .label;
+}
+
+#advanced-search-form .label,
+#advanced-search-form label {
+  @extend .secondary;
+}
+
 #submit_search_advanced {
   @extend .button;
+}
+
+.inputs {
+  padding: $global-padding $global-padding 0;
+  border: 1px solid $medium-gray;
+}
+
+.field {
+  margin-bottom: $global-margin;
+}
+
+.search-entry {
+  display: flex;
+  
+  &:first-child .advanced-search-joiner {
+    display: none;
+  }
+  
+  & > *:not(button) {
+    margin-right: .5 * $global-margin;
+  }
+}
+
+.advanced-search-joiner {
+  max-width: 6rem;
+}
+
+.add_search {
+  margin-top: $global-margin;
+}
+
+.remove_search {
+  text-indent: -999px;
+  height: 2 * $global-padding;
+  
+  &:before {
+    font-family: "FontAwesome";
+    content: "\f1f8";
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    line-height: 2 * $global-padding;
+  }
 }
 
 // Page
