@@ -32,6 +32,25 @@ label {
   font-size: 100%;
 }
 
+thead, tbody, tfoot {
+  border: 0;
+}
+
+thead {
+  background-color: transparent;
+  border-bottom: 3px solid $medium-gray;
+}
+
+tbody,
+tbody tr:nth-child(2n) {
+  background-color: transparent;
+}
+
+tr,
+tbody tr:nth-child(2n) {
+  border-bottom: 1px solid $medium-gray;
+}
+
 // #. Header
 // -------
 
@@ -434,7 +453,7 @@ header #site-title img {
   }
 }
 
-.item {
+.browse .item {
   @include xy-grid;
 
   i.far,
