@@ -95,7 +95,7 @@ header {
   }
 }
 
-header .dropdown.menu > li {
+header #primary-nav > .dropdown.menu > li {
   margin: (.5 * $global-margin) $global-margin;
   height: 2 * $global-padding;
 }
@@ -119,8 +119,8 @@ header .menu > li > a:focus {
   color: $white;
 }
 
-header .menu > li > a:hover,
-header .menu .is-active > a {
+header #primary-nav > .menu > li > a:hover,
+header #primary-nav > .menu .is-active > a {
   color: $white;
   border-bottom: 2px solid $white;
 }
@@ -181,6 +181,11 @@ header #site-title img {
 .search-toggle,
 .search-toggle:hover {
   background-color: transparent;
+}
+
+#submit_search {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #query {
