@@ -5,7 +5,7 @@ $itemTypes = revolution_get_item_type_icons();
 $sortedTags = revolution_get_sorted_tags();
 $currentTags = revolution_get_current_tags();
 $filterState = ($currentTags !== '') ? 'collapse' : 'expand';
-echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout));
+echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse '));
 ?>
 
 <h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
@@ -56,62 +56,32 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 </div>
 
 
-<?php if ($layout == 'grid'): ?>
-    <div id="resource-list" class="grid-x grid-margin-x">
-    <?php foreach (loop('items') as $item): ?>
-    <div class="item card cell small-12 medium-6 large-3">
-        <div class="card-divider">
-            <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h2>
-        </div>
-        <?php if (metadata('item', 'has files')): ?>
-            <?php echo link_to_item(item_image()); ?>
-        <?php endif; ?>
-    
-        <div class="item-meta card-section">
-        
-            <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
-            <div class="item-description">
-                <?php echo $description; ?>
-            </div>
-            <?php endif; ?>
-        
-            <?php if (metadata('item', 'has tags')): ?>
-            <div class="tags"><span class="tags label"><?php echo __('Tags'); ?></span> <?php echo tag_string('items'); ?></div>
-            <?php endif; ?>
-        
-            <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
-        </div>
-    </div>
-    <?php endforeach; ?>
-    </div>
-<?php else: ?>
-    <div class="resource-list list">
-    <?php foreach (loop('items') as $item): ?>
-    <div class="item">
-        <?php if (metadata('item', 'has files')): ?>
-        <?php echo link_to_item(item_image(), array('class' => 'item-image')); ?>
-        <?php endif; ?>
-        <div class="item-meta">
-        <h2>
-            <?php echo revolution_display_item_type_icons($item); ?>
-            <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?>
-        </h2>
+<div class="resource-list list">
+<?php foreach (loop('items') as $item): ?>
+<div class="item">
+    <?php if (metadata('item', 'has files')): ?>
+    <?php echo link_to_item(item_image(), array('class' => 'item-image')); ?>
+    <?php endif; ?>
+    <div class="item-meta">
+    <h2>
+        <?php echo revolution_display_item_type_icons($item); ?>
+        <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?>
+    </h2>
 
-        <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
-        <div class="item-description">
-            <?php echo $description; ?>
-        </div>
-        <?php endif; ?>
+    <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
+    <div class="item-description">
+        <?php echo $description; ?>
+    </div>
+    <?php endif; ?>
 
-        <?php if (metadata('item', 'has tags')): ?>
-        <div class="tags"><span class="tags secondary label"><?php echo __('Tags'); ?></span> <?php echo tag_string('item', 'items/browse', ' '); ?></div>
-        <?php endif; ?>
-        <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
-        </div>
+    <?php if (metadata('item', 'has tags')): ?>
+    <div class="tags"><span class="tags secondary label"><?php echo __('Tags'); ?></span> <?php echo tag_string('item', 'items/browse', ' '); ?></div>
+    <?php endif; ?>
+    <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
     </div>
-    <?php endforeach; ?>
-    </div>
-<?php endif; ?>
+</div>
+<?php endforeach; ?>
+</div>
 
 <div class="browse-controls">
     <?php echo pagination_links(); ?>
