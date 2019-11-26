@@ -45,8 +45,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse '));
       <?php if ($total_results > 0): ?>        
       <?php
       $sortLinks[__('Title')] = 'Dublin Core,Title';
-      $sortLinks[__('Creator')] = 'Dublin Core,Creator';
-      $sortLinks[__('Date Added')] = 'added';
+      $sortLinks[__('Date')] = 'Item Type Metadata,Sortable Date';
       ?>
       <div id="sort-links">
           <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
@@ -66,6 +65,9 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse '));
     <h2>
         <?php echo revolution_display_item_type_icons($item); ?>
         <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?>
+        <?php if ($date = metadata('item', array('Dublin Core', 'Date'))): ?>
+        <span class="date"><?php echo $date; ?></span>
+        <?php endif; ?>
     </h2>
 
     <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>

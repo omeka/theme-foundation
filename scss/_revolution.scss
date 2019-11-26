@@ -290,7 +290,8 @@ header #site-title img {
   }
 
   
-  .button {
+  .button,
+  .button:hover {
     background-color: $secondary-color;
   }
 }
@@ -492,6 +493,26 @@ header #site-title img {
     cursor: pointer;
     margin-bottom: .5 * $global-margin;
   }
+}
+
+.date {
+  display: inline-block;
+  margin-left: .5 * $global-margin;
+  color: $dark-gray;
+}
+
+.sorting.asc:after,
+.sorting.desc:after {
+  content: "\f0d8";
+  font-family: "Font Awesome 5 Pro";
+  direction: inline-block;
+  margin-left: .25 * $global-margin;
+  font-weight: 900;
+  color: $dark-gray;
+}
+
+.sorting.desc:after {
+  content: "\f0d7";
 }
 
 // Search
