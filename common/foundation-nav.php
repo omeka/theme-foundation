@@ -6,7 +6,7 @@
 $container = $this->container;
 ?>
 <div class="title-bar" data-responsive-toggle="top-nav" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle aria-label="Menu"></button>
+  <button class="menu-icon" type="button" data-toggle aria-label="<?php echo __('Menu'); ?>"><i class="fas fa-bars"></i></button>
   <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
 </div>
 <ul id="top-nav" class="horizontal menu" data-responsive-menu="accordion medium-dropdown">
