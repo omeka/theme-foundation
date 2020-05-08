@@ -141,28 +141,35 @@ footer {
   padding: (2 * $global-padding) 0;
 }
 
-.resource-list.list .item {
+.resource-list.list-layout .item {
   padding: $global-padding;
 }
 
-.resource-list.list .item:not(:last-child) {
+.resource-list.list-layout .item:not(:last-child) {
   border-bottom: 1px solid $light-gray;
 }
 
-.resource-list.list h2 {
+.resource-list.list-layout h2 {
   font-size: rem-calc(map-deep-get($header-styles, small, h4, font-size));
 }
 
-#resource-list .card {
+#resource-list.grid-layout .item {
   align-self: flex-start;
+  margin-bottom: $global-margin;
 }
 
-#resource-list .card img {
+#resource-list.grid-layout .item .item-image,
+#resource-list.grid-layout .item .item-meta > * {
+  margin-bottom: (.5 * $global-margin);
+  display: block;
+}
+
+#resource-list.grid-layout .item img {
   width: 100%;
   height: auto;
 }
 
-.card h2 {
+.item-meta h4 {
   @extend .h5;
 }
 
@@ -216,17 +223,38 @@ footer {
   margin-bottom: 0;
 }
 
+.items-nav .navigation {
+  @extend .menu;
+}
+
 #sort-links {
   display: flex;
+  align-items: center;
 }
 
 #sort-links-list {
   @include style-type-unordered(none);
   display: flex;
+  margin-bottom: 0;
 }
 
 #sort-links-list li {
   margin: 0 $global-margin;
+}
+
+.asc a,
+.desc a {
+  font-weight: bold;
+  
+  &:after {
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    margin-left: (.25 * $global-margin);
+  }
+}
+
+.desc a:after {
+  content: "\f0d8";
 }
 
 .item-file > a {
