@@ -7,9 +7,91 @@
 // #. Global
 // ---------
 
+[type="submit"], 
+[type="button"] {
+  @extend .button;
+}
+
+.input-group .input-group,
+.input-group .button-group,
+.input-group select,
+.input-group [type="text"] {
+  margin-bottom: 0;
+}
+
+.field {
+  margin-bottom: 2 * $global-margin;
+}
+
+select {
+  width: auto;  
+  background: #fff url("../images/select-arrow.svg") no-repeat;
+  background-position: right 6px center;
+  background-size: 8px;
+  border: 1px solid $light-gray;
+  margin: 0;
+  padding: (.25 * $global-padding) $global-padding (.25 * $global-padding) (.25 * $global-padding) !important;
+  border-radius: 3px;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+[type="text"]:not(:only-child) {
+  width: auto;
+}
+
 #skipnav {
   @include element-invisible;
 }
+
+body:not(.browse) #content {
+  @include xy-grid-container;
+  padding: (2 * $global-padding) 0;  
+
+  @include breakpoint(small down) {
+    padding: 0;
+    margin: $global-margin;
+  }
+}
+
+/* Styles for vertical menu layout */
+
+body.vertical-menu {
+  @include breakpoint(medium up) {
+    background-color: $primary-color;    
+  }
+}
+
+body.vertical-menu .off-canvas-content {
+  @include xy-grid();
+}
+
+body.vertical-menu #content {
+  width: 100%;
+  margin: 0;
+
+  @include breakpoint(medium up) {
+    background-color: $white;
+    @include xy-cell(auto, $gutters: 0);
+    max-width: none;
+    min-height: 90vh;    
+  }
+}
+
+body.vertical-menu #user-bar {
+  width: 100%;
+}
+
+body.vertical-menu #user-bar ~ #content {
+  @include breakpoint(medium up) {
+    min-height: calc(90vh - 38px);
+  }
+}
+
+// #. Header
+// ---------
 
 header {
     @include breakpoint(large up) {
@@ -17,17 +99,28 @@ header {
   }
 }
 
-#site-title {
-  @include breakpoint(medium down) {
-    background-color: $medium-gray;
+#site-title img {
+  max-height: 2rem;
+  width: auto;
+}
+
+#site-title h1 {
+  @extend h4;
+}
+
+#site-title h1 {
+  margin-bottom: 0;
+}
+
+#site-title h1 {
+  @include breakpoint(small down) {
+    font-weight: bold;
   }
 }
 
-#site-title img {
-  max-width: 100%;
-  height: auto;
+.site-title img {
+  margin: $global-margin 0;
 }
-
 .title-bar {
   width: 100%;
 }
@@ -119,14 +212,6 @@ header {
 
 #submit_search {
   @extend .button;
-}
-
-#content {
-  padding-top: 3 * $global-margin;
-  
-  @include breakpoint(medium down) {
-    padding-top: $global-padding;
-  }
 }
 
 #content,
@@ -260,6 +345,111 @@ footer {
 .item-file > a {
   @extend .thumbnail;
 }
+
+// #. Browse Tags
+// --------------
+
+.hTagcloud ul {
+  list-style: none;
+  margin: $global-margin (-.5 * $global-margin);
+}
+
+.hTagcloud li {
+  display: inline-block;
+  padding: (.25 * $global-padding) (.5 * $global-margin);
+  margin-bottom: (.25 * $global-margin);
+}
+
+.popular {
+  font-size: .875 * $global-font-size;
+}
+
+.v-popular {
+  font-size: 1.125 * $global-font-size;
+}
+
+.vv-popular {
+  font-size: 1.25 * $global-font-size;
+}
+
+.vvv-popular {
+  font-size: 1.375 * $global-font-size;
+}
+
+.vvvv-popular {
+  font-size: 1.5 * $global-font-size;
+}
+
+.vvvvv-popular {
+  font-size: 1.675 * $global-font-size;
+}
+
+.vvvvvv-popular {
+  font-size: 1.75 * $global-font-size;
+}
+
+.vvvvvvv-popular {
+  font-size: 1.875 * $global-font-size;
+}
+
+.vvvvvvvv-popular {
+  font-size: 2 * $global-font-size;
+}
+
+.vvvvvvvvv-popular {
+  font-size: 2.25 * $global-font-size;
+}
+
+// #. Advanced Search
+// ------------------
+
+.search-entry {
+  display: flex;
+}
+
+.search-entry:first-child .advanced-search-joiner {
+  display: none;
+}
+
+.search-entry select {
+  width: auto;
+  margin-right: (.25 * $global-margin);
+}
+
+.items.advanced-search label {
+  @extend .label;
+}
+
+.items.advanced-search label,
+.items.advanced-search .label {
+  @extend .secondary;
+}
+
+.items.advanced-search label,
+.items.advanced-search .label {
+  margin-bottom: (.5 * $global-margin);
+}
+
+.remove_search {
+  text-indent: -9999px;
+  position: relative;
+  width: 2.5 * $global-padding;
+  height: 2.5 * $global-padding;
+  
+  &:before {
+    content: "\f1f8";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-indent: 0;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    line-height: 1.5 * $global-lineheight;
+  }
+}
+
 
 // #. Show
 // -----------
@@ -399,13 +589,13 @@ footer {
 }
 
 #exhibit-page-navigation .previous-page:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 5 Free";
   content: "\f053";
   font-weight: 900;
 }
 
 #exhibit-page-navigation .next-page:before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 5 Free";
   content: "\f054";
   font-weight: 900;
 }
