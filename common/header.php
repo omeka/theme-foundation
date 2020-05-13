@@ -43,6 +43,8 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
+    <?php $navLayout = get_theme_option('navigation_layout'); ?>
+    <?php if ($navLayout !== 'vertical'): ?>
     <header role="banner">
         <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
         <div id="site-title" class="top-bar-left"><?php echo link_to_home_page(theme_logo()); ?></div>
@@ -51,6 +53,8 @@
               <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
         </nav>
     </header>
+    <?php else: ?>
+    <?php endif; ?>
 
     <div id="search-container" role="search" class="closed">
         <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
