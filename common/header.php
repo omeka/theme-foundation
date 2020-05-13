@@ -43,18 +43,18 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
+    <div id="offCanvas" class="off-canvas position-left" data-off-canvas>
+        <?php echo use_foundation_navigation('vertical'); ?>
+    </div>
     <?php $navLayout = get_theme_option('navigation_layout'); ?>
-    <?php if ($navLayout !== 'vertical'): ?>
+    <div class="off-canvas-content" data-off-canvas-content>
     <header role="banner">
-        <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
-        <div id="site-title" class="top-bar-left"><?php echo link_to_home_page(theme_logo()); ?></div>
-        <nav id="primary-nav" role="navigation" class="top-bar-right">
-              <?php echo use_foundation_navigation(); ?>
-              <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
-        </nav>
-    </header>
+    <?php if ($navLayout !== 'vertical'): ?>
+        <?php echo common('header-dropdown'); ?>
     <?php else: ?>
+        <?php echo common('header-vertical'); ?>
     <?php endif; ?>
+    </header>
 
     <div id="search-container" role="search" class="closed">
         <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>

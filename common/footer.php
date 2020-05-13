@@ -17,6 +17,8 @@
         <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
 
     </footer><!-- end footer -->
+    
+    </div><!-- end off canvas content -->
 
     <script type="text/javascript">
     jQuery(document).ready(function () {
