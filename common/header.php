@@ -40,13 +40,13 @@
     echo head_js();
     ?>
 </head>
-<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+<?php $navLayout = get_theme_option('navigation_layout'); ?>
+<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass . ' ' . $navLayout . '-menu')); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="offCanvas" class="off-canvas position-left" data-off-canvas>
         <?php echo use_foundation_navigation('vertical'); ?>
     </div>
-    <?php $navLayout = get_theme_option('navigation_layout'); ?>
     <div class="off-canvas-content" data-off-canvas-content>
     <header role="banner">
     <?php if ($navLayout !== 'vertical'): ?>

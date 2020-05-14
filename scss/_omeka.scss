@@ -93,26 +93,20 @@ body.vertical-menu #user-bar ~ #content {
 // #. Header
 // ---------
 
-header {
-    @include breakpoint(large up) {
-      @include top-bar-container;
-  }
-}
-
-#site-title img {
+.site-title img {
   max-height: 2rem;
   width: auto;
 }
 
-#site-title h1 {
+.site-title h1 {
   @extend h4;
 }
 
-#site-title h1 {
+.site-title h1 {
   margin-bottom: 0;
 }
 
-#site-title h1 {
+.site-title h1 {
   @include breakpoint(small down) {
     font-weight: bold;
   }
@@ -142,8 +136,82 @@ header .top-bar-left {
   align-items: center;
 }
 
+header .top-bar {
+  @include breakpoint(small down) {
+    padding: 0;    
+  }
+}
+
 .title-bar {
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+  
+  button {
+    margin: 0 $global-margin 0 0;
+    background-color: transparent;
+    color: $dark-gray;
+  }
+}
+
+body.vertical-menu header {
+  background-color: $primary-color;
   width: 100%;
+
+  @include breakpoint(large up) {
+    padding: $global-padding;     
+    @include xy-cell(2, $gutters: 0);
+  }
+  
+  a {
+    color: $white;
+  }
+  
+  .title-bar {
+    display: flex;
+  }
+  
+  .title-bar button {
+    color: $white;
+  }
+  
+  .site-title h1 {
+    font-size: 1.125 * $global-font-size;
+    font-weight: bold;  
+  }
+  
+  .vertical.menu {
+    margin: $global-margin 0;
+  }
+  
+  .vertical.menu li {
+    margin: 0;
+  }
+  
+  .vertical.menu li a {
+    padding: (.5 * $global-padding)  0;
+  }
+
+}
+
+body.vertical-menu .vertical.menu.nested .active > a {
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1 * $global-padding;
+    width: $global-padding;
+    bottom: 0;
+    background-color: $primary-color;
+  }
+}
+
+body.vertical-menu header .desktop {
+  @include breakpoint(medium down) {
+    display: none;
+  }
 }
 
 #primary-nav {
@@ -235,9 +303,33 @@ header .top-bar-left {
   @extend .button;
 }
 
-#content,
+#content {
+  @include xy-grid-container;
+}
+
+// #. Footer
+// ------------------
 footer {
   @include xy-grid-container;
+  padding: (2 * $global-padding) 0;
+  
+  @include breakpoint(small down) {
+    margin: 0 $global-margin;
+  }
+}
+
+body.vertical-menu footer {
+  background-color: $white;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: $global-padding;
+  min-height: 10vh;
+  
+  @include breakpoint(medium up) {
+    width: calc(100% - #{xy-cell-size(2)});
+    margin-left: xy-cell-size(2);
+  }
 }
 
 // #. Browse
