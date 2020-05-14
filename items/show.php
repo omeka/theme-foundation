@@ -1,20 +1,25 @@
 <?php $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single'; ?>
-<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show ' . $layout)); ?>
+<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); ?>
+<div class="resource-title">
+    <h2><?php echo metadata('item', array('Dublin Core','Title')); ?></h2>
+    <h3 class="label"><?php echo __('Item'); ?></h3>
+</div>
 <div class="wrap">
-    <h1><?php echo metadata('item', array('Dublin Core','Title')); ?></h1>
-
     <?php if (metadata('item', 'has files')): ?>
-    <div id="item-images">    
-        <?php if ((get_theme_option('Item File Gallery') == 1)): ?>
-            <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
-        <?php else: ?>
-            <?php echo files_for_item(); ?>
-        <?php endif; ?>
+    <?php $mediaDisplay = get_theme_option('item_show_media_display'); ?>
+    <?php $mediaThumbnailSize = ($mediaDisplay == 'embed') ? 'fullsize' : 'square_thumbnail'; ?>    
+    <div id="item-images" class="media-<?php echo $mediaDisplay; ?>">
+        <?php 
+            echo files_for_item(array(
+                'imageSize' => $mediaThumbnailSize,
+            )); 
+        ?>
     </div>
     <?php endif; ?>
 
     <!-- Items metadata -->
-    <div id="item-metadata">
+    <?php $showLayout = get_theme_option('item_show_inline_metadata'); ?>
+    <div id="resource-values" class="<?php echo ($showLayout == 1) ? 'inline' : 'stack'; ?>">
         <?php echo all_element_texts('item'); ?>
 
         <?php if(metadata('item','Collection Name')): ?>
@@ -45,7 +50,6 @@
         <div id="previous-item" class="previous"><?php echo link_to_previous_item_show(null, array('class' => 'button')); ?></div>
         <div id="next-item" class="next"><?php echo link_to_next_item_show(null, array('class' => 'button')); ?></div>
     </div>
-
 </div> <!-- End of Primary. -->
 
  <?php echo foot(); ?>
