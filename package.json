@@ -17,7 +17,7 @@
     "foundation-sites": "^6.6.3",
     "jquery": "^3.5.1",
     "motion-ui": "~2.0.0",
-    "what-input": "^5.2.7"
+    "what-input": "^5.2.9"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
