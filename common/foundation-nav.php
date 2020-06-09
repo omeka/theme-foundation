@@ -6,7 +6,7 @@
 $container = $this->container;
 $layoutAttributes = array(
   'dropdown' => 'class="dropdown menu" data-dropdown-menu',
-  'vertical' => 'class="vertical menu"',
+  'vertical' => 'class="vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true"',
 );
 $layout = $this->navigation()->menu()->getUlClass();
 ?>
@@ -42,11 +42,11 @@ $layout = $this->navigation()->menu()->getUlClass();
             if ($access) :
                 ?>
                 <li class="dropdown<?php if ($page->isActive(true)) echo ' active' ?>">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo $page->getHref(); ?>">
                         <?php echo html_escape($this->translate($page->getLabel())); ?>
                         <b class="caret"></b>
                     </a>
-                    <ul class="menu vertical">
+                    <ul class="menu vertical nested">
                         <?php foreach ($page->getPages() as $child): ?>
                             <?php if (!$this->navigation()->accept($child)) continue; ?>
                             <?php if ($child->get("separator") === true): ?>

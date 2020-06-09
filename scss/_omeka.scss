@@ -154,6 +154,19 @@ header .top-bar {
   }
 }
 
+.menu a.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-menu .dropdown-toggle {
+  width: 100%;
+}
+
+.submenu-toggle:after {
+  border-color: #fff transparent transparent;
+}
+
 body.vertical-menu header {
   background-color: $primary-color;
   width: 100%;
@@ -194,9 +207,13 @@ body.vertical-menu header {
   }
   
   .vertical.menu li a {
-    padding: (.5 * $global-padding)  0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
+  .dropdown .vertical.menu {
+    margin: 0 0 0 $global-margin;
+  }
 }
 
 body.vertical-menu .vertical.menu.nested .active > a {
