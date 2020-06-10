@@ -46,6 +46,19 @@ select {
   @include element-invisible;
 }
 
+#content {
+  padding: (2 * $global-padding) $global-padding;
+
+  @include breakpoint(small down) {
+    padding: 0;
+    margin: $global-margin;
+  }
+  
+  & > h1:first-of-type {
+    @extend .h2;
+  }
+}
+
 body:not(.browse) #content {
   @include xy-grid-container;
   padding: (2 * $global-padding) 0;  
