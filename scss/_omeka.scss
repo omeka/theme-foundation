@@ -357,6 +357,15 @@ body.vertical-menu footer {
 // #. Browse
 // ---------
 
+.items-nav .top-bar-left > ul,
+.items-nav > ul {
+  @include menu-base;
+
+  .active a {
+    @include button-style($primary-color, auto, auto);
+  }
+}
+
 .resource-list {
   padding: (2 * $global-padding) 0;
 }
