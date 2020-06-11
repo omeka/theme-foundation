@@ -370,6 +370,86 @@ body.vertical-menu footer {
 // #. Browse
 // ---------
 
+.browse #content > h1:first-child {
+  @include breakpoint(small down) {
+    display: inline-block;
+    margin-top: (.25 * $global-margin);
+  }
+}
+
+.browse-control-mobile {
+  display: none;
+  
+  @include breakpoint(small down) {
+    display: inline-block;
+    float: right;
+  }
+}
+
+.browse-toggle {
+    font-size: .875 * $global-font-size;
+    padding: (.5 * $global-padding);
+
+    &:after {
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 900;
+      margin-left: (.5 * $global-margin);
+    }
+    
+    &.closed:after {
+      content: "\f055";
+    }
+
+    &.open:after {
+      content: "\f056";
+    }
+}
+
+.browse-controls {
+  @include xy-grid;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 (-.5 * $global-margin);
+  font-size: .875 * $global-font-size;
+  clear: both;
+  
+  input,
+  select,
+  button,
+  .button {
+    font-size: .875 * $global-font-size;
+    padding: (.5 * $global-padding);
+  }
+
+  .sorting select {
+    margin-right: .5 * $global-margin;
+  }
+
+  @include breakpoint(small down) {
+    margin: 0;
+    display: none;
+
+    &.open {
+      display: flex;
+      align-items: stretch;
+    }
+    
+    &.closed {
+      display: none;
+    }
+    
+    .sorting,
+    .omeka-pagination,
+    .advanced-search {
+      margin-bottom: $global-margin;
+    }
+    
+    .advanced-search {
+      order: 3;
+    }
+  }
+}
+
 .items-nav .top-bar-left > ul,
 .items-nav > ul {
   @include menu-base;
@@ -379,40 +459,71 @@ body.vertical-menu footer {
   }
 }
 
+.resource-list,
+.resource-grid {
+  list-style-type: none;
+  margin: (2 * $global-margin) 0;
+  
+  @include breakpoint(small down) {
+    margin: 0;
+  }
+}
+
 .resource-list {
-  padding: (2 * $global-padding) 0;
+    border-top: 1px solid $light-gray;
 }
 
-.resource-list.list-layout .item {
-  padding: $global-padding;
-}
-
-.resource-list.list-layout .item:not(:last-child) {
+.resource-list .resource {
+  margin: $global-margin 0;
   border-bottom: 1px solid $light-gray;
+  padding-bottom: $global-padding;
 }
 
-.resource-list.list-layout h2 {
-  font-size: rem-calc(map-deep-get($header-styles, small, h4, font-size));
+.resource-list .resource-meta {
+  @include xy-cell(12);
 }
 
-#resource-list.grid-layout .item {
-  align-self: flex-start;
-  margin-bottom: $global-margin;
+.resource-list .media-object-section:last-child:not(:nth-child(2)) {
+ padding-left:0;
 }
 
-#resource-list.grid-layout .item .item-image,
-#resource-list.grid-layout .item .item-meta > * {
-  margin-bottom: (.5 * $global-margin);
-  display: block;
+.resource-list .resource-image {
+  order: 2;
+  text-align: center;
+  width: 25%;
+  
+  @include breakpoint(medium down) {
+    margin: 0;
+    width: 50%;
+  }
 }
 
-#resource-list.grid-layout .item img {
-  width: 100%;
-  height: auto;
+.resource-list .resource-image.media-object-section img {
+  max-width: 100%;
 }
 
-.item-meta h4 {
-  @extend .h5;
+.resource-list .resource-meta:not(:only-child) {
+  @include xy-cell(9);
+  order: 1;
+  
+  @include breakpoint(small down) {
+    width: 50%;
+  }
+}
+
+.resource-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-1 * $global-margin);
+}
+
+.resource-grid .resource {
+  width: 25%;
+  padding: $global-padding;
+  
+  @include breakpoint(medium down) {
+    width: 50%;
+  }
 }
 
 .browse-controls,
