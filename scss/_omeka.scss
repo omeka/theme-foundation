@@ -450,6 +450,20 @@ body.vertical-menu footer {
   }
 }
 
+.browse-controls,
+.secondary-nav {
+  @include top-bar-container;
+  margin: $global-margin 0;
+  padding: 0;
+}
+
+.browse-controls,
+.browse-controls ul,
+.secondary-nav,
+.secondary-nav ul {
+    background-color: transparent;
+}
+
 .items-nav .top-bar-left > ul,
 .items-nav > ul {
   @include menu-base;
@@ -526,20 +540,6 @@ body.vertical-menu footer {
   }
 }
 
-.browse-controls,
-.secondary-nav {
-  @include top-bar-container;
-  margin: $global-margin 0;
-  padding: 0;
-}
-
-.browse-controls,
-.browse-controls ul,
-.secondary-nav,
-.secondary-nav ul {
-    background-color: transparent;
-}
-
 #item-filters ul {
     @include style-type-unordered(no-bullet);
 }
@@ -573,6 +573,11 @@ body.vertical-menu footer {
 
 .pagination_previous a,
 .pagination_next a {
+  margin-bottom: 0;
+}
+
+.pagination-nav .button,
+.pagination-nav .button-group {
   margin-bottom: 0;
 }
 
@@ -612,6 +617,20 @@ body.vertical-menu footer {
 
 .item-file > a {
   @extend .thumbnail;
+}
+
+.layout-toggle button {
+  margin-bottom: 0;
+}
+
+.o-icon-grid:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f009";
+}
+
+.o-icon-list:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f03a";
 }
 
 // #. Browse Tags
@@ -671,12 +690,32 @@ body.vertical-menu footer {
 // #. Advanced Search
 // ------------------
 
+.advanced-search select {
+  @include breakpoint(small down) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.advanced-search .value {
+  margin-bottom: $global-margin !important;
+}
+
 .search-entry {
   display: flex;
 }
 
 .search-entry:first-child .advanced-search-joiner {
   display: none;
+}
+
+.advanced-search .advanced-search-terms {
+  margin-right: .25 * $global-margin;
+}
+
+
+.advanced-search [class="field"] {
+  @extend .fieldset;
 }
 
 .search-entry select {

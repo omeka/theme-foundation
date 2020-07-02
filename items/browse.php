@@ -27,6 +27,12 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
     <div class="top-bar-left">
         <?php echo pagination_links(); ?>
     </div>
+    <?php if (strpos($layout, 'toggle') !== false): ?>
+    <div class="layout-toggle">
+        <button type="button" aria-label="Grid" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
+        <button type="button" aria-label="List" class="list o-icon-list" <?php echo $listState; ?>></button>        
+    </div>
+    <?php endif; ?>
     <div class="top-bar-right">
         <?php if ($total_results > 0): ?>        
         <?php

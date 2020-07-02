@@ -32,22 +32,24 @@ if ($this->pageCount > 1):
     ?>
     </form>
     </div>
-
-    <?php if (isset($this->previous)): ?>
-    <!-- Previous page link -->
-    <div class="pagination_previous">
-        <?php $getParams['page'] = $previous; ?>
-        <a rel="prev" href="<?php echo html_escape($this->url(array(), null, $getParams)); ?>" aria-label="<?php echo __('Previous Page'); ?>" title="<?php echo __('Previous Page'); ?>" class="button"><i class="fas fa-caret-left"></i></a>
+    
+    <div class="button-group">
+        <?php if (isset($this->previous)): ?>
+        <!-- Previous page link -->
+        <div class="pagination_previous">
+            <?php $getParams['page'] = $previous; ?>
+            <a rel="prev" href="<?php echo html_escape($this->url(array(), null, $getParams)); ?>" aria-label="<?php echo __('Previous Page'); ?>" title="<?php echo __('Previous Page'); ?>" class="button"><i class="fas fa-caret-left"></i></a>
+        </div>
+        <?php endif; ?>
+    
+        <?php if (isset($this->next)): ?>
+        <!-- Next page link -->
+        <div class="pagination_next">
+            <?php $getParams['page'] = $next; ?>
+            <a rel="next" href="<?php echo html_escape($this->url(array(), null, $getParams)); ?>" aria-label="<?php echo __('Next Page'); ?>" title="<?php echo __('Next Page'); ?>" class="button"><i class="fas fa-caret-right"></i></a>
+        </div>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
-
-    <?php if (isset($this->next)): ?>
-    <!-- Next page link -->
-    <div class="pagination_next">
-        <?php $getParams['page'] = $next; ?>
-        <a rel="next" href="<?php echo html_escape($this->url(array(), null, $getParams)); ?>" aria-label="<?php echo __('Next Page'); ?>" title="<?php echo __('Next Page'); ?>" class="button"><i class="fas fa-caret-right"></i></a>
-    </div>
-    <?php endif; ?>
 </nav>
 
 <?php endif; ?>
