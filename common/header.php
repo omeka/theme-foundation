@@ -23,6 +23,7 @@
 
     <!-- Stylesheets -->
     <?php
+    queue_css_file(array('iconfonts'));
     queue_css_file('app');
     echo head_css();
 

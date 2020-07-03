@@ -83,6 +83,7 @@ body.vertical-menu .off-canvas-content {
 
 body.vertical-menu #content {
   width: 100%;
+  overflow: hidden;
 
   @include breakpoint(medium up) {
     background-color: $white;
@@ -442,6 +443,7 @@ body.vertical-menu footer {
     &.open {
       display: flex;
       align-items: stretch;
+      flex-wrap: wrap;
     }
     
     &.closed {
@@ -495,6 +497,7 @@ body.vertical-menu footer {
 
 .resource-list {
     border-top: 1px solid $light-gray;
+    clear: both;
 }
 
 .resource-list .resource {
@@ -598,6 +601,10 @@ body.vertical-menu footer {
 #sort-links {
   display: flex;
   align-items: center;
+  
+  @include breakpoint(small down) {
+    margin-top: .5 * $global-margin;
+  }
 }
 
 #sort-links-list {
@@ -636,11 +643,13 @@ body.vertical-menu footer {
 .o-icon-grid:before {
     font-family: "Font Awesome 5 Free";
     content: "\f009";
+    font-weight: 900;
 }
 
 .o-icon-list:before {
     font-family: "Font Awesome 5 Free";
     content: "\f03a";
+    font-weight: 900;
 }
 
 // #. Browse Tags
