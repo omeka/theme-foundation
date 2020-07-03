@@ -83,13 +83,13 @@ body.vertical-menu .off-canvas-content {
 
 body.vertical-menu #content {
   width: 100%;
-  margin: 0;
 
   @include breakpoint(medium up) {
     background-color: $white;
     @include xy-cell(auto, $gutters: 0);
     max-width: none;
     min-height: 90vh;    
+    margin: 0;
   }
 }
 
@@ -159,12 +159,22 @@ header .top-bar {
   display: inline-block;
   background-color: transparent;
   padding: 0;
+  max-height: 3 * $global-padding;
   
   button {
     margin: 0 $global-margin 0 0;
     background-color: transparent;
     color: $dark-gray;
   }
+  
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+body.vertical-menu header .title-bar .site-title img {
+  max-height: 2.5 * $global-padding;
 }
 
 .menu a.dropdown-toggle {
@@ -713,7 +723,6 @@ body.vertical-menu footer {
   margin-right: .25 * $global-margin;
 }
 
-
 .advanced-search [class="field"] {
   @extend .fieldset;
 }
@@ -875,19 +884,20 @@ body.vertical-menu footer {
   }
 }
 
+.inline + .item-pagination {
+  margin-left: xy-cell-width(4);
+}
+
 .double #item-images {
   @include xy-cell(4);
   order: 2;
-}
-
-.double .item-pagination {
-  order: 3;
 }
 
 .item-pagination {
   display: flex;
   justify-content: center;
   margin: $global-margin 0;
+  order: 3;
 }
 
 // #. Exhibits
@@ -919,6 +929,7 @@ body.vertical-menu footer {
     margin: 0;
   }
 }
+
 #exhibit-pages ul {
   @extend .vertical;
   @extend .menu;
@@ -1003,11 +1014,6 @@ body.vertical-menu footer {
   margin-bottom: 0;
 }
 
-.layout-file-text .exhibit-items .download-file img,
-.layout-gallery a.exhibit-item-link {
-  @extend .thumbnail;
-}
-
 .layout-gallery .gallery {
   display: flex;
   justify-content: center;
@@ -1034,6 +1040,11 @@ body.vertical-menu footer {
 .layout-gallery .download-file * {
   margin: 0;
   display: block;
+}
+
+.layout-gallery .gallery.with-showcase.left {
+  clear: none;
+  margin-right: 0;
 }
 
 // #. Search
