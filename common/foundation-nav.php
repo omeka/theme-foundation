@@ -15,7 +15,8 @@ $layout = $this->navigation()->menu()->getUlClass();
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
         <?php $hasChildren = $page->hasPages() ?>
-        <?php if (!$hasChildren): ?>
+        <?php $showChildren = get_theme_option('nav_show_levels'); ?>
+        <?php if (!$hasChildren || ($showChildren == 0)): ?>
             <li<?php if ($page->isActive()) echo ' class="active"' ?>>
                 <a 
                     class="nav-header" 
