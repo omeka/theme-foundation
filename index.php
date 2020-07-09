@@ -4,7 +4,6 @@
     <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
     <!-- Featured Collection -->
     <div class="main featured">
-        <span class="secondary label"><?php echo __('Featured Collection'); ?></span>
         <?php echo foundation_random_featured_records_html('collection'); ?>
     </div><!-- end featured collection -->
     <?php endif; ?>
