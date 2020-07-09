@@ -1089,3 +1089,102 @@ body.vertical-menu footer {
 #search-results {
   margin: $global-margin 0;
 }
+
+// #. Home
+// -------
+
+.featured-records {
+  @include xy-grid;
+  
+  .record {
+    position: relative;
+    margin-bottom: $global-margin;
+  }
+}
+
+.main.featured {
+  @include xy-cell(8);
+}
+
+.supporting.featured {
+  @include xy-cell(4);
+}
+
+.featured-records .label {
+  position: absolute;
+  top: $global-margin;
+  left: $global-margin;
+  max-width: calc(100% - #{2 * $global-margin});
+}
+
+.featured-records h3 {
+  position: absolute;
+  bottom: $global-margin;
+  left: $global-margin;
+  width: calc(100% - #{2 * $global-margin});
+  font-size: 1.25 * $global-font-size;
+  line-height: 1.25;
+  
+  a {
+    color: #fff;
+    background-color: $primary-color;
+    display: inline;
+    box-shadow: 6px 0 0 $primary-color, -6px 0 0 $primary-color;
+    box-decoration-break: clone;
+  }
+}
+
+.featured-records .description {
+  display: none;
+}
+
+#intro {
+  margin: $global-margin 0;
+  padding: $global-padding;
+  font-size: 1.3125 * $global-font-size;
+}
+
+.supporting-content {
+  @include xy-grid;
+}
+
+.recent-items {
+  @include xy-cell(8);
+  
+  .record {
+    @include xy-grid;
+    border-bottom: 1px solid $light-gray;
+    padding: $global-padding 0;
+  }
+  
+  .image {
+    @include xy-cell(4);
+    text-align: right;
+  }
+  .record-meta {
+    @include xy-cell(8);
+  }
+  
+  h3 {
+    font-size: 1.25 * $global-font-size;
+  }
+  
+  .view-items-link {
+    padding: $global-padding;
+  }
+}
+
+.other {
+  @include xy-cell(4);
+  
+  .total {
+    font-size: 1.5 * $global-font-size;
+    text-align: center;
+    margin-bottom: 2 * $global-margin;
+    
+    .count {
+      font-size: 2 * $global-font-size;
+      display: block;
+    }
+  }
+}
