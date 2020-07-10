@@ -82,7 +82,6 @@ body.vertical-menu .off-canvas-content {
 }
 
 body.vertical-menu #content {
-  width: 100%;
   overflow: hidden;
 
   @include breakpoint(medium up) {
@@ -1093,6 +1092,10 @@ body.vertical-menu footer {
 // #. Home
 // -------
 
+.vertical-menu .grid-container {
+  margin: 0;
+}
+
 .featured-records {
   @include xy-grid;
   
@@ -1146,6 +1149,11 @@ body.vertical-menu footer {
 
 .supporting-content {
   @include xy-grid;
+  
+  h2.text-center,
+  hr {
+    width: 100%;
+  }
 }
 
 .recent-items {
