@@ -476,7 +476,8 @@ body.vertical-menu footer {
 }
 
 .items-nav .top-bar-left > ul,
-.items-nav > ul {
+.items-nav > ul,
+.secondary-nav > ul {
   @include menu-base;
 
   .active a {
