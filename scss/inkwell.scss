@@ -1,0 +1,56 @@
+@charset 'utf-8';
+
+@import 'globals-default';
+@import 'globals-inkwell';
+@import 'settings';
+
+// Sea Foam Settings
+
+$topbar-background: transparent;
+
+$header-font-family: "Playfair Display", serif;
+  
+$thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
+
+$button-color: $black;
+
+@import 'foundation-core';
+@import 'omeka';
+
+body {
+  font-weight: 500;
+}
+
+header {
+  border-top: $global-padding solid $primary-color;
+}
+
+header a {
+  color: $black;
+}
+
+
+header .button {
+  border: 1px solid #000;
+  margin-left: -1px;
+}
+
+header .input-group-field {
+  border: 1px solid #000;
+  box-shadow: none;
+}
+
+a,
+.breadcrumbs a {
+  color: $black;
+}
+
+body.vertical-menu header a {
+  color: #000;
+  text-decoration: underline;
+}
+
+label,
+.label {
+  color: $black;
+}

@@ -23,8 +23,9 @@
 
     <!-- Stylesheets -->
     <?php
+    $stylesheetOption = (get_theme_option('stylesheet')) ? get_theme_option('stylesheet') : 'default';
     queue_css_file(array('iconfonts'));
-    queue_css_file('app');
+    queue_css_file($stylesheetOption);
     echo head_css();
 
     echo theme_header_background();

@@ -24,10 +24,6 @@
     jQuery(document).ready(function () {
         Omeka.skipNav();
         jQuery(document).foundation();
-
-        jQuery('#resource-list').masonry({
-          itemSelector: '#resource-list .card',
-        });
     });
     </script>
 
