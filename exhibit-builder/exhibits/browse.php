@@ -3,6 +3,8 @@ $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
+
+$truncateDescription = (get_theme_option('truncate_body_property') !== null) ? get_theme_option('truncate_body_property') : 'full'; 
 $title = __('Browse Exhibits');
 queue_js_file('browse');
 echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
@@ -50,7 +52,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
         <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         <h4><?php echo link_to_exhibit(); ?></h4>
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
-        <div class="description"><?php echo $exhibitDescription; ?></div>
+        <div class="description <?php echo $truncateDescription; ?>"><?php echo $exhibitDescription; ?></div>
         <?php endif; ?>
         <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
         <p class="tags"><?php echo $exhibitTags; ?></p>
