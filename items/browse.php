@@ -3,6 +3,8 @@ $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
+
+$truncateDescription = (get_theme_option('truncate_body_property') !== null) ? get_theme_option('truncate_body_property') : 'full'; 
 $pageTitle = __('Browse Items');
 queue_js_file('browse');
 echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout));
@@ -58,8 +60,8 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
     <?php endif; ?>
     <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h4>
-        <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet' => 250))): ?>
-        <div class="description"><?php echo $description; ?></div>
+        <?php if ($description = metadata('item', array('Dublin Core', 'Description'))): ?>
+        <div class="description <?php echo $truncateDescription; ?>"><?php echo $description; ?></div>
         <?php endif; ?>
         <?php if (metadata('item', 'has tags')): ?>
         <div class="tags"><span class="tags label"><?php echo __('Tags'); ?></span> <?php echo tag_string('items'); ?></div>
