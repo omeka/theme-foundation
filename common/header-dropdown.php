@@ -1,7 +1,7 @@
 <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 <div class="top-bar">
     <nav class="top-bar-left">
-        <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
+        <div class="title-bar" data-responsive-toggle="primary-nav" data-hide-for="large">
             <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
         </div>
         <?php echo link_to_home_page(theme_logo(), array('class' => 'site-title', 'title' => "Logo")); ?>
