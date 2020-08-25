@@ -371,7 +371,7 @@ body.vertical-menu footer {
   padding: $global-padding;
   min-height: 10vh;
   
-  @include breakpoint(medium up) {
+  @include breakpoint(large up) {
     width: calc(100% - #{xy-cell-size(2)});
     margin-left: xy-cell-size(2);
   }
@@ -401,7 +401,7 @@ body.vertical-menu footer {
     padding: (.5 * $global-padding);
 
     &:after {
-      font-family: "Font Awesome 5 Pro";
+      font-family: "Font Awesome 5 Free";
       font-weight: 900;
       margin-left: (.5 * $global-margin);
     }
@@ -1130,12 +1130,15 @@ body.vertical-menu footer {
   }
 }
 
-.main.featured {
-  @include xy-cell(8);
-}
 
-.supporting.featured {
-  @include xy-cell(4);
+@include breakpoint(medium up) {
+  .main.featured {
+    @include xy-cell(8);
+  }
+  
+  .supporting.featured {
+    @include xy-cell(4);
+  }  
 }
 
 .featured-records .label {
@@ -1181,34 +1184,8 @@ body.vertical-menu footer {
   }
 }
 
-.recent-items {
-  @include xy-cell(8);
-  
-  .record {
-    @include xy-grid;
-    border-bottom: 1px solid $light-gray;
-    padding: $global-padding 0;
-  }
-  
-  .image {
-    @include xy-cell(4);
-    text-align: right;
-  }
-  .record-meta {
-    @include xy-cell(8);
-  }
-  
-  h3 {
-    font-size: 1.25 * $global-font-size;
-  }
-  
-  .view-items-link {
-    padding: $global-padding;
-  }
-}
-
 .other {
-  @include xy-cell(4);
+  width: 100%;
   
   .total {
     font-size: 1.5 * $global-font-size;
@@ -1219,5 +1196,49 @@ body.vertical-menu footer {
       font-size: 2 * $global-font-size;
       display: block;
     }
+  }
+}
+
+.recent-items {
+  text-align: center;
+  
+  .image,
+  .record-meta {
+    margin: auto;
+  }
+  
+  .record {
+    @include xy-grid;
+    border-bottom: 1px solid $light-gray;
+    padding: $global-padding 0;
+  }
+    
+  h3 {
+    font-size: 1.25 * $global-font-size;
+  }
+  
+  .view-items-link {
+    padding: $global-padding;
+  }
+}
+
+@include breakpoint(medium up) {  
+  .recent-items {
+    text-align: left;
+    @include xy-cell(8);
+  }
+
+  .recent-items .image {
+    @include xy-cell(4);
+    text-align: right;
+    margin-top: 0;
+  }
+  
+  .recent-items .record-meta {
+    @include xy-cell(8);
+  }
+  
+  .other {
+    @include xy-cell(4);
   }
 }
