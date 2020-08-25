@@ -1,17 +1,36 @@
 <?php
+$layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$gridState = ($layout == 'togglegrid') ? 'disabled' : '';
+$listState = ($layout == 'togglelist') ? 'disabled': '';
+$isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
+
+$truncateDescription = (get_theme_option('truncate_body_property') !== null) ? get_theme_option('truncate_body_property') : 'full'; 
 $pageTitle = __('Browse Collections');
+queue_js_file('browse');
 echo head(array('title' => $pageTitle, 'bodyclass' => 'collections browse'));
 ?>
 
 <h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
-<div class="browse-controls">
+
+<div class="browse-control-mobile">
+<button type="button" class="browse-toggle closed">Tools</button>
+</div>
+
+<div class="browse-controls closed">
     <div class="top-bar-left">
         <?php echo pagination_links(); ?>
     </div>
+    <?php if (strpos($layout, 'toggle') !== false): ?>
+    <div class="layout-toggle">
+        <button type="button" aria-label="Grid" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
+        <button type="button" aria-label="List" class="list o-icon-list" <?php echo $listState; ?>></button>        
+    </div>
+    <?php endif; ?>
     <div class="top-bar-right">
         <?php if ($total_results > 0): ?>        
         <?php
         $sortLinks[__('Title')] = 'Dublin Core,Title';
+        $sortLinks[__('Creator')] = 'Dublin Core,Creator';
         $sortLinks[__('Date Added')] = 'added';
         ?>
         <div id="sort-links">
@@ -22,24 +41,24 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'collections browse'));
     </div>
 </div>
 
+<ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">
+
 <?php foreach (loop('collections') as $collection): ?>
 
-<div class="collection hentry media-object grid-x">
-    <div class="media-object-section cell small-3">
+<li class="collection resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
     <?php if ($collectionImage = record_image('collection')): ?>
+    <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         <?php echo link_to_collection($collectionImage, array('class' => 'thumbnail')); ?>
-    <?php endif; ?>
     </div>
-
-    <div class="collection-meta media-object-section cell small-9">
-        <h2><?php echo link_to_collection(); ?></h2>
+    <?php endif; ?>
+    <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
+        <h4><?php echo link_to_collection(); ?></h4>
     
         <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
         <div class="collection-description">
             <?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet' => 150))); ?>
         </div>
         <?php endif; ?>
-    
         <?php if ($collection->hasContributor()): ?>
         <div class="collection-contributors">
             <p>
@@ -54,9 +73,10 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'collections browse'));
         <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
     </div>
     
-</div><!-- end class="collection" -->
-
+</li><!-- end class="collection" -->
 <?php endforeach; ?>
+
+</ul>
 
 <?php echo pagination_links(); ?>
 
