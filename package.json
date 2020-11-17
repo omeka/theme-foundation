@@ -1,6 +1,6 @@
 {
   "name": "foundation-classic-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Omeka Classic theme using the ZURB Foundation toolkit.",
   "main": "gulpfile.js",
   "scripts": {
