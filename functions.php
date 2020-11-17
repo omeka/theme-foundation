@@ -74,9 +74,8 @@ function foundation_random_featured_records_html($recordType)
         'item' => 'items/single.php',
     ];
 
-    $featuredRecords =  get_records(strtoupper($recordType), array('featured' => 1,
-                                     'sort_field' => 'random',
-                                     'hasImage' => $hasImage), 1);
+    $featuredRecords =  get_records(ucfirst($recordType), array('featured' => 1,
+                                     'sort_field' => 'random'), 1);
 
     if ($featuredRecords) {
         foreach ($featuredRecords as $featuredRecord) {
