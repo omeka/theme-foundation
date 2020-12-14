@@ -66,7 +66,7 @@
         <?php endif; ?>
     </div>
 
-    <div id="content" role="main" tabindex="-1">
+    <div id="content" role="main">
 
 
         <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>

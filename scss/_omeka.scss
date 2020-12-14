@@ -43,7 +43,12 @@ select {
 }
 
 #skipnav {
-  @include element-invisible;
+  @extend .show-on-focus;
+}
+
+#skipnav {
+  text-align: center;
+  display: block;
 }
 
 #content {
