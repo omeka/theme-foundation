@@ -946,6 +946,7 @@ body.vertical-menu footer {
 #exhibit-blocks {
   float: right;
   margin: $global-margin 0;
+  width: 100%;
 }
 
 @include breakpoint(medium down) {
