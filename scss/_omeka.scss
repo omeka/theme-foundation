@@ -561,6 +561,10 @@ body.vertical-menu footer {
   }
 }
 
+.description:not(:last-child) {
+  margin-bottom: $global-margin;
+}
+
 .description.ellipsis,
 .description.ellipsis p:first-child {
   display: -webkit-box;
