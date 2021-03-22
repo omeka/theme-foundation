@@ -46,6 +46,10 @@ body {
   border-bottom-color: $gold;
 }
 
+.resource-list .has-media {
+  color: $brown;
+}
+
 .description.fadeout:after {
   background: transparent url('../images/revolution-fade.png') no-repeat;
   background-size: cover;

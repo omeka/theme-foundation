@@ -1,5 +1,6 @@
 <?php
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$hideThumbnails = (get_theme_option('browse_hide_thumbnails') == 1);
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
@@ -53,13 +54,19 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 <ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">
 <?php foreach (loop('items') as $item): ?>
 <li class="item resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
-    <?php if (metadata('item', 'has files')): ?>
+    <?php if (metadata('item', 'has files') && !$hideThumbnails): ?>
     <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         <?php echo link_to_item(item_image(), array('class' => 'thumbnail')); ?>
     </div>
     <?php endif; ?>
     <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-        <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h4>
+        
+        <h4>
+            <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?>
+            <?php if ($hideThumbnails && metadata('item', 'has files')): ?>
+            <span class="has-media" aria-label="<?php echo __('Has media'); ?>"></span>
+            <?php endif; ?>
+        </h4>
         <?php if ($description = metadata('item', array('Dublin Core', 'Description'))): ?>
         <div class="description <?php echo $truncateDescription; ?>"><?php echo $description; ?></div>
         <?php endif; ?>

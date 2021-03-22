@@ -533,6 +533,16 @@ body.vertical-menu footer {
   }
 }
 
+.resource-list .has-media {
+  display: inline-block;
+  color: $medium-gray;
+
+  &:after {
+    content: "\f302";
+    font-family: "Font Awesome 5 Free";
+  }
+}
+
 .resource-list .resource-image.media-object-section img {
   max-width: 100%;
 }
