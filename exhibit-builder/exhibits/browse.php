@@ -1,5 +1,6 @@
 <?php
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$hideThumbnails = (get_theme_option('browse_hide_thumbnails') == 1);
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
@@ -44,13 +45,19 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 <ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <li class="exhibit resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
-        <?php if ($exhibitImage = record_image($exhibit)): ?>
+        <?php if (($exhibitImage = record_image($exhibit)) && !$hideThumbnails): ?>
         <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
             <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'thumbnail')); ?>
         </div>
         <?php endif; ?>
         <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-        <h4><?php echo link_to_exhibit(); ?></h4>
+        <h4>
+            <?php echo link_to_exhibit(); ?>
+            <?php if ($hideThumbnails && isset($exhibitImage)): ?>
+            <span class="has-media" aria-label="<?php echo __('Has media'); ?>" title="<?php echo __('Has media'); ?>"></span>
+            <?php endif; ?>
+        </h4>
+        </h4>
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
         <div class="description <?php echo $truncateDescription; ?>"><?php echo $exhibitDescription; ?></div>
         <?php endif; ?>

@@ -1,5 +1,6 @@
 <?php
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$hideThumbnails = (get_theme_option('browse_hide_thumbnails') == 1);
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
@@ -46,13 +47,18 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'collections browse'));
 <?php foreach (loop('collections') as $collection): ?>
 
 <li class="collection resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
-    <?php if ($collectionImage = record_image('collection')): ?>
+    <?php if (($collectionImage = record_image('collection')) && !$hideThumbnails): ?>
     <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         <?php echo link_to_collection($collectionImage, array('class' => 'thumbnail')); ?>
     </div>
     <?php endif; ?>
     <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-        <h4><?php echo link_to_collection(); ?></h4>
+        <h4>
+            <?php echo link_to_collection(); ?>
+            <?php if ($hideThumbnails && isset($collectionImage)): ?>
+            <span class="has-media" aria-label="<?php echo __('Has media'); ?>" title="<?php echo __('Has media'); ?>"></span>
+            <?php endif; ?>
+        </h4>
     
         <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
         <div class="collection-description">
