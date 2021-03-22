@@ -56,3 +56,7 @@ body {
   background-position: right;
   right: -1rem;
 }
+
+.inline .element .element-text:not(:first-of-type) {
+  border-top-color: lighten($brown, 50%);
+}

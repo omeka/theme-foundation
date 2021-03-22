@@ -901,6 +901,8 @@ body.vertical-menu footer {
 
 .inline .element {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   
   h3 {
     @include xy-cell(4);
@@ -909,6 +911,12 @@ body.vertical-menu footer {
   
   .element-text {
     @include xy-cell(8);
+
+    &:not(:first-of-type) {
+      border-top: 1px solid $light-gray;
+      margin-top: .25 * $global-margin;
+      padding-top: .25 * $global-margin;
+    }
   }
 }
 
