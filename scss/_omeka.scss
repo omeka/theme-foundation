@@ -864,12 +864,27 @@ body.vertical-menu footer {
   }
 }
 
+.resource.show .media-list a {
+  display: flex;
+  align-items: center;
+}
+
+.resource.show .media-list img {
+  max-height: 5 * $global-padding;
+  margin: 0 $global-margin 0 0;
+}
+
 .resource.show .media-grid {
   display: flex;
   flex-wrap: wrap;
   
   .item-file {
-    margin: (.5 * $global-margin) $global-margin;
+    margin: (.5 * $global-margin);
+    width: calc(50% - #{$global-margin});
+
+    & > a {
+      margin-bottom: 0;
+    }
   }
 }
 

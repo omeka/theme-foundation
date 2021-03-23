@@ -1,4 +1,5 @@
 <?php $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single'; ?>
+<?php $linkToFileMetadata = get_option('link_to_file_metadata'); ?>
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); ?>
 <div class="resource-title">
     <h2><?php echo metadata('item', array('Dublin Core','Title')); ?></h2>
@@ -9,11 +10,22 @@
     <?php $mediaDisplay = get_theme_option('item_show_media_display'); ?>
     <?php $mediaThumbnailSize = ($mediaDisplay == 'embed') ? 'fullsize' : 'square_thumbnail'; ?>    
     <div id="item-images" class="media-<?php echo $mediaDisplay; ?>">
+        <?php if ($mediaDisplay == 'list'): ?>
+        <?php foreach ($item->Files as $file): ?>
+        <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($file) : $file->getWebPath('original'); ?>
+            <div class="media-link">
+            <a href="<?php echo $fileUrl; ?>">
+                <?php echo file_image('square_thumbnail', array('class' => 'thumbnail'), $file); ?>
+                <?php echo metadata($file, 'rich_title', array('no_escape' => true)); ?></a>
+            </div>
+        <?php endforeach; ?>
+        <?php else: ?>
         <?php 
             echo files_for_item(array(
                 'imageSize' => $mediaThumbnailSize,
             )); 
         ?>
+        <?php endif; ?>
     </div>
     <?php endif; ?>
 
