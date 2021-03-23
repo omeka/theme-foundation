@@ -1,38 +1,27 @@
 <?php $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single'; ?>
-<?php $linkToFileMetadata = get_option('link_to_file_metadata'); ?>
+<?php $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top'; ?>
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); ?>
 <div class="resource-title">
     <h2><?php echo metadata('item', array('Dublin Core','Title')); ?></h2>
     <h3 class="label"><?php echo __('Item'); ?></h3>
 </div>
 <div class="wrap">
-    <?php if (metadata('item', 'has files')): ?>
-    <?php $mediaDisplay = get_theme_option('item_show_media_display'); ?>
-    <?php $mediaThumbnailSize = ($mediaDisplay == 'embed') ? 'fullsize' : 'square_thumbnail'; ?>    
-    <div id="item-images" class="media-<?php echo $mediaDisplay; ?>">
-        <?php if ($mediaDisplay == 'list'): ?>
-        <?php foreach ($item->Files as $file): ?>
-        <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($file) : $file->getWebPath('original'); ?>
-            <div class="media-link">
-            <a href="<?php echo $fileUrl; ?>">
-                <?php echo file_image('square_thumbnail', array('class' => 'thumbnail'), $file); ?>
-                <?php echo metadata($file, 'rich_title', array('no_escape' => true)); ?></a>
-            </div>
-        <?php endforeach; ?>
-        <?php else: ?>
-        <?php 
-            echo files_for_item(array(
-                'imageSize' => $mediaThumbnailSize,
-            )); 
-        ?>
-        <?php endif; ?>
-    </div>
+    <?php if (metadata('item', 'has files') && ($mediaPosition == 'top')): ?>
+        <?php echo foundation_display_attached_media($item); ?>
     <?php endif; ?>
 
     <!-- Items metadata -->
     <?php $showLayout = get_theme_option('item_show_inline_metadata'); ?>
     <div id="resource-values" class="<?php echo ($showLayout == 1) ? 'inline' : 'stack'; ?>">
         <?php echo all_element_texts('item'); ?>
+
+        <?php if (metadata('item', 'has files') && ($mediaPosition == 'bottom')): ?>
+        <div id="itemfiles" class="element">
+            <h3><?php echo __('Files'); ?></h3>
+            <div class="element-text"><?php echo foundation_display_attached_media($item); ?></div>
+        </div>
+        <?php endif; ?>
+
 
         <?php if(metadata('item','Collection Name')): ?>
           <div id="collection" class="element">

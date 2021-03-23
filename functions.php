@@ -150,3 +150,43 @@ function foundation_breadcrumbs($pageId = null, $seperator=null, $includePage=tr
     $html .= '</ul></nav>';
     return $html;
 }
+
+function foundation_display_attached_media($item) {
+    $linkToFileMetadata = get_option('link_to_file_metadata');
+    $mediaDisplay = get_theme_option('item_show_media_display');
+    $mediaThumbnailSize = ($mediaDisplay == 'embed') ? 'fullsize' : 'square_thumbnail';
+    $html = '';
+
+    if ($mediaDisplay == 'list') {
+        $html .= '<div id="item-images" class="media-list">';
+        foreach ($item->Files as $file) {
+            $fileUrl = ($linkToFileMetadata == '1') ? record_url($file) : $file->getWebPath('original');
+            $html .= '<div class="media-link">';
+            $html .= '<a href="' . $fileUrl . '">';
+            $html .= file_image('square_thumbnail', array('class' => 'thumbnail'), $file);
+            $html .= metadata($file, 'rich_title', array('no_escape' => true));
+            $html .= '</a>';
+            $html .= '</div>';
+        }
+        $html .= '</div>';
+    } elseif ($mediaDisplay == 'grid') {
+        $html .= item_image_gallery(array(
+            'wrapper' => array(
+                'class' => 'media-grid'
+            ),
+            'linkWrapper' => array(
+                'class' => 'item-file',
+            ),
+            'link' => array(
+                'class' => 'thumbnail',
+            ),
+        ));
+    } else {
+        $html .= '<div id="item-images" class="media-embed">';
+        $html .= files_for_item(array(
+                    'imageSize' => $mediaThumbnailSize,
+                )); 
+        $html .= '</div>';
+    }
+    return $html;
+}

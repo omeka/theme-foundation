@@ -836,7 +836,7 @@ body.vertical-menu footer {
   }
 }
 
-.resource.show .wrap {
+.double .resource.show .wrap {
   padding: (2 * $global-padding) 0;
   @include xy-grid;
 }
@@ -852,8 +852,8 @@ body.vertical-menu footer {
   }
 }
 
-.resource.show .media-embed,
-.resource.show .media-list {
+.double .resource.show .media-embed,
+.double .resource.show .media-list {
   order: 2;
   @include xy-cell(4);
   margin-right: 0;
@@ -880,7 +880,7 @@ body.vertical-menu footer {
   
   .item-file {
     margin: (.5 * $global-margin);
-    width: calc(50% - #{$global-margin});
+    max-width: calc(50% - #{$global-margin});
 
     & > a {
       margin-bottom: 0;
