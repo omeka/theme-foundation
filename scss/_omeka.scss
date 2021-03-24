@@ -864,6 +864,10 @@ body.vertical-menu footer {
   }
 }
 
+.resource.show .media-link:not(:last-child) {
+  margin-bottom: $global-margin;
+}
+
 .resource.show .media-list a {
   display: flex;
   align-items: center;
