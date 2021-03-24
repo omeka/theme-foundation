@@ -981,6 +981,10 @@ body.vertical-menu footer {
   justify-content: center;
   margin: $global-margin 0;
   order: 3;
+
+  & > div:not(:last-child) {
+    margin-right: $global-margin;
+  }
 }
 
 // #. Exhibits
