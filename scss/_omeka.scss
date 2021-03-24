@@ -881,6 +881,7 @@ body.vertical-menu footer {
 .resource.show .media-grid {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 (-.5 * $global-margin);
   
   .item-file {
     margin: (.5 * $global-margin);
