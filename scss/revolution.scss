@@ -29,13 +29,18 @@ body {
   }
 
   body.vertical-menu #content,
-  body.vertical-menu footer {
+  body.vertical-menu footer,
+  body.vertical-menu #search-container {
     background: transparent url('../images/revolution-bg.jpg') repeat;
   }
 
   body:not(.vertical-menu) header {
     border-top: ($global-padding) solid $primary-color;
   }  
+}
+
+body.vertical-menu #search-container {
+  border-bottom-color: $gold;
 }
 
 .fieldset {

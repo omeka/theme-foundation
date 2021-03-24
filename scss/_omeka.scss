@@ -83,20 +83,49 @@ body.vertical-menu {
 }
 
 body.vertical-menu .off-canvas-content {
-  @include xy-grid();
+  @include breakpoint(large up) {
+    @include xy-grid(vertical);
+  }
 }
 
 body.vertical-menu #content {
   overflow: hidden;
 
-  @include breakpoint(medium up) {
+  @include breakpoint(large up) {
     background-color: $white;
-    @include xy-cell(auto, $gutters: 0);
+    @include xy-cell(10, $gutters: 0);
     max-width: none;
     min-height: 90vh;    
     margin: 0;
   }
 }
+
+body.vertical-menu #search-container {
+  border-bottom: 1px solid $light-gray;
+
+  @include breakpoint(medium up) {
+    break-before: always;
+    min-height: 0;
+    flex: 1;
+    width: auto;
+    background-color: $white;
+    max-width: none;
+    margin: 0;
+
+    form {
+      @include xy-grid-container();
+      margin-left: 0;
+    }
+
+    #advanced-form {
+      padding-bottom: 0;
+
+      input {
+        margin-bottom: 0;
+      }
+    }
+  }
+} 
 
 body.vertical-menu #user-bar {
   width: 100%;
@@ -303,6 +332,10 @@ body.vertical-menu header .desktop {
     border-bottom: 1px solid $medium-gray;
     margin-bottom: $global-margin;
   }
+}
+
+.vertical-menu #search-container.closed {
+  display: block;
 }
 
 #search-form button,
@@ -1188,11 +1221,11 @@ body.vertical-menu footer {
 
 @include breakpoint(medium up) {
   .main.featured {
-    @include xy-cell(8);
+    @include xy-cell(8, null, 0);
   }
   
   .supporting.featured {
-    @include xy-cell(4);
+    @include xy-cell(4, null, 0);
   }  
 }
 

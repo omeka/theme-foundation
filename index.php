@@ -1,6 +1,5 @@
 <?php echo head(array('bodyid' => 'home')); ?>
 
-<div class="grid-container">
   <div class="featured-records">
       <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
       <!-- Featured Collection -->
@@ -69,4 +68,3 @@
   <?php fire_plugin_hook('public_home', array('view' => $this)); ?>
   
   <?php echo foot(); ?>
-</div>

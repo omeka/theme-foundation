@@ -18,6 +18,7 @@
 
     </footer><!-- end footer -->
     
+    </div><!-- end grid-container -->
     </div><!-- end off canvas content -->
 
     <script type="text/javascript">

@@ -73,6 +73,5 @@
     </div>
 
     <div id="content" role="main">
-
-
+        <div class="grid-container">
         <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>
