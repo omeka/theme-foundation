@@ -1,5 +1,6 @@
 <?php
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$thumbnailSize = (get_theme_option('thumbnail_size') !== null) ? get_theme_option('thumbnail_size') : 'square_thumbnail';
 $hideThumbnails = (get_theme_option('browse_hide_thumbnails') == 1);
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
@@ -47,7 +48,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'collections browse'));
 <?php foreach (loop('collections') as $collection): ?>
 
 <li class="collection resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
-    <?php if (($collectionImage = record_image('collection')) && !$hideThumbnails): ?>
+    <?php if (($collectionImage = record_image('collection', $thumbnailSize)) && !$hideThumbnails): ?>
     <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         <?php echo link_to_collection($collectionImage, array('class' => 'thumbnail')); ?>
     </div>

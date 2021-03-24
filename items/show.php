@@ -2,7 +2,7 @@
 <?php $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top'; ?>
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); ?>
 <div class="resource-title">
-    <h2><?php echo mmetadata('item','rich_title', array('no_escape' => true)); ?></h2>
+    <h2><?php echo metadata('item','rich_title', array('no_escape' => true)); ?></h2>
     <h3 class="label"><?php echo __('Item'); ?></h3>
 </div>
 <div class="wrap">

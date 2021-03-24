@@ -1,5 +1,6 @@
 <?php
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$thumbnailSize = (get_theme_option('thumbnail_size') !== null) ? get_theme_option('thumbnail_size') : 'square_thumbnail';
 $hideThumbnails = (get_theme_option('browse_hide_thumbnails') == 1);
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
@@ -56,11 +57,10 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 <li class="item resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
     <?php if (metadata('item', 'has files') && !$hideThumbnails): ?>
     <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-        <?php echo link_to_item(item_image(), array('class' => 'thumbnail')); ?>
+        <?php echo link_to_item(item_image($thumbnailSize), array('class' => 'thumbnail')); ?>
     </div>
     <?php endif; ?>
     <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-        
         <h4>
             <?php echo link_to_item(metadata('item','rich_title', array('no_escape' => true)), array('class' => 'permalink')); ?>
             <?php if ($hideThumbnails && metadata('item', 'has files')): ?>

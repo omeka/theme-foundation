@@ -1,5 +1,6 @@
 <?php
 $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('item_browse_layout') : 'list';
+$thumbnailSize = (get_theme_option('thumbnail_size') !== null) ? get_theme_option('thumbnail_size') : 'square_thumbnail';
 $hideThumbnails = (get_theme_option('browse_hide_thumbnails') == 1);
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
@@ -45,7 +46,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 <ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <li class="exhibit resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
-        <?php if (($exhibitImage = record_image($exhibit)) && !$hideThumbnails): ?>
+        <?php if (($exhibitImage = record_image($exhibit, $thumbnailSize)) && !$hideThumbnails): ?>
         <div class="resource-image <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
             <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'thumbnail')); ?>
         </div>
