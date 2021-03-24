@@ -58,5 +58,5 @@ body {
 }
 
 .inline .element .element-text:not(:first-of-type) {
-  border-top-color: lighten($brown, 50%);
+  border-top-color: $gold;
 }
