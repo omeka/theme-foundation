@@ -53,7 +53,7 @@ $totalItems = metadata('collection', 'total_items');
         </div>
         <?php endif; ?>
         <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-            <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?></h4>
+            <h4><?php echo link_to_item(metadata('item','rich_title', array('no_escape' => true)), array('class' => 'permalink')); ?></h4>
             <?php if ($description = metadata('item', array('Dublin Core', 'Description'))): ?>
             <div class="description <?php echo $truncateDescription; ?>"><?php echo $description; ?></div>
             <?php endif; ?>

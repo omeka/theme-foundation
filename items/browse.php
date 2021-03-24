@@ -62,7 +62,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
     <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
         
         <h4>
-            <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class' => 'permalink')); ?>
+            <?php echo link_to_item(metadata('item','rich_title', array('no_escape' => true)), array('class' => 'permalink')); ?>
             <?php if ($hideThumbnails && metadata('item', 'has files')): ?>
             <span class="has-media" aria-label="<?php echo __('Has media'); ?>" title="<?php echo __('Has media'); ?>"></span>
             <?php endif; ?>
