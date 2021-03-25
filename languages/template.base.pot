@@ -1,0 +1,27 @@
+# Translation for the Foundation Classic theme for Omeka.
+# Copyright (C) 2021 Omeka
+# This file is distributed under the same license as the Omeka package.
+# Kim Nguyen <kim@omeka.org>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FoundationClassic\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/theme-foundation-classic/issues\n"
+"POT-Creation-Date: 2021-03-25 21:49-0500\n"
+"PO-Revision-Date: 2021-03-25 HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Grid"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Toggle advanced options"
+msgstr ""

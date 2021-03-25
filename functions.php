@@ -190,3 +190,5 @@ function foundation_display_attached_media($item) {
     }
     return $html;
 }
+
+add_translation_source(dirname(__FILE__) . '/languages');

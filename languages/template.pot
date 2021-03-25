@@ -1,0 +1,70 @@
+# Translation for the Foundation Classic theme for Omeka.
+# Copyright (C) 2021 Omeka
+# This file is distributed under the same license as the Omeka package.
+# Kim Nguyen <kim@omeka.org>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FoundationClassic\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/theme-foundation-classic/"
+"issues\n"
+"POT-Creation-Date: 2021-03-25 21:49-0500\n"
+"PO-Revision-Date: 2021-03-25 HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: collections/browse.php:27 collections/show.php:29
+#: exhibit-builder/exhibits/browse.php:40 items/browse.php:36
+msgid "Grid"
+msgstr ""
+
+#: collections/browse.php:28 collections/show.php:30
+#: exhibit-builder/exhibits/browse.php:41 items/browse.php:37
+msgid "List"
+msgstr ""
+
+#: search/search-form.php:27
+msgid "Toggle advanced options"
+msgstr ""
+
+#: collections/browse.php:60 exhibit-builder/exhibits/browse.php:58
+#: items/browse.php:67
+msgid "Has media"
+msgstr ""
+
+#: exhibit-builder/exhibits/browse.php:10
+msgid "Browse Exhibits"
+msgstr ""
+
+#: exhibit-builder/exhibits/browse.php:80
+msgid "There are no exhibits available yet."
+msgstr ""
+
+#: exhibit-builder/exhibits/single.php:7
+msgid "Featured Exhibit"
+msgstr ""
+
+#: exhibit-builder/exhibits/summary.php:28
+msgid "Credits"
+msgstr ""
+
+#: functions.php:145
+msgid "Home"
+msgstr ""
+
+#: index.php:54
+msgid "items"
+msgstr ""
+
+#: index.php:57
+msgid "collections"
+msgstr ""
+
+#: index.php:61
+msgid "exhibits"
+msgstr ""
