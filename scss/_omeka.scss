@@ -116,13 +116,38 @@ body.vertical-menu #search-container {
       @include xy-grid-container();
       margin-left: 0;
     }
+  }
 
-    #advanced-form {
-      padding-bottom: 0;
+  .advanced-toggle {
+    width: 2.5 * $global-padding;
+    height: 2.5 * $global-padding;
+    background-color: transparent;
+    margin-left: -2.5 * $global-padding;
+    position: relative;
+    z-index: 1;
+    color: $dark-gray;
 
-      input {
-        margin-bottom: 0;
-      }
+    &:after {
+      content: "\f0da";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
+    &.open:after {
+     content: "\f0d7"; 
+    }
+  }
+
+  #advanced-form {
+    padding-bottom: 0;
+    display: none;
+
+    &.open {
+      display: flex;
+    }
+    
+    input {
+      margin-bottom: 0;
     }
   }
 } 

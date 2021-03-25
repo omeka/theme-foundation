@@ -24,5 +24,6 @@
         <?php echo $this->formHidden('record_types[]', $type); ?>
         <?php endforeach; ?>
     <?php endif; ?>
+    <button type="button" class="expand advanced-toggle" aria-label="<?php echo __('Toggle advanced options'); ?>" title="<?php echo __('Toggle advanced options'); ?>"></button>
     <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit', 'class' => 'cell large-1')); ?>
 </form>
