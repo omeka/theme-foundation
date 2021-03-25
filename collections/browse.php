@@ -24,8 +24,8 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'collections browse'));
     </div>
     <?php if (strpos($layout, 'toggle') !== false): ?>
     <div class="layout-toggle">
-        <button type="button" aria-label="Grid" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
-        <button type="button" aria-label="List" class="list o-icon-list" <?php echo $listState; ?>></button>        
+        <button type="button" aria-label="<?php echo __('Grid'); ?>" title="<?php echo __('Grid'); ?>" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
+        <button type="button" aria-label="<?php echo __('List'); ?>" title="<?php echo __('List'); ?>" class="list o-icon-list" <?php echo $listState; ?>></button>
     </div>
     <?php endif; ?>
     <div class="top-bar-right">
