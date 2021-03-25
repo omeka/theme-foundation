@@ -6,7 +6,7 @@
     <h3 class="label"><?php echo __('Item'); ?></h3>
 </div>
 <div class="wrap">
-    <?php if (metadata('item', 'has files') && ($mediaPosition == 'top')): ?>
+    <?php if (metadata('item', 'has files') && (($mediaPosition == 'top') || ($layout == 'double'))): ?>
         <?php echo foundation_display_attached_media($item); ?>
     <?php endif; ?>
 
@@ -15,13 +15,12 @@
     <div id="resource-values" class="<?php echo ($showLayout == 1) ? 'inline' : 'stack'; ?>">
         <?php echo all_element_texts('item'); ?>
 
-        <?php if (metadata('item', 'has files') && ($mediaPosition == 'bottom')): ?>
+        <?php if (metadata('item', 'has files') && ($mediaPosition == 'bottom') && ($layout == 'single')): ?>
         <div id="itemfiles" class="element">
             <h3><?php echo __('Files'); ?></h3>
             <div class="element-text"><?php echo foundation_display_attached_media($item); ?></div>
         </div>
         <?php endif; ?>
-
 
         <?php if(metadata('item','Collection Name')): ?>
           <div id="collection" class="element">

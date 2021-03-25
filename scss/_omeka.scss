@@ -439,7 +439,6 @@ body.vertical-menu footer {
   
   @include breakpoint(large up) {
     width: calc(100% - #{xy-cell-size(2)});
-    margin-left: xy-cell-size(2);
   }
 }
 
@@ -894,12 +893,12 @@ body.vertical-menu footer {
   }
 }
 
-.double .resource.show .wrap {
+.double.resource.show .wrap {
   padding: (2 * $global-padding) 0;
   @include xy-grid;
 }
 
-.resource.show #resource-values {
+.double.resource.show #resource-values {
   order: 1;
   @include xy-cell(8);
   margin-left: 0;
@@ -910,8 +909,9 @@ body.vertical-menu footer {
   }
 }
 
-.double .resource.show .media-embed,
-.double .resource.show .media-list {
+.double.resource.show .media-embed,
+.double.resource.show .media-list,
+.double.resource.show .media-grid {
   order: 2;
   @include xy-cell(4);
   margin-right: 0;
