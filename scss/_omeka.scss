@@ -51,6 +51,10 @@ select {
   display: block;
 }
 
+.advanced-toggle {
+  display: none;
+}
+
 #content {
   padding: (2 * $global-padding) $global-padding;
 
@@ -119,6 +123,7 @@ body.vertical-menu #search-container {
   }
 
   .advanced-toggle {
+    display: block;
     width: 2.5 * $global-padding;
     height: 2.5 * $global-padding;
     background-color: transparent;
