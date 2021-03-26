@@ -191,4 +191,13 @@ function foundation_display_attached_media($item) {
     return $html;
 }
 
+function foundation_mobile_theme_logo() {
+    $logo = get_theme_option('mobile_logo');
+    if ($logo) {
+        $storage = Zend_Registry::get('storage');
+        $uri = $storage->getUri($storage->getPathByType($logo, 'theme_uploads'));
+        return '<img src="' . $uri . '" alt="' . option('site_title') . '" />';
+    }
+}
+
 add_translation_source(dirname(__FILE__) . '/languages');
