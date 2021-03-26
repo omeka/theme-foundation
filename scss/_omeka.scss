@@ -95,8 +95,11 @@ body.vertical-menu .off-canvas-content {
 body.vertical-menu #content {
   overflow: hidden;
 
-  @include breakpoint(large up) {
+  @include breakpoint(medium up) {
     background-color: $white;
+  }
+
+  @include breakpoint(large up) {
     @include xy-cell(10, $gutters: 0);
     max-width: none;
     min-height: 90vh;    
@@ -125,7 +128,6 @@ body.vertical-menu #search-container {
   .advanced-toggle {
     display: block;
     width: 2.5 * $global-padding;
-    height: 2.5 * $global-padding;
     background-color: transparent;
     margin-left: -2.5 * $global-padding;
     position: relative;

@@ -21,8 +21,10 @@ body {
   font-weight: 500;
 }
 
-header {
-  border-top: $global-padding solid $primary-color;
+@include breakpoint (large up) {
+  header {
+    border-top: $global-padding solid $primary-color;
+  }
 }
 
 header a {
