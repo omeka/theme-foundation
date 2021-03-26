@@ -27,14 +27,14 @@ body {
   }
 }
 
-header a {
-  color: $black;
+@include breakpoint (medium down) {
+  header {
+    background-color: $primary-color;
+  }
 }
 
-
-header .button {
-  border: 1px solid #000;
-  margin-left: -1px;
+header a {
+  color: $black;
 }
 
 header .input-group-field {
