@@ -1242,21 +1242,32 @@ body.vertical-menu footer {
 
 .featured-records {
   @include xy-grid;
+  align-items: center;
+  margin: 0 #{-.5 * $global-margin};
   
   .record {
     position: relative;
     margin-bottom: $global-margin;
+  }
+
+  .image {
+    display: block;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
 
 @include breakpoint(medium up) {
   .main.featured {
-    @include xy-cell(8, null, 0);
+    @include xy-cell(8, null, $global-margin);
   }
   
   .supporting.featured {
-    @include xy-cell(4, null, 0);
+    @include xy-cell(4, null, $global-margin);
   }  
 }
 

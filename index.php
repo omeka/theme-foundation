@@ -1,27 +1,33 @@
 <?php echo head(array('bodyid' => 'home')); ?>
 
   <div class="featured-records">
-      <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
+      <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? get_theme_option('home_main_featured') : 'item'; ?>
       <!-- Featured Collection -->
       <div class="main featured">
-          <?php echo foundation_random_featured_records_html('collection'); ?>
+          <?php if (($mainFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
+            <?php echo __('Exhibit Builder is not installed.'); ?>
+          <?php else: ?>
+            <?php echo foundation_random_featured_records_html($mainFeaturedRecordType); ?>
+          <?php endif; ?>
       </div><!-- end featured collection -->
-      <?php endif; ?>
       
       
       <div class="supporting featured">
-      <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
-      <!-- Featured Item -->    <?php echo foundation_random_featured_records_html('item'); ?>
-      <?php endif; ?>
-      
-      <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
-              && plugin_is_active('ExhibitBuilder')
-              && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
-      <!-- Featured Exhibit -->
-      <div id="featured-exhibit">
-        <?php echo foundation_random_featured_records_html('exhibit'); ?>
-      </div>
-      <?php endif; ?>
+          <?php $secondFeaturedRecordType = (get_theme_option('home_second_featured') !== null) ? get_theme_option('home_second_featured') : 'item'; ?>
+          <!-- Featured Collection -->
+          <?php if (($secondFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
+            <?php echo __('Exhibit Builder is not installed.'); ?>
+          <?php else: ?>
+            <?php echo foundation_random_featured_records_html($secondFeaturedRecordType); ?>
+          <?php endif; ?>
+
+          <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? get_theme_option('home_third_featured') : 'item'; ?>
+          <!-- Featured Collection -->
+          <?php if (($thirdFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
+            <?php echo __('Exhibit Builder is not installed.'); ?>
+          <?php else: ?>
+            <?php echo foundation_random_featured_records_html($thirdFeaturedRecordType); ?>
+          <?php endif; ?>
       </div>
   </div>
   
