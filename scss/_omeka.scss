@@ -7,6 +7,10 @@
 // #. Global
 // ---------
 
+.print-only {
+  display: none;
+}
+
 [type="submit"], 
 [type="button"] {
   @extend .button;

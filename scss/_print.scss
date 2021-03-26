@@ -1,0 +1,26 @@
+@media print {
+    a[href]:after {
+        content: none !important;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #admin-bar,
+    header,
+    #search-container,
+    .browse-control-mobile {
+        display: none !important;
+    }
+
+    .site-title {
+        margin: $global-margin;
+    }
+
+    .featured .label,
+    .featured h3 {
+        position: static;
+        padding: 0;
+    }
+}
