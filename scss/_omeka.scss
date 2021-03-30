@@ -766,6 +766,12 @@ body.vertical-menu footer {
     font-weight: 900;
 }
 
+.tags-label {
+    font-weight: bold;
+    font-family: $header-font-family;
+    margin-right: .5 * $global-margin;
+}
+
 // #. Browse Tags
 // --------------
 

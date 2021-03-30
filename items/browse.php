@@ -71,7 +71,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
         <div class="description <?php echo $truncateDescription; ?>"><?php echo $description; ?></div>
         <?php endif; ?>
         <?php if (metadata('item', 'has tags')): ?>
-        <div class="tags"><span class="tags label"><?php echo __('Tags'); ?></span> <?php echo tag_string('items'); ?></div>
+        <div class="tags"><span class="tags-label"><?php echo __('Tags'); ?></span> <?php echo tag_string('items'); ?></div>
         <?php endif; ?>    
         <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
     </div>
