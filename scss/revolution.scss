@@ -64,5 +64,5 @@ body.vertical-menu #search-container {
 }
 
 .inline .element .element-text:not(:first-of-type) {
-  border-top-color: $gold;
+  border-top-color: lighten(desaturate($gold, 10%), 10%);
 }
