@@ -15,7 +15,7 @@
     <div id="resource-values" class="<?php echo ($showLayout == 1) ? 'inline' : 'stack'; ?>">
         <?php echo all_element_texts('item'); ?>
 
-        <?php if (metadata('item', 'has files') && ($mediaPosition == 'bottom') && ($layout == 'single')): ?>
+        <?php if (metadata('item', 'has files') && ($mediaPosition == 'embedded') && ($layout == 'single')): ?>
         <div id="itemfiles" class="element">
             <h3><?php echo __('Files'); ?></h3>
             <div class="element-text"><?php echo foundation_display_attached_media($item); ?></div>
@@ -44,6 +44,10 @@
         </div>
 
        <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+
+       <?php if (metadata('item', 'has files') && (($mediaPosition == 'bottom') && ($layout == 'single'))): ?>
+        <?php echo foundation_display_attached_media($item); ?>
+        <?php endif; ?>
     </div>
 
     <div class="item-pagination navigation">
