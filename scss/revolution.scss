@@ -29,15 +29,16 @@ body {
     background-image: none;
   }
 
-  body.vertical-menu #content,
-  body.vertical-menu footer,
-  body.vertical-menu #search-container {
-    background: transparent url('../images/revolution-bg.jpg') repeat;
-  }
-
   body:not(.vertical-menu) header {
     border-top: ($global-padding) solid $primary-color;
   }  
+}
+
+body.vertical-menu #content,
+body.vertical-menu #content:after,
+body.vertical-menu footer,
+body.vertical-menu #search-container {
+  background: transparent url('../images/revolution-bg.jpg') repeat;
 }
 
 body.vertical-menu #search-container {

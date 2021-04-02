@@ -86,21 +86,32 @@ body:not(.browse) #content {
 
 body.vertical-menu {
   @include breakpoint(medium up) {
-    background-color: $primary-color;    
+    background-color: $primary-color;   
+    overflow: hidden; 
   }
 }
 
 body.vertical-menu .off-canvas-content {
-  @include breakpoint(large up) {
-    @include xy-grid(vertical);
-  }
+
 }
 
 body.vertical-menu #content {
-  overflow: hidden;
+  position: relative;
 
   @include breakpoint(medium up) {
     background-color: $white;
+    float: right;
+    width: 100%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background: #fff;
+    }
   }
 
   @include breakpoint(large up) {
@@ -225,6 +236,11 @@ header .top-bar {
   }
 }
 
+header flex-fix {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .title-bar {
   display: inline-block;
   background-color: transparent;
@@ -267,6 +283,7 @@ body.vertical-menu header {
   @include breakpoint(large up) {
     padding: $global-padding;     
     @include xy-cell(2, $gutters: 0);
+    float: left;
   }
   
   a {
