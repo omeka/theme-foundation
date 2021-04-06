@@ -87,12 +87,11 @@ body:not(.browse) #content {
 body.vertical-menu {
   @include breakpoint(medium up) {
     background-color: $primary-color;   
-    overflow: hidden; 
   }
 }
 
 body.vertical-menu .off-canvas-content {
-
+  overflow: hidden;
 }
 
 body.vertical-menu #content {
