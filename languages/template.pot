@@ -9,14 +9,27 @@ msgstr ""
 "Project-Id-Version: FoundationClassic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/theme-foundation-classic/"
 "issues\n"
-"POT-Creation-Date: 2021-03-25 21:49-0500\n"
+"POT-Creation-Date: 2021-05-24 10:11+0200\n"
 "PO-Revision-Date: 2021-03-25 HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: collections/browse.php:10
+msgid "Browse Collections"
+msgstr ""
+
+#: collections/browse.php:15 exhibit-builder/exhibits/browse.php:14
+#: items/browse.php:15
+#, php-format
+msgid "(%s total)"
+msgstr ""
 
 #: collections/browse.php:27 collections/show.php:29
 #: exhibit-builder/exhibits/browse.php:40 items/browse.php:36
@@ -28,8 +41,20 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: search/search-form.php:27
-msgid "Toggle advanced options"
+#: collections/browse.php:34 collections/show.php:36 items/browse.php:43
+msgid "Title"
+msgstr ""
+
+#: collections/browse.php:35 collections/show.php:37 items/browse.php:44
+msgid "Creator"
+msgstr ""
+
+#: collections/browse.php:36 collections/show.php:38 items/browse.php:45
+msgid "Date Added"
+msgstr ""
+
+#: collections/browse.php:39 collections/show.php:41 items/browse.php:48
+msgid "Sort by: "
 msgstr ""
 
 #: collections/browse.php:60 exhibit-builder/exhibits/browse.php:58
@@ -37,8 +62,70 @@ msgstr ""
 msgid "Has media"
 msgstr ""
 
+#: collections/browse.php:72
+msgid "Contributors"
+msgstr ""
+
+#: collections/browse.php:78
+#, php-format
+msgid "View the items in %s"
+msgstr ""
+
+#: collections/show.php:20
+msgid "Collection Items"
+msgstr ""
+
+#: collections/show.php:61 items/browse.php:74 items/show.php:35
+msgid "Tags"
+msgstr ""
+
+#: collections/single.php:8
+msgid "Featured Collection"
+msgstr ""
+
+#: common/footer.php:9
+msgid "Proudly powered by <a href=\"http://omeka.org\">Omeka</a>."
+msgstr ""
+
+#: common/header-dropdown.php:13 search/search-form.php:2
+msgid "Search"
+msgstr ""
+
+#: common/header.php:53
+msgid "Skip to main content"
+msgstr ""
+
+#: common/pagination_control.php:5
+msgid "Pagination"
+msgstr ""
+
+#: common/pagination_control.php:27
+msgid "Current Page"
+msgstr ""
+
+#: common/pagination_control.php:30
+#, php-format
+msgid "%s of %s"
+msgstr ""
+
+#: common/pagination_control.php:41
+msgid "Previous Page"
+msgstr ""
+
+#: common/pagination_control.php:49
+msgid "Next Page"
+msgstr ""
+
 #: exhibit-builder/exhibits/browse.php:10
 msgid "Browse Exhibits"
+msgstr ""
+
+#: exhibit-builder/exhibits/browse.php:20
+msgid "Browse All"
+msgstr ""
+
+#: exhibit-builder/exhibits/browse.php:24
+msgid "Browse by Tag"
 msgstr ""
 
 #: exhibit-builder/exhibits/browse.php:80
@@ -57,14 +144,74 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: index.php:54
+#: index.php:8 index.php:19 index.php:27
+msgid "Exhibit Builder is not installed."
+msgstr ""
+
+#: index.php:52
+msgid "Recently Added Items"
+msgstr ""
+
+#: index.php:56
+msgid "View All Items"
+msgstr ""
+
+#: index.php:60
 msgid "items"
 msgstr ""
 
-#: index.php:57
+#: index.php:63
 msgid "collections"
 msgstr ""
 
-#: index.php:61
+#: index.php:67
 msgid "exhibits"
+msgstr ""
+
+#: items/browse.php:10
+msgid "Browse Items"
+msgstr ""
+
+#: items/browse.php:85
+msgid "Output Formats"
+msgstr ""
+
+#: items/show.php:6
+msgid "Item"
+msgstr ""
+
+#: items/show.php:20
+msgid "Files"
+msgstr ""
+
+#: items/show.php:27
+msgid "Collection"
+msgstr ""
+
+#: items/show.php:42
+msgid "Citation"
+msgstr ""
+
+#: items/single.php:15
+msgid "Featured Item"
+msgstr ""
+
+#: search/search-form.php:6
+msgid "Search using this query type:"
+msgstr ""
+
+#: search/search-form.php:11
+msgid "Search only these record types:"
+msgstr ""
+
+#: search/search-form.php:17
+msgid "Go to search settings to select record types to use."
+msgstr ""
+
+#: search/search-form.php:19
+msgid "Advanced Search (Items only)"
+msgstr ""
+
+#: search/search-form.php:27
+msgid "Toggle advanced options"
 msgstr ""
