@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://github.com/omeka/theme-foundation-classic/"
 "issues\n"
 "POT-Creation-Date: 2021-05-24 10:11+0200\n"
-"PO-Revision-Date: 2021-05-24 10:19+0200\n"
+"PO-Revision-Date: 2021-05-24 10:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -20,10 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: collections/browse.php:10
-#, fuzzy
-#| msgid "collections"
 msgid "Browse Collections"
-msgstr "collections"
+msgstr "Parcourir les collections"
 
 #: collections/browse.php:15 exhibit-builder/exhibits/browse.php:14
 #: items/browse.php:15
@@ -72,20 +70,16 @@ msgid "View the items in %s"
 msgstr "Voir les contenus dans %s"
 
 #: collections/show.php:20
-#, fuzzy
-#| msgid "collections"
 msgid "Collection Items"
-msgstr "collections"
+msgstr "Collections"
 
 #: collections/show.php:61 items/browse.php:74 items/show.php:35
 msgid "Tags"
 msgstr "Mots-clés"
 
 #: collections/single.php:8
-#, fuzzy
-#| msgid "collections"
 msgid "Featured Collection"
-msgstr "collections"
+msgstr "Collection mise en avant"
 
 #: common/footer.php:9
 msgid "Proudly powered by <a href=\"http://omeka.org\">Omeka</a>."
@@ -110,7 +104,7 @@ msgstr "Page actuelle"
 #: common/pagination_control.php:30
 #, php-format
 msgid "%s of %s"
-msgstr "%s de %s"
+msgstr "%s sur %s"
 
 #: common/pagination_control.php:41
 msgid "Previous Page"
@@ -173,10 +167,8 @@ msgid "exhibits"
 msgstr "expositions"
 
 #: items/browse.php:10
-#, fuzzy
-#| msgid "Browse Exhibits"
 msgid "Browse Items"
-msgstr "Parcourir les expositions"
+msgstr "Parcourir les contenus"
 
 #: items/browse.php:85
 msgid "Output Formats"
@@ -191,20 +183,16 @@ msgid "Files"
 msgstr "Fichiers"
 
 #: items/show.php:27
-#, fuzzy
-#| msgid "collections"
 msgid "Collection"
-msgstr "collections"
+msgstr "Collection"
 
 #: items/show.php:42
 msgid "Citation"
 msgstr "Citation"
 
 #: items/single.php:15
-#, fuzzy
-#| msgid "Featured Exhibit"
 msgid "Featured Item"
-msgstr "Exposition mise en avant"
+msgstr "Contenu mis en avant"
 
 #: search/search-form.php:6
 msgid "Search using this query type:"
@@ -216,7 +204,9 @@ msgstr "Types d'enregistrement:"
 
 #: search/search-form.php:17
 msgid "Go to search settings to select record types to use."
-msgstr "Ouvrir les paramètres de recherche"
+msgstr ""
+"Ouvrir les paramètres de recherche pour sélectionner les types "
+"d'enregistrement à utiliser."
 
 #: search/search-form.php:19
 msgid "Advanced Search (Items only)"
