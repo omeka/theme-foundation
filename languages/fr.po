@@ -8,16 +8,28 @@ msgstr ""
 "Project-Id-Version: FoundationClassic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/theme-foundation-classic/"
 "issues\n"
-"POT-Creation-Date: 2021-03-25 21:49-0500\n"
-"PO-Revision-Date: 2021-05-24 10:03+0200\n"
+"POT-Creation-Date: 2021-05-24 10:11+0200\n"
+"PO-Revision-Date: 2021-05-24 10:19+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.3\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
+
+#: collections/browse.php:10
+#, fuzzy
+#| msgid "collections"
+msgid "Browse Collections"
+msgstr "collections"
+
+#: collections/browse.php:15 exhibit-builder/exhibits/browse.php:14
+#: items/browse.php:15
+#, php-format
+msgid "(%s total)"
+msgstr "(%s au total)"
 
 #: collections/browse.php:27 collections/show.php:29
 #: exhibit-builder/exhibits/browse.php:40 items/browse.php:36
@@ -29,18 +41,96 @@ msgstr "Grille"
 msgid "List"
 msgstr "Liste"
 
-#: search/search-form.php:27
-msgid "Toggle advanced options"
-msgstr "Afficher les options avancées"
+#: collections/browse.php:34 collections/show.php:36 items/browse.php:43
+msgid "Title"
+msgstr "Titre"
+
+#: collections/browse.php:35 collections/show.php:37 items/browse.php:44
+msgid "Creator"
+msgstr "Créateur"
+
+#: collections/browse.php:36 collections/show.php:38 items/browse.php:45
+msgid "Date Added"
+msgstr "Date d'ajout"
+
+#: collections/browse.php:39 collections/show.php:41 items/browse.php:48
+msgid "Sort by: "
+msgstr "Trier par: "
 
 #: collections/browse.php:60 exhibit-builder/exhibits/browse.php:58
 #: items/browse.php:67
 msgid "Has media"
-msgstr "Possède les média"
+msgstr "Possède des média"
+
+#: collections/browse.php:72
+msgid "Contributors"
+msgstr "Contributeurs"
+
+#: collections/browse.php:78
+#, php-format
+msgid "View the items in %s"
+msgstr "Voir les contenus dans %s"
+
+#: collections/show.php:20
+#, fuzzy
+#| msgid "collections"
+msgid "Collection Items"
+msgstr "collections"
+
+#: collections/show.php:61 items/browse.php:74 items/show.php:35
+msgid "Tags"
+msgstr "Mots-clés"
+
+#: collections/single.php:8
+#, fuzzy
+#| msgid "collections"
+msgid "Featured Collection"
+msgstr "collections"
+
+#: common/footer.php:9
+msgid "Proudly powered by <a href=\"http://omeka.org\">Omeka</a>."
+msgstr "Fièrement propulsé par <a href=\"http://omeka.org\">Omeka</a>."
+
+#: common/header-dropdown.php:13 search/search-form.php:2
+msgid "Search"
+msgstr "Rechercher"
+
+#: common/header.php:53
+msgid "Skip to main content"
+msgstr "Se rendre au contenu principal"
+
+#: common/pagination_control.php:5
+msgid "Pagination"
+msgstr "Pagination"
+
+#: common/pagination_control.php:27
+msgid "Current Page"
+msgstr "Page actuelle"
+
+#: common/pagination_control.php:30
+#, php-format
+msgid "%s of %s"
+msgstr "%s de %s"
+
+#: common/pagination_control.php:41
+msgid "Previous Page"
+msgstr "Page précédente"
+
+#: common/pagination_control.php:49
+msgid "Next Page"
+msgstr "Page suivante"
 
 #: exhibit-builder/exhibits/browse.php:10
 msgid "Browse Exhibits"
 msgstr "Parcourir les expositions"
+
+#: exhibit-builder/exhibits/browse.php:20
+msgid "Browse All"
+msgstr "Tout parcourir"
+
+#: exhibit-builder/exhibits/browse.php:24
+msgid "Browse by Tag"
+msgstr "Parcourir par mot-clé"
 
 #: exhibit-builder/exhibits/browse.php:80
 msgid "There are no exhibits available yet."
@@ -58,14 +148,80 @@ msgstr "Crédits"
 msgid "Home"
 msgstr "Accueil"
 
-#: index.php:54
+#: index.php:8 index.php:19 index.php:27
+msgid "Exhibit Builder is not installed."
+msgstr "Exhibit Builder n'est pas installé."
+
+#: index.php:52
+msgid "Recently Added Items"
+msgstr "Contenus récemment ajoutés"
+
+#: index.php:56
+msgid "View All Items"
+msgstr "Voir tous les contenus"
+
+#: index.php:60
 msgid "items"
 msgstr "contenus"
 
-#: index.php:57
+#: index.php:63
 msgid "collections"
 msgstr "collections"
 
-#: index.php:61
+#: index.php:67
 msgid "exhibits"
 msgstr "expositions"
+
+#: items/browse.php:10
+#, fuzzy
+#| msgid "Browse Exhibits"
+msgid "Browse Items"
+msgstr "Parcourir les expositions"
+
+#: items/browse.php:85
+msgid "Output Formats"
+msgstr "Format de sortie"
+
+#: items/show.php:6
+msgid "Item"
+msgstr "Contenu"
+
+#: items/show.php:20
+msgid "Files"
+msgstr "Fichiers"
+
+#: items/show.php:27
+#, fuzzy
+#| msgid "collections"
+msgid "Collection"
+msgstr "collections"
+
+#: items/show.php:42
+msgid "Citation"
+msgstr "Citation"
+
+#: items/single.php:15
+#, fuzzy
+#| msgid "Featured Exhibit"
+msgid "Featured Item"
+msgstr "Exposition mise en avant"
+
+#: search/search-form.php:6
+msgid "Search using this query type:"
+msgstr "Type de requête:"
+
+#: search/search-form.php:11
+msgid "Search only these record types:"
+msgstr "Types d'enregistrement:"
+
+#: search/search-form.php:17
+msgid "Go to search settings to select record types to use."
+msgstr "Ouvrir les paramètres de recherche"
+
+#: search/search-form.php:19
+msgid "Advanced Search (Items only)"
+msgstr "Recherche avancée (Contenus seulement)"
+
+#: search/search-form.php:27
+msgid "Toggle advanced options"
+msgstr "Afficher les options avancées"
