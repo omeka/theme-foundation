@@ -2,6 +2,16 @@
 
 This is an Omeka Classic theme based on ZURB Foundation Sites. It currently comes with a default stylesheet for prototyping as well as 3 other style options. 
 
+Foundation Classic is Copyright © 2018-present Corporation for Digital Scholarship, Vienna, Virginia, USA http://digitalscholar.org
+
+The Corporation for Digital Scholarship distributes the Omeka source code under the GNU General Public License, version 3 (GPLv3). See the LICENSE file for the full text.
+
+The Omeka name is a registered trademark of the Corporation for Digital Scholarship.
+
+Third-party copyright in this distribution is noted where applicable.
+
+All rights not expressly granted are reserved.
+
 ## Installation
 
 For basic out-of-the-box use of the theme, follow the [Omeka Classic User Manual instructions for installing themes](https://omeka.org/classic/docs/Admin/Appearance/Themes/#installing-a-theme). 
