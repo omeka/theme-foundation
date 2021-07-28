@@ -766,6 +766,14 @@ body.vertical-menu footer {
   @extend .thumbnail;
 }
 
+.item-file > a {
+  display: block;
+
+  img {
+    vertical-align: bottom;
+  }
+}
+
 .layout-toggle button {
   margin-bottom: 0;
 }
@@ -972,6 +980,7 @@ body.vertical-menu footer {
 .resource.show .media-grid {
   display: flex;
   flex-wrap: wrap;
+  align-self: flex-start;
   margin: 0 (-.5 * $global-margin);
   
   .item-file {
