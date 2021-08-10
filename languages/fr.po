@@ -3,215 +3,215 @@
 # This file is distributed under the same license as the Omeka package.
 # Kim Nguyen <kim@omeka.org>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FoundationClassic\n"
 "Report-Msgid-Bugs-To: http://github.com/omeka/theme-foundation-classic/"
 "issues\n"
 "POT-Creation-Date: 2021-05-24 10:11+0200\n"
-"PO-Revision-Date: 2021-03-25 HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-05-24 10:33+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.3\n"
-"X-Poedit-KeywordsList: __\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: collections/browse.php:10
 msgid "Browse Collections"
-msgstr ""
+msgstr "Parcourir les collections"
 
 #: collections/browse.php:15 exhibit-builder/exhibits/browse.php:14
 #: items/browse.php:15
 #, php-format
 msgid "(%s total)"
-msgstr ""
+msgstr "(%s au total)"
 
 #: collections/browse.php:27 collections/show.php:29
 #: exhibit-builder/exhibits/browse.php:40 items/browse.php:36
 msgid "Grid"
-msgstr ""
+msgstr "Grille"
 
 #: collections/browse.php:28 collections/show.php:30
 #: exhibit-builder/exhibits/browse.php:41 items/browse.php:37
 msgid "List"
-msgstr ""
+msgstr "Liste"
 
 #: collections/browse.php:34 collections/show.php:36 items/browse.php:43
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: collections/browse.php:35 collections/show.php:37 items/browse.php:44
 msgid "Creator"
-msgstr ""
+msgstr "Créateur"
 
 #: collections/browse.php:36 collections/show.php:38 items/browse.php:45
 msgid "Date Added"
-msgstr ""
+msgstr "Date d'ajout"
 
 #: collections/browse.php:39 collections/show.php:41 items/browse.php:48
 msgid "Sort by: "
-msgstr ""
+msgstr "Trier par: "
 
 #: collections/browse.php:60 exhibit-builder/exhibits/browse.php:58
 #: items/browse.php:67
 msgid "Has media"
-msgstr ""
+msgstr "Possède des média"
 
 #: collections/browse.php:72
 msgid "Contributors"
-msgstr ""
+msgstr "Contributeurs"
 
 #: collections/browse.php:78
 #, php-format
 msgid "View the items in %s"
-msgstr ""
+msgstr "Voir les contenus dans %s"
 
 #: collections/show.php:20
 msgid "Collection Items"
-msgstr ""
+msgstr "Collections"
 
 #: collections/show.php:61 items/browse.php:74 items/show.php:35
 msgid "Tags"
-msgstr ""
+msgstr "Mots-clés"
 
 #: collections/single.php:8
 msgid "Featured Collection"
-msgstr ""
+msgstr "Collection mise en avant"
 
 #: common/footer.php:9
 msgid "Proudly powered by <a href=\"http://omeka.org\">Omeka</a>."
-msgstr ""
+msgstr "Fièrement propulsé par <a href=\"http://omeka.org\">Omeka</a>."
 
 #: common/header-dropdown.php:13 search/search-form.php:2
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: common/header.php:53
 msgid "Skip to main content"
-msgstr ""
+msgstr "Se rendre au contenu principal"
 
 #: common/pagination_control.php:5
 msgid "Pagination"
-msgstr ""
+msgstr "Pagination"
 
 #: common/pagination_control.php:27
 msgid "Current Page"
-msgstr ""
+msgstr "Page actuelle"
 
 #: common/pagination_control.php:30
 #, php-format
 msgid "%s of %s"
-msgstr ""
+msgstr "%s sur %s"
 
 #: common/pagination_control.php:41
 msgid "Previous Page"
-msgstr ""
+msgstr "Page précédente"
 
 #: common/pagination_control.php:49
 msgid "Next Page"
-msgstr ""
+msgstr "Page suivante"
 
 #: exhibit-builder/exhibits/browse.php:10
 msgid "Browse Exhibits"
-msgstr ""
+msgstr "Parcourir les expositions"
 
 #: exhibit-builder/exhibits/browse.php:20
 msgid "Browse All"
-msgstr ""
+msgstr "Tout parcourir"
 
 #: exhibit-builder/exhibits/browse.php:24
 msgid "Browse by Tag"
-msgstr ""
+msgstr "Parcourir par mot-clé"
 
 #: exhibit-builder/exhibits/browse.php:80
 msgid "There are no exhibits available yet."
-msgstr ""
+msgstr "Aucune exposition n'est encore disponible."
 
 #: exhibit-builder/exhibits/single.php:7
 msgid "Featured Exhibit"
-msgstr ""
+msgstr "Exposition mise en avant"
 
 #: exhibit-builder/exhibits/summary.php:28
 msgid "Credits"
-msgstr ""
+msgstr "Crédits"
 
 #: functions.php:145
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: index.php:8 index.php:19 index.php:27
 msgid "Exhibit Builder is not installed."
-msgstr ""
+msgstr "Exhibit Builder n'est pas installé."
 
 #: index.php:52
 msgid "Recently Added Items"
-msgstr ""
+msgstr "Contenus récemment ajoutés"
 
 #: index.php:56
 msgid "View All Items"
-msgstr ""
+msgstr "Voir tous les contenus"
 
 #: index.php:60
 msgid "items"
-msgstr ""
+msgstr "contenus"
 
 #: index.php:63
 msgid "collections"
-msgstr ""
+msgstr "collections"
 
 #: index.php:67
 msgid "exhibits"
-msgstr ""
+msgstr "expositions"
 
 #: items/browse.php:10
 msgid "Browse Items"
-msgstr ""
+msgstr "Parcourir les contenus"
 
 #: items/browse.php:85
 msgid "Output Formats"
-msgstr ""
+msgstr "Format de sortie"
 
 #: items/show.php:6
 msgid "Item"
-msgstr ""
+msgstr "Contenu"
 
 #: items/show.php:20
 msgid "Files"
-msgstr ""
+msgstr "Fichiers"
 
 #: items/show.php:27
 msgid "Collection"
-msgstr ""
+msgstr "Collection"
 
 #: items/show.php:42
 msgid "Citation"
-msgstr ""
+msgstr "Citation"
 
 #: items/single.php:15
 msgid "Featured Item"
-msgstr ""
+msgstr "Contenu mis en avant"
 
 #: search/search-form.php:6
 msgid "Search using this query type:"
-msgstr ""
+msgstr "Type de requête:"
 
 #: search/search-form.php:11
 msgid "Search only these record types:"
-msgstr ""
+msgstr "Types d'enregistrement:"
 
 #: search/search-form.php:17
 msgid "Go to search settings to select record types to use."
 msgstr ""
+"Ouvrir les paramètres de recherche pour sélectionner les types "
+"d'enregistrement à utiliser."
 
 #: search/search-form.php:19
 msgid "Advanced Search (Items only)"
-msgstr ""
+msgstr "Recherche avancée (Contenus seulement)"
 
 #: search/search-form.php:27
 msgid "Toggle advanced options"
-msgstr ""
+msgstr "Afficher les options avancées"
