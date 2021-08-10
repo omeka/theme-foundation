@@ -31,7 +31,7 @@ $totalItems = metadata('collection', 'total_items');
         </div>
         <?php endif; ?>
         <div class="top-bar-right">
-            <?php if ($totalItems > 0): ?>        
+            <?php if ($totalItems > 0): ?>
             <?php
             $sortLinks[__('Title')] = 'Dublin Core,Title';
             $sortLinks[__('Creator')] = 'Dublin Core,Creator';
@@ -39,8 +39,8 @@ $totalItems = metadata('collection', 'total_items');
             ?>
             <div id="sort-links">
                 <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
-            </div>
-            
+            </div>       
+                 
             <?php endif; ?>
         </div>
     </div>
@@ -65,6 +65,11 @@ $totalItems = metadata('collection', 'total_items');
     </li>
     <?php endforeach; ?>
     </ul>
+    <?php if ($totalItems > 0): ?>
+        <div id="item-list-footer">
+            <?php echo link_to_items_browse(__(plural('View item', 'View all %s items', $totalItems), $totalItems), array('collection' => metadata('collection', 'id')), array('class' => 'view-items-link')); ?>
+        </div>
+    <?php endif; ?>
 </div><!-- end collection-items -->
 
 <?php fire_plugin_hook('public_collections_show', array('view' => $this, 'collection' => $collection)); ?>
