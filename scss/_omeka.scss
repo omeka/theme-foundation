@@ -767,11 +767,19 @@ body.vertical-menu footer {
 }
 
 .item-file > a {
-  display: block;
+  display: inline-block;
 
   img {
     vertical-align: bottom;
   }
+}
+
+.wrap > #item-images {
+  text-align: center;
+}
+
+.wrap > .media-grid {
+  justify-content: center;
 }
 
 .layout-toggle button {
