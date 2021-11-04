@@ -181,6 +181,10 @@ function foundation_display_attached_media($item) {
                 'class' => 'thumbnail',
             ),
         ));
+    } elseif ($mediaDisplay == 'lightgallery') {
+        $html .= get_view()->partial('items/media-viewer.php', array(
+            'item' => $item,
+        ));
     } else {
         $html .= '<div id="item-images" class="media-embed">';
         $html .= files_for_item(array(

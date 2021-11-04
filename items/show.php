@@ -1,6 +1,10 @@
 <?php 
 $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single';
 $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top';
+if (get_theme_option('item_show_media_display') == 'lightgallery') {
+    queue_css_file('lightgallery-bundle.min');
+    queue_js_file(array('show', 'lightgallery.min', 'lg-thumbnail.min', 'lg-video.min', 'lg-pager.min', 'lg-zoom.min'));
+}
 $showLayout = get_theme_option('item_show_inline_metadata');
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); 
 ?>

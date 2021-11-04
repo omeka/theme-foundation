@@ -1084,6 +1084,32 @@ body.vertical-menu footer {
   order: 2;
 }
 
+#itemfiles {
+  height: 60vh;
+  width: 100%;
+  margin-bottom: $global-margin;
+}
+
+#itemfiles .media.resource {
+  height: 0;
+  overflow: hidden;
+}
+
+#itemfiles .lg-img-wrap,
+#itemfiles .lg-video-object,
+#itemfiles .lg-video-poster {
+  padding-bottom: 3 * $global-padding;
+}
+
+#itemfiles .lg-outer .lg-video-cont .lg-object {
+  width: auto !important;
+}
+
+.lg-outer[data-lg-slide-type="video"] .lg-download {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
 .item-pagination {
   display: flex;
   margin: $global-margin 0;
