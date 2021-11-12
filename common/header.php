@@ -30,8 +30,31 @@
     <!-- Stylesheets -->
     <?php
     $stylesheetOption = (get_theme_option('stylesheet')) ? get_theme_option('stylesheet') : 'default';
+    $banner = get_theme_option('banner');
+    $bannerWidth = (get_theme_option('banner_width')) ? get_theme_option('banner_width') : '';
+    $bannerHeight = get_theme_option('banner_height_desktop');
+    if ($bannerHeight == '') {
+        $bannerHeight = 'auto';
+    }
+    $bannerHeightMobile = get_theme_option('banner_height_mobile');
+    $bannerPosition = (get_theme_option('banner_position')) ? str_replace('_','-', get_theme_option('banner_position')) : 'center';
     queue_css_file(array('iconfonts'));
     queue_css_file($stylesheetOption);
+    queue_css_string('
+        .banner {
+            height: ' .  $bannerHeight . ';
+            align-items: ' . $bannerPosition . ';
+        }'
+    );
+    if ($bannerHeightMobile !== '') {
+        queue_css_string('
+            @media screen and (max-width:640px) {
+                .banner {
+                    height: ' . $bannerHeightMobile . ';
+                }
+            }'
+        );
+    }
     echo head_css();
 
     echo theme_header_background();
@@ -61,6 +84,11 @@
         <?php echo common('header-dropdown'); ?>
     <?php else: ?>
         <?php echo common('header-vertical'); ?>
+    <?php endif; ?>
+    <?php if ($banner): ?>
+    <div class="banner <?php echo $bannerWidth; ?>">
+        <?php echo foundation_theme_banner(); ?>
+    </div>
     <?php endif; ?>
     </header>
 

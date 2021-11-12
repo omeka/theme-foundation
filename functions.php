@@ -204,4 +204,15 @@ function foundation_mobile_theme_logo() {
     }
 }
 
+function foundation_theme_banner()
+{
+    $banner = get_theme_option('Banner');
+    $view = get_view();
+    if ($banner) {
+        $storage = Zend_Registry::get('storage');
+        $uri = $storage->getUri($storage->getPathByType($banner, 'theme_uploads'));
+        return '<img src="' . $uri . '" alt="' . html_escape($view->translate('Banner')) . '" />';
+    }
+}
+
 add_translation_source(dirname(__FILE__) . '/languages');

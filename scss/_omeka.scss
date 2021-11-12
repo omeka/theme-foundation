@@ -441,6 +441,21 @@ body.vertical-menu header .desktop {
   @extend .button;
 }
 
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &.contained {
+      @include xy-grid-container;
+    }
+}
+
+.banner img {
+    width: 100%;
+}
+
 #content {
   @include xy-grid-container;
 }
