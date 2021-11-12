@@ -29,7 +29,7 @@ body {
 }
 
 @include breakpoint (medium down) {
-  header {
+  header .top-bar {
     background-color: $primary-color;
   }
 }

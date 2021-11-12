@@ -449,6 +449,7 @@ body.vertical-menu header .desktop {
 
     &.contained {
       @include xy-grid-container;
+      margin-top: 2 * $global-margin;
     }
 }
 
