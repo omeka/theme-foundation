@@ -25,7 +25,8 @@
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^2.0.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^5.0.0"
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.54.7"
   },
   "browserslist": [
     "last 2 versions",
