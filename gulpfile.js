@@ -1,36 +1,31 @@
-var gulp          = require('gulp');
-var browserSync   = require('browser-sync').create();
-var $             = require('gulp-load-plugins')();
-var autoprefixer  = require('autoprefixer');
 
-var sassPaths = [
-  'node_modules/foundation-sites/scss',
-  'node_modules/motion-ui/src'
-];
+'use strict';
 
-function sass() {
-  return gulp.src('scss/*.scss')
-    .pipe($.sass({
-      includePaths: sassPaths,
-      outputStyle: 'compressed' // if css compressed **file size**
-    })
-      .on('error', $.sass.logError))
-    .pipe($.postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream());
-};
+var gulp = require('gulp');
 
-function serve() {
-  browserSync.init({
-    server: "./"
-  });
+gulp.task('css', function () {
+    var sass = require('gulp-sass')(require('sass'));
+    var postcss = require('gulp-postcss');
+    var autoprefixer = require('autoprefixer');
 
-  gulp.watch("scss/*.scss", sass);
-  gulp.watch("*.html").on('change', browserSync.reload);
-}
+    var sassPaths = [
+      'node_modules/foundation-sites/scss',
+      'node_modules/motion-ui/src'
+    ];
 
-gulp.task('sass', sass);
-gulp.task('serve', gulp.series('sass', serve));
-gulp.task('default', gulp.series('sass', serve));
+    return gulp.src('./scss/*.scss')
+        .pipe(sass.sync({
+            outputStyle: 'compressed',
+            includePaths: sassPaths
+        }).on('error', sass.logError))
+        .pipe(postcss([
+            autoprefixer()
+        ]))
+        .pipe(gulp.dest('./css'));
+});
+
+gulp.task('css:watch', function () {
+    gulp.watch('./scss/*.scss', gulp.parallel('css'));
+});
+
+gulp.task('default', gulp.series('css:watch'));
