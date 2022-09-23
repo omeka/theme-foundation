@@ -2,9 +2,9 @@
     <?php
     $title = metadata($collection, 'display_title');
     $description = metadata($collection, array('Dublin Core', 'Description'), array('snippet' => 150));
-    $thumbnailSize = ($thumbnailSize) ? $thumbnailSize : 'thumbnail';
+    $thumbnailSize = (isset($thumbnailSize)) ? $thumbnailSize : 'thumbnail';
     ?>
-    <?php if ($featured): ?>
+    <?php if (isset($featured)): ?>
     <span class="secondary label"><?php echo __('Featured Collection'); ?></span>
     <?php endif; ?>
     <h3><?php echo link_to($this->collection, 'show', $title); ?></h3>
