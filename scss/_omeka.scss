@@ -753,13 +753,13 @@ body.vertical-menu footer {
   }
 }
 
-#sort-links-list {
+.sort-links-list {
   @include style-type-unordered(none);
   display: flex;
   margin-bottom: 0;
 }
 
-#sort-links-list li {
+.sort-links-list li {
   margin: 0 $global-margin;
 }
 
