@@ -2,8 +2,7 @@
 $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single';
 $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top';
 if (get_theme_option('item_show_media_display') == 'lightgallery') {
-    queue_css_file('lightgallery-bundle.min');
-    queue_js_file(array('show', 'lightgallery.min', 'lg-thumbnail.min', 'lg-video.min', 'lg-pager.min', 'lg-zoom.min'));
+    queue_lightgallery_assets();
 }
 $showLayout = get_theme_option('item_show_inline_metadata');
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'resource items show ' . $layout)); 
@@ -49,11 +48,11 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
             <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
         </div>
 
-       <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
-
-       <?php if (metadata('item', 'has files') && (($mediaPosition == 'bottom') && ($layout == 'single'))): ?>
+        <?php if (metadata('item', 'has files') && (($mediaPosition == 'bottom') && ($layout == 'single'))): ?>
         <?php echo foundation_display_attached_media($item); ?>
         <?php endif; ?>
+
+       <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
     </div>
 
     <div class="item-pagination navigation">

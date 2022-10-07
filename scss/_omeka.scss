@@ -1126,6 +1126,10 @@ body.vertical-menu footer {
   pointer-events: all !important;
 }
 
+[type="button"].lg-icon {
+  font-family: lg-omeka;
+}
+
 .item-pagination {
   display: flex;
   margin: $global-margin 0;
