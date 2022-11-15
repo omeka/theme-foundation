@@ -2,7 +2,6 @@
 $layout = (get_theme_option('item_show_columns') !== null) ? get_theme_option('item_show_columns') : 'single';
 $mediaPosition = (get_theme_option('media_position') !== null) ? get_theme_option('media_position') : 'top';
 $mediaDisplay = get_theme_option('item_show_media_display');
-$mediaThumbnailSize = ($mediaDisplay == 'embed') ? 'fullsize' : 'square_thumbnail';
 $showLayout = get_theme_option('item_show_inline_metadata');
 
 if ($mediaDisplay == 'lightgallery') {
@@ -16,11 +15,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
 </div>
 <div class="wrap">
     <?php if (metadata('item', 'has files') && (($mediaPosition == 'top') || ($layout == 'double'))): ?>
-        <?php if ($mediaDisplay == 'lightgallery'): ?>
-            <?php echo foundation_display_attached_media($item, 'lightgallery-viewer'); ?>
-        <?php else: ?>
-            <?php echo foundation_display_attached_media($item, 'embeds'); ?>
-        <?php endif; ?>
+        <?php echo foundation_display_attached_media($item, $mediaDisplay); ?>
     <?php endif; ?>
 
     <!-- Items metadata -->
@@ -31,10 +26,12 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
             <?php if ($mediaDisplay == 'lightgallery'): ?>
                 <?php echo foundation_display_attached_media($item, 'lightgallery-list'); ?>
             <?php else: ?>
+                <?php if ($mediaPosition == 'embedded'): ?>
                 <div id="itemfiles" class="element">
                     <h3><?php echo __('Files'); ?></h3>
-                    <div class="element-text"><?php echo foundation_display_attached_media($item); ?></div>
+                    <div class="element-text"><?php echo foundation_display_attached_media($item, $mediaDisplay); ?></div>
                 </div>
+                <?php endif; ?>
             <?php endif; ?>
         <?php endif; ?>
 
@@ -60,7 +57,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
         </div>
 
         <?php if (metadata('item', 'has files') && (($mediaPosition == 'bottom') && ($layout == 'single'))): ?>
-        <?php echo foundation_display_attached_media($item); ?>
+        <?php echo foundation_display_attached_media($item, $mediaDisplay); ?>
         <?php endif; ?>
 
        <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
