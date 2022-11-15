@@ -154,16 +154,15 @@ function foundation_breadcrumbs($pageId = null, $seperator=null, $includePage=tr
 function foundation_display_attached_media($item, $layout) {
     $html = '';
     $view = get_view();
-
     switch ($layout) {
         case 'lightgallery-viewer':
-            $html .= $view->lightGallery($item->Files);
+            $html .= light_gallery($item->Files);
             break;
         case 'lightgallery-list':
-            $html .= $view->lightGallery($item->Files, false);
+            $html .= light_gallery_other_files($item->Files);
             break;
         case 'list':
-            $html .= $view->partial('common/media-list', [
+            $html .= $view->partial('common/media-list.php', [
                 'files' => $item->Files,
             ]);
             break;
@@ -183,7 +182,7 @@ function foundation_display_attached_media($item, $layout) {
         case 'embed':
             $html .= '<div id="item-images" class="media-embed">';
             $html .= files_for_item(array(
-                        'imageSize' => $mediaThumbnailSize,
+                        'imageSize' => 'fullsize',
                     )); 
             $html .= '</div>';
             break;
