@@ -155,11 +155,11 @@ function foundation_display_attached_media($item, $layout) {
     $html = '';
     $view = get_view();
     switch ($layout) {
-        case 'lightgallery-viewer':
-            $html .= light_gallery($item->Files);
+        case 'lightgallery':
+            $html .= lightgallery($item->Files);
             break;
         case 'lightgallery-list':
-            $html .= light_gallery_other_files($item->Files);
+            $html .= lightgallery_other_files($item->Files);
             break;
         case 'list':
             $html .= $view->partial('common/media-list.php', [
