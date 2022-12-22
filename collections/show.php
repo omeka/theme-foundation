@@ -24,24 +24,12 @@ $totalItems = metadata('collection', 'total_items');
     </div>
 
     <div class="browse-controls closed">
-
         <?php if (strpos($layout, 'toggle') !== false): ?>
         <div class="layout-toggle">
             <button type="button" aria-label="<?php echo __('Grid'); ?>" title="<?php echo __('Grid'); ?>" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
             <button type="button" aria-label="<?php echo __('List'); ?>" title="<?php echo __('List'); ?>" class="list o-icon-list" <?php echo $listState; ?>></button> 
         </div>
         <?php endif; ?>
-        <div class="top-bar-right">
-            <?php
-            $sortLinks[__('Title')] = 'Dublin Core,Title';
-            $sortLinks[__('Creator')] = 'Dublin Core,Creator';
-            $sortLinks[__('Date Added')] = 'added';
-            ?>
-            <div id="sort-links">
-                <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
-            </div>       
-                 
-        </div>
     </div>
     <ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">
         <?php foreach (loop('items') as $item): ?>
