@@ -43,7 +43,7 @@
     queue_css_string('
         .banner {
             height: ' .  $bannerHeight . ';
-            align-items: ' . $bannerPosition . ';
+            background-position: ' . $bannerPosition . ';
         }'
     );
     if ($bannerHeightMobile !== '') {
@@ -86,8 +86,7 @@
         <?php echo common('header-vertical'); ?>
     <?php endif; ?>
     <?php if ($banner): ?>
-    <div class="banner <?php echo $bannerWidth; ?>">
-        <?php echo foundation_theme_banner(); ?>
+    <div class="banner <?php echo $bannerWidth; ?>" style="background-image:url(<?php echo foundation_theme_banner(); ?>)">
     </div>
     <?php endif; ?>
     </header>

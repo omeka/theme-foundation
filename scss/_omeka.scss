@@ -371,7 +371,7 @@ body.vertical-menu header .desktop {
 }
 
 .search-toggle {
-  margin: (-.5 * $global-margin);
+  margin: (-.25 * $global-margin) (-.5 * $global-margin);
   margin-left: (2 * $global-margin);
   padding: $global-padding;
 
@@ -458,6 +458,8 @@ body.vertical-menu header .desktop {
     display: flex;
     align-items: center;
     overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &.contained {
       @include xy-grid-container;
