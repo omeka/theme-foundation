@@ -753,13 +753,13 @@ body.vertical-menu footer {
   }
 }
 
-.sort-links-list {
+#sort-links-list {
   @include style-type-unordered(none);
   display: flex;
   margin-bottom: 0;
 }
 
-.sort-links-list li {
+#sort-links-list li {
   margin: 0 $global-margin;
 }
 
@@ -1028,6 +1028,7 @@ body.vertical-menu footer {
 .element h3 {
   @extend h6;
   @extend dt;
+  font-weight: bold;
 }
 
 .element-text {
@@ -1103,6 +1104,10 @@ body.vertical-menu footer {
 #itemfiles .media.resource {
   height: 0;
   overflow: hidden;
+}
+
+.lightgallery-files + #other-files h3 {
+  display: none;
 }
 
 .item-pagination {

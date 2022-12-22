@@ -23,14 +23,13 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
         <?php echo all_element_texts('item'); ?>
 
         <?php if (metadata('item', 'has files') && ($layout == 'single')): ?>
-            <?php if ($mediaDisplay == 'lightgallery'): ?>
-                <?php echo foundation_display_attached_media($item, 'lightgallery-list'); ?>
-            <?php else: ?>
-                <?php if ($mediaPosition == 'embedded'): ?>
-                <div id="itemfiles" class="element">
+            <?php if ($mediaPosition == 'embedded'): ?>
+                <div class="<?php echo $mediaDisplay; ?>-files element">
                     <h3><?php echo __('Files'); ?></h3>
                     <div class="element-text"><?php echo foundation_display_attached_media($item, $mediaDisplay); ?></div>
                 </div>
+                <?php if ($mediaDisplay == 'lightgallery'): ?>
+                    <?php echo foundation_display_attached_media($item, 'lightgallery-list'); ?>
                 <?php endif; ?>
             <?php endif; ?>
         <?php endif; ?>
