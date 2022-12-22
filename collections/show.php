@@ -3,6 +3,7 @@ $layout = (get_theme_option('item_browse_layout') !== null) ? get_theme_option('
 $gridState = ($layout == 'togglegrid') ? 'disabled' : '';
 $listState = ($layout == 'togglelist') ? 'disabled': '';
 $isGrid = (!isset($layout) || strpos($layout, 'grid') !== false) ? true : false;
+$truncateDescription = (get_theme_option('truncate_body_property') !== null) ? get_theme_option('truncate_body_property') : 'full';
 queue_js_file('browse');
 
 $collectionTitle = metadata('collection', 'display_title');
