@@ -186,6 +186,10 @@ body.vertical-menu #user-bar ~ #content {
 // #. Header
 // ---------
 
+header {
+  position: relative;
+}
+
 .site-title img {
   max-height: 2rem;
   width: auto;
@@ -230,6 +234,8 @@ header .top-bar-left {
 }
 
 header .top-bar {
+  padding: .25rem .5rem;
+
   @include breakpoint(small down) {
     padding: 0;    
   }
@@ -368,6 +374,12 @@ body.vertical-menu header .desktop {
   margin: (-.5 * $global-margin);
   margin-left: (2 * $global-margin);
   padding: $global-padding;
+
+  @include breakpoint(small down) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 #search-container {

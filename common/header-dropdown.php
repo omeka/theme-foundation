@@ -10,7 +10,7 @@
     <nav id="primary-nav" role="navigation" class="top-bar-right">
         <div class="flex-fix">
           <?php echo use_foundation_navigation('dropdown'); ?>
-          <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
         </div>
     </nav>
+    <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
 </div>

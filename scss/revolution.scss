@@ -29,10 +29,11 @@ body {
     background-image: none;
   }
 
-  body:not(.vertical-menu) header {
-    border-top: ($global-padding) solid $primary-color;
-  }  
 }
+
+body:not(.vertical-menu) header {
+  border-top: ($global-padding) solid $primary-color;
+}  
 
 body.vertical-menu #content,
 body.vertical-menu #content:after,
@@ -43,6 +44,10 @@ body.vertical-menu #search-container {
 
 body.vertical-menu #search-container {
   border-bottom-color: $gold;
+}
+
+.accordion-menu .submenu-toggle:after {
+  border-color: $primary-color transparent transparent;
 }
 
 .fieldset {
