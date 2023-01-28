@@ -904,23 +904,54 @@ body.vertical-menu footer {
 
 .search-entry {
   display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+
+  @include breakpoint(small down) {
+    flex-wrap: wrap;
+  }
 }
 
 .search-entry:first-child .advanced-search-joiner {
   display: none;
 }
 
-.advanced-search .advanced-search-terms {
+#search-narrow-by-fields .advanced-search-joiner {
+  width: auto;
   margin-right: .25 * $global-margin;
+}
+
+#search-narrow-by-fields .advanced-search-element, 
+#search-narrow-by-fields .advanced-search-type,
+#search-narrow-by-fields .advanced-search-terms {
+  width: 30%;
+  margin-right: .25 * $global-margin;
+}
+
+#search-narrow-by-fields .advanced-search-terms input {
+  width: 100%;
+}
+
+@include breakpoint(small down) {
+
+#search-narrow-by-fields .advanced-search-joiner {
+  width: 100%;
+}
+
+#search-narrow-by-fields .advanced-search-element, 
+#search-narrow-by-fields .advanced-search-type {
+  width: calc(50% - #{.25 * $global-margin})
+}
+
+#search-narrow-by-fields .advanced-search-terms {
+  width: auto;
+}
+
+
 }
 
 .advanced-search [class="field"] {
   @extend .fieldset;
-}
-
-.search-entry select {
-  width: auto;
-  margin-right: (.25 * $global-margin);
 }
 
 .items.advanced-search label {
@@ -940,8 +971,9 @@ body.vertical-menu footer {
 .remove_search {
   text-indent: -9999px;
   position: relative;
-  width: 2.5 * $global-padding;
-  height: 2.5 * $global-padding;
+  width: 2.25 * $global-padding;
+  height: 2.25 * $global-padding;
+  align-self: flex-end;
   
   &:before {
     content: "\f1f8";
