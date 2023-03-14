@@ -906,10 +906,10 @@ body.vertical-menu footer {
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
+}
 
-  @include breakpoint(small down) {
-    flex-wrap: wrap;
-  }
+.search-entry select {
+  width: 100%;
 }
 
 .search-entry:first-child .advanced-search-joiner {
@@ -917,8 +917,11 @@ body.vertical-menu footer {
 }
 
 #search-narrow-by-fields .advanced-search-joiner {
-  width: auto;
   margin-right: .25 * $global-margin;
+}
+
+#search-narrow-by-fields .advanced-search-joiner select {
+  width: auto;
 }
 
 #search-narrow-by-fields .advanced-search-element, 
@@ -933,6 +936,10 @@ body.vertical-menu footer {
 }
 
 @include breakpoint(small down) {
+  .search-entry {
+    flex-wrap: wrap;
+  }
+
   #search-narrow-by-fields .advanced-search-joiner {
     width: 100%;
   }
