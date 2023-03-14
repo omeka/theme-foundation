@@ -933,21 +933,18 @@ body.vertical-menu footer {
 }
 
 @include breakpoint(small down) {
+  #search-narrow-by-fields .advanced-search-joiner {
+    width: 100%;
+  }
 
-#search-narrow-by-fields .advanced-search-joiner {
-  width: 100%;
-}
+  #search-narrow-by-fields .advanced-search-element, 
+  #search-narrow-by-fields .advanced-search-type {
+    width: calc(50% - #{.25 * $global-margin})
+  }
 
-#search-narrow-by-fields .advanced-search-element, 
-#search-narrow-by-fields .advanced-search-type {
-  width: calc(50% - #{.25 * $global-margin})
-}
-
-#search-narrow-by-fields .advanced-search-terms {
-  width: auto;
-}
-
-
+  #search-narrow-by-fields .advanced-search-terms {
+    width: auto;
+  }
 }
 
 .advanced-search [class="field"] {
