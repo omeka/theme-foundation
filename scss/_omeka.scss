@@ -975,8 +975,6 @@ body.vertical-menu footer {
 .remove_search {
   text-indent: -9999px;
   position: relative;
-  width: 2.25 * $global-padding;
-  height: 2.25 * $global-padding;
   align-self: flex-end;
   
   &:before {
@@ -989,7 +987,9 @@ body.vertical-menu footer {
     text-indent: 0;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    line-height: 1.5 * $global-lineheight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
