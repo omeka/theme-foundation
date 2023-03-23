@@ -908,27 +908,24 @@ body.vertical-menu footer {
   flex-wrap: nowrap;
 }
 
+.search-entry .input {
+  margin-right: .25 * $global-margin;
+}
+
 .search-entry select {
   width: 100%;
+}
+
+.search-entry .advanced-search-terms {
+  flex-grow: 1;
 }
 
 .search-entry:first-child .advanced-search-joiner {
   display: none;
 }
 
-#search-narrow-by-fields .advanced-search-joiner {
-  margin-right: .25 * $global-margin;
-}
-
 #search-narrow-by-fields .advanced-search-joiner select {
   width: auto;
-}
-
-#search-narrow-by-fields .advanced-search-element, 
-#search-narrow-by-fields .advanced-search-type,
-#search-narrow-by-fields .advanced-search-terms {
-  width: 30%;
-  margin-right: .25 * $global-margin;
 }
 
 #search-narrow-by-fields .advanced-search-terms input {
