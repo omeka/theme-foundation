@@ -27,6 +27,10 @@
   margin-bottom: 2 * $global-margin;
 }
 
+.field select {
+  max-width: 100%;
+}
+
 select {
   width: auto;  
   background: #fff url("../images/select-arrow.svg") no-repeat;
