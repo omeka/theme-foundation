@@ -479,6 +479,20 @@ body.vertical-menu header .desktop {
   @include xy-grid-container;
 }
 
+.fas:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-style: normal;
+}
+
+.fa-bars:before {
+  content: "\f0c9";
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
 // #. Footer
 // ------------------
 footer {
@@ -758,6 +772,14 @@ body.vertical-menu footer {
   margin-bottom: 0;
 }
 
+.pagination_next i:before {
+  content: "\f0da";
+}
+
+.pagination_previous i:before {
+  content: "\f0d9";
+}
+
 .items-nav .navigation {
   @extend .menu;
 }
@@ -820,13 +842,13 @@ body.vertical-menu footer {
   margin-bottom: 0;
 }
 
-.o-icon-grid:before {
+.grid:before {
     font-family: "Font Awesome 5 Free";
     content: "\f009";
     font-weight: 900;
 }
 
-.o-icon-list:before {
+.list:before {
     font-family: "Font Awesome 5 Free";
     content: "\f03a";
     font-weight: 900;
