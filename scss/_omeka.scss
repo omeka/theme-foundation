@@ -13,7 +13,7 @@
 
 [type="submit"], 
 [type="button"] {
-  @extend .button;
+  @include button();
 }
 
 .input-group .input-group,
@@ -454,7 +454,7 @@ body.vertical-menu header .desktop {
 }
 
 #submit_search {
-  @extend .button;
+  @include button();
 }
 
 .banner {
@@ -733,10 +733,13 @@ body.vertical-menu footer {
 
 #item-filters ul {
     @include style-type-unordered(no-bullet);
+    line-height: 1;
 }
 
 #item-filters li {
-  @extend .label;
+  @include label;
+  background-color: $secondary-color;
+  color: $label-color-alt;
 }
 
 .pagination-nav {
@@ -819,7 +822,7 @@ body.vertical-menu footer {
 }
 
 .item-file > a {
-  @extend .thumbnail;
+  @include thumbnail;
 }
 
 .item-file > a {
@@ -982,12 +985,13 @@ body.vertical-menu footer {
 }
 
 .items.advanced-search label {
-  @extend .label;
+  @include label;
 }
 
 .items.advanced-search label,
 .items.advanced-search .label {
-  @extend .secondary;
+  background-color: $secondary-color;
+  color: $label-color-alt;
 }
 
 .items.advanced-search label,
@@ -1249,7 +1253,7 @@ body.vertical-menu footer {
 
 #exhibit-page-navigation .next-page,
 #exhibit-page-navigation .previous-page {
-  @extend .button;
+  @include button();
 }
 
 #exhibit-page-navigation .next-page,
@@ -1356,10 +1360,13 @@ body.vertical-menu footer {
   ul {
     display: inline;
     margin: 0;
+    line-height: 1;
   }
   
   & > li {
-    @extend .label;
+    @include label;
+    background-color: $secondary-color;
+    color: $label-color-alt;
   }
   
   & > li {
