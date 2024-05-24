@@ -760,9 +760,9 @@ body.vertical-menu footer {
   height: 100%;
 }
 
-.page-input input {
-  margin-bottom: 0;
-  width: auto;
+.page-input input[type="text"] {
+  margin: 0 (.5 * $global-margin) 0 0;
+  width: 4rem;
 }
 
 .pagination_previous a,
