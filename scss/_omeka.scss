@@ -984,18 +984,18 @@ body.vertical-menu footer {
   @extend .fieldset;
 }
 
-.items.advanced-search label {
+#advanced-search-form label {
   @include label;
 }
 
-.items.advanced-search label,
-.items.advanced-search .label {
+#advanced-search-form label,
+#advanced-search-form .label {
   background-color: $secondary-color;
   color: $label-color-alt;
 }
 
-.items.advanced-search label,
-.items.advanced-search .label {
+#advanced-search-form label,
+#advanced-search-form .label {
   margin-bottom: (.5 * $global-margin);
 }
 
