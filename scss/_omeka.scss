@@ -14,6 +14,10 @@
 [type="submit"], 
 [type="button"] {
   @include button();
+
+  &:disabled {
+    @include button-disabled();
+  }
 }
 
 .input-group .input-group,
