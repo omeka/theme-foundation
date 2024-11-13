@@ -1,7 +1,8 @@
 <?php echo $this->form('search-form', $options['form_attributes']); ?>
     <?php echo $this->formText('query', $filters['query'], array('title' => __('Search'), 'class' => 'cell large-11')); ?>
     <?php if ($options['show_advanced']): ?>
-    <div id="advanced-form">
+    <button type="button" class="closed advanced-toggle" aria-expanded="false" aria-controls="advanced-form" aria-label="<?php echo __('Toggle advanced options'); ?>" title="<?php echo __('Toggle advanced options'); ?>"></button>
+    <div id="advanced-form" class="closed">
         <fieldset id="query-types">
             <legend class="show-for-sr"><?php echo __('Search using this query type:'); ?></legend>
             <?php echo $this->formRadio('query_type', $filters['query_type'], null, $query_types, ""); ?>
@@ -24,6 +25,5 @@
         <?php echo $this->formHidden('record_types[]', $type); ?>
         <?php endforeach; ?>
     <?php endif; ?>
-    <button type="button" class="expand advanced-toggle" aria-label="<?php echo __('Toggle advanced options'); ?>" title="<?php echo __('Toggle advanced options'); ?>"></button>
     <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit', 'class' => 'cell large-1')); ?>
 </form>

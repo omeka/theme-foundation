@@ -12,5 +12,5 @@
           <?php echo use_foundation_navigation('dropdown'); ?>
         </div>
     </nav>
-    <button type="button" class="search-toggle button" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
+    <button type="button" class="search-toggle closed button" aria-controls="search-form" aria-expanded="false" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
 </div>

@@ -144,6 +144,7 @@ body.vertical-menu #search-container {
     form {
       @include xy-grid-container();
       margin-left: 0;
+      max-width: 100%;
     }
   }
 
