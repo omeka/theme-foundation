@@ -7,7 +7,7 @@
           <?php if (($mainFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
             <?php echo __('Exhibit Builder is not installed.'); ?>
           <?php else: ?>
-            <?php echo foundation_random_featured_records_html($mainFeaturedRecordType); ?>
+            <?php echo random_featured_records($mainFeaturedRecordType); ?>
           <?php endif; ?>
       </div><!-- end featured collection -->
       
@@ -18,7 +18,7 @@
           <?php if (($secondFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
             <?php echo __('Exhibit Builder is not installed.'); ?>
           <?php else: ?>
-            <?php echo foundation_random_featured_records_html($secondFeaturedRecordType); ?>
+            <?php echo random_featured_records($secondFeaturedRecordType); ?>
           <?php endif; ?>
 
           <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? get_theme_option('home_third_featured') : 'item'; ?>
@@ -26,7 +26,7 @@
           <?php if (($thirdFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
             <?php echo __('Exhibit Builder is not installed.'); ?>
           <?php else: ?>
-            <?php echo foundation_random_featured_records_html($thirdFeaturedRecordType); ?>
+            <?php echo random_featured_records($thirdFeaturedRecordType); ?>
           <?php endif; ?>
       </div>
   </div>
