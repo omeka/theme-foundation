@@ -67,30 +67,13 @@ function foundation_homepage_intro_background() {
 function foundation_random_featured_records_html($recordType)
 {
     $html = '';
+    $partialPath = ($recordType == 'exhibit') ? 'exhibit-builder/exhibits/single.php' : $recordType . 's/single.php';
 
-    $recordSinglePartial = [
-        'exhibit' => 'exhibit-builder/exhibits/single.php',
-        'collection' => 'collections/single.php',
-        'item' => 'items/single.php',
-    ];
-
-    $featuredRecords =  get_records(ucfirst($recordType), array('featured' => 1,
-                                     'sort_field' => 'random'), 1);
-
-    if ($featuredRecords) {
-        foreach ($featuredRecords as $featuredRecord) {
-            $html .= get_view()->partial($recordSinglePartial[$recordType], array(
-                $recordType => $featuredRecord,
-                'thumbnailSize' => 'fullsize',
-                'featured' => 'featured',
-            ));
-        }
+    if (($recordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')) {
+        $html = __('Exhibit Builder is not installed.');
+    } else {
+        $html = display_records($recordType, array(), $partialPath, array('thumbnailSize' => 'fullsize'), 1);
     }
-    
-    if ($recordType == 'exhibit') {
-        $html = apply_filters('exhibit_builder_display_random_featured_exhibit', $html);
-    }
-    
     return $html;
 }
 
