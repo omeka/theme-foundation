@@ -204,23 +204,26 @@ header {
   width: auto;
 }
 
-.site-title h1 {
-  @extend h4;
-}
-
-.site-title h1 {
+h1.site-title {
   margin-bottom: 0;
-}
-
-.site-title h1 {
-  @include breakpoint(small down) {
-    font-weight: bold;
-  }
+  font-size: $global-font-size;
 }
 
 .site-title img {
   margin: $global-margin 0;
 }
+
+@include breakpoint(small down) {
+  .site-title h1 {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .site-title img {
+    margin: 0;
+  }
+}
+
 
 .dropdown.menu > li.is-dropdown-submenu-parent.active > a:after {
   border-color: #fff transparent transparent;
@@ -385,9 +388,12 @@ body.vertical-menu header .desktop {
   padding: $global-padding;
 
   @include breakpoint(small down) {
+    margin: 0;
+    padding: 0 $global-padding;
     position: absolute;
     top: 0;
     right: 0;
+    bottom: 0;
   }
 }
 
