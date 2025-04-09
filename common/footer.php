@@ -1,6 +1,8 @@
     </div><!-- end content -->
 
-    <footer role="contentinfo">
+    
+    </div><!-- end grid-container -->
+    <footer>
 
         <div id="footer-text">
             <?php if ($footerText = get_theme_option('Footer Text')): ?>
@@ -17,8 +19,6 @@
         <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
 
     </footer><!-- end footer -->
-    
-    </div><!-- end grid-container -->
     </div><!-- end off canvas content -->
 
     <script type="text/javascript">
