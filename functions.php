@@ -64,19 +64,6 @@ function foundation_homepage_intro_background() {
     }
 }
 
-function foundation_random_featured_records_html($recordType)
-{
-    $html = '';
-    $partialPath = ($recordType == 'exhibit') ? 'exhibit-builder/exhibits/single.php' : $recordType . 's/single.php';
-
-    if (($recordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')) {
-        $html = __('Exhibit Builder is not installed.');
-    } else {
-        $html = display_records($recordType, array(), $partialPath, array('thumbnailSize' => 'fullsize'), 1);
-    }
-    return $html;
-}
-
 /**
  * Returns a breadcrumb for a given page.
  *

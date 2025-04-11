@@ -3,17 +3,17 @@
   <div class="featured-records">
       <!-- Featured Collection -->
       <div class="main featured">
-          <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? get_theme_option('home_main_featured') : 'item'; ?>
-          <?php echo foundation_random_featured_records_html($mainFeaturedRecordType); ?>
+          <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? ucfirst(get_theme_option('home_main_featured')) : 'item'; ?>
+          <?php echo display_records($mainFeaturedRecordType, 1, array(), null, array('thumbnailSize' => 'fullsize')); ?>
       </div><!-- end featured collection -->
       
       
       <div class="supporting featured">
-          <?php $secondFeaturedRecordType = (get_theme_option('home_second_featured') !== null) ? get_theme_option('home_second_featured') : 'item'; ?>
-          <?php echo foundation_random_featured_records_html($secondFeaturedRecordType); ?>
+          <?php $secondFeaturedRecordType = (get_theme_option('home_second_featured') !== null) ? ucfirst(get_theme_option('home_second_featured')) : 'item'; ?>
+          <?php echo display_records($secondFeaturedRecordType, 1, array(), null, array('thumbnailSize' => 'fullsize')); ?>
 
-          <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? get_theme_option('home_third_featured') : 'item'; ?>
-          <?php echo foundation_random_featured_records_html($thirdFeaturedRecordType); ?>
+          <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? ucfirst(get_theme_option('home_third_featured')) : 'item'; ?>
+          <?php echo display_records($thirdFeaturedRecordType, 1, array(), null, array('thumbnailSize' => 'fullsize')); ?>
       </div>
   </div>
   
