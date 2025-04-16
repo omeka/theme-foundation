@@ -9,7 +9,7 @@
             <?php echo link_to_home_page(foundation_mobile_theme_logo(), array('class' => 'show-for-small-only', 'title' => "Logo")); ?>
         </h1>
     </div>
-    <nav id="primary-nav" class="top-bar-right" aria-label="<?php echo $this->translate('Main navigation'); ?>">
+    <nav id="primary-nav" class="top-bar-right" aria-label="<?php echo $this->translate('Main'); ?>">
         <div class="flex-fix">
           <?php echo use_foundation_navigation('dropdown'); ?>
         </div>

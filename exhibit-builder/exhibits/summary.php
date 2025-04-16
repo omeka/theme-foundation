@@ -5,7 +5,7 @@
 $pageTree = exhibit_builder_page_tree();
 if ($pageTree):
 ?>
-    <nav id="exhibit-pages" class="cell small-2" data-sticky-container>
+    <nav id="exhibit-pages" aria-label="<?php echo metadata('exhibit', 'title'); ?>"class="cell small-2" data-sticky-container>
         <div class="exhibit-tree-container sticky" data-sticky data-anchor="exhibit-content">
         <?php echo exhibit_builder_page_tree($exhibit); ?>
         </div>

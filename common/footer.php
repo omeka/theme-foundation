@@ -2,7 +2,7 @@
 
     
     </div><!-- end grid-container -->
-    <footer>
+    <footer aria-label="<?php echo __('Footer'); ?>">
 
         <div id="footer-text">
             <?php if ($footerText = get_theme_option('Footer Text')): ?>
