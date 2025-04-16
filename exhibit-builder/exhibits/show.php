@@ -6,9 +6,9 @@ echo head(array(
 
 <div class="grid-x">
 
-    <nav id="exhibit-pages" class="cell small-2" data-sticky-container>
+    <nav id="exhibit-pages" aria-label="<?php echo metadata('exhibit', 'title'); ?>" class="cell small-2" data-sticky-container>
         <div class="exhibit-tree-container sticky" data-sticky data-anchor="exhibit-content">
-        <h4><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h4>
+        <span class="exhibit-title"><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></span>
         <?php echo exhibit_builder_page_tree($exhibit, $exhibit_page); ?>
         </div>
     </nav>
