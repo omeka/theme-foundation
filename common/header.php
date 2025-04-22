@@ -79,24 +79,24 @@
     </div>
     <div class="off-canvas-content" data-off-canvas-content>
     <header aria-label="<?php echo __('Header'); ?>">
-    <?php if ($navLayout !== 'vertical'): ?>
-        <?php echo common('header-dropdown'); ?>
-    <?php else: ?>
-        <?php echo common('header-vertical'); ?>
-    <?php endif; ?>
-    <?php if ($banner): ?>
-    <div class="banner <?php echo $bannerWidth; ?>" style="background-image:url(<?php echo foundation_theme_banner(); ?>)">
-    </div>
-    <?php endif; ?>
+        <?php if ($navLayout !== 'vertical'): ?>
+            <?php echo common('header-dropdown'); ?>
+        <?php else: ?>
+            <?php echo common('header-vertical'); ?>
+        <?php endif; ?>
+        <?php if ($banner): ?>
+        <div class="banner <?php echo $bannerWidth; ?>" style="background-image:url(<?php echo foundation_theme_banner(); ?>)">
+        </div>
+        <?php endif; ?>
+        <div id="search-container" class="grid-x closed">
+            <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+            <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search'))); ?>
+            <?php else: ?>
+            <?php echo search_form(array('form_attributes' => array('role' => 'search'))); ?>
+            <?php endif; ?>
+        </div>
     </header>
 
-    <div id="search-container" role="search" class="closed">
-        <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-        <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('class' => 'grid-x'))); ?>
-        <?php else: ?>
-        <?php echo search_form(); ?>
-        <?php endif; ?>
-    </div>
 
     <div id="content" role="main" aria-label="<?php echo __('Content'); ?>">
         <?php echo link_to_home_page(theme_logo(), array('class' => 'site-title print-only', 'title' => "Logo")); ?>
