@@ -10,7 +10,7 @@ $layoutAttributes = array(
 );
 $layout = $this->navigation()->menu()->getUlClass();
 ?>
-<ul id="top-nav" <?php echo $layoutAttributes[$layout]; ?>>
+<ul id="<?php echo $layout; ?>-top-nav" <?php echo $layoutAttributes[$layout]; ?>>
     <?php foreach ($container as $page): ?>
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
