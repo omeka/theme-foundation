@@ -34,7 +34,7 @@
     $banner = get_theme_option('banner');
     $bannerWidth = (get_theme_option('banner_width')) ? get_theme_option('banner_width') : '';
     $bannerHeight = get_theme_option('banner_height_desktop');
-    if ($bannerHeight == '') {
+    if (!isset($bannerHeight) || $bannerHeight == '') {
         $bannerHeight = 'auto';
     }
     $bannerHeightMobile = get_theme_option('banner_height_mobile');
