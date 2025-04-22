@@ -12,6 +12,7 @@
     <?php if ( $description = option('description')): ?>
     <meta name="description" content="<?php echo $description; ?>" />
     <?php endif; ?>
+    <meta name="generator" content="Zurb Foundation 6" class="foundation-mq">
     <?php
     if (isset($title)) {
         $titleParts[] = strip_formatting($title);
