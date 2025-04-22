@@ -249,7 +249,8 @@ header .top-bar {
   padding: .25rem .5rem;
 
   @include breakpoint(small down) {
-    padding: 0;    
+    padding: 0;
+    position: relative;
   }
 }
 
@@ -400,7 +401,8 @@ body.vertical-menu header .desktop {
 #search-container {
   @include xy-grid-container;
   padding: $global-padding 0;
-  margin-bottom: (-3 * $global-margin);
+  border-bottom: 1px solid $light-gray;
+  max-width: none;
   
   &.closed {
     display: none;
@@ -425,35 +427,32 @@ body.vertical-menu header .desktop {
 
 #search-form {
   @include xy-grid;
+  margin: 0 auto;
 }
 
 #query {
-  order: 1;
-  height: 100%;
   width: 80%;
 }
 
 #search-form button {
-  order: 2;
   width: 20%;
   padding: 0;
 }
 
 #advanced-form {
-  order: 3;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: $global-padding;
+  padding: 0 $global-padding;
   
   @include breakpoint(medium down) {
     flex-wrap: wrap;
-    padding: $global-padding 0 0;
+    padding: 0;
   }
 }
 
 #advanced-form p {
-  margin-bottom: 0;
+  margin-bottom: $global-padding;
 }
 
 #query-types {
