@@ -38,6 +38,9 @@
         $bannerHeight = 'auto';
     }
     $bannerHeightMobile = get_theme_option('banner_height_mobile');
+    if (!isset($bannerHeightMobile) || $bannerHeightMobile == '') {
+        $bannerHeightMobile = 'auto';
+    }
     $bannerPosition = (get_theme_option('banner_position')) ? str_replace('_','-', get_theme_option('banner_position')) : 'center';
     queue_css_file(array('iconfonts'));
     queue_css_file($stylesheetOption);
@@ -45,17 +48,14 @@
         .banner {
             height: ' .  $bannerHeight . ';
             background-position: ' . $bannerPosition . ';
+        }
+
+        @media screen and (max-width:640px) {
+            .banner {
+                height: ' . $bannerHeightMobile . ';
+            }
         }'
     );
-    if ($bannerHeightMobile !== '') {
-        queue_css_string('
-            @media screen and (max-width:640px) {
-                .banner {
-                    height: ' . $bannerHeightMobile . ';
-                }
-            }'
-        );
-    }
     echo head_css();
 
     echo theme_header_background();
