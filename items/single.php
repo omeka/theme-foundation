@@ -15,7 +15,7 @@
   <span class="secondary label"><?php echo __('Featured Item'); ?></span>
   <?php endif; ?>
   <div class="record-meta">
-    <h3><?php echo link_to($item, 'show', $title); ?></h3>
+    <h2><?php echo link_to($item, 'show', $title); ?></h2>
     <?php if ($description): ?>
         <p class="description"><?php echo $description; ?></p>
     <?php endif; ?>

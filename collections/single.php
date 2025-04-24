@@ -7,7 +7,7 @@
     <?php if (isset($featured)): ?>
     <span class="secondary label"><?php echo __('Featured Collection'); ?></span>
     <?php endif; ?>
-    <h3><?php echo link_to($this->collection, 'show', $title); ?></h3>
+    <h2><?php echo link_to($this->collection, 'show', $title); ?></h2>
     <?php if ($collectionImage = record_image($collection, $thumbnailSize)): ?>
         <?php echo link_to($this->collection, 'show', $collectionImage, array('class' => 'image')); ?>
     <?php endif; ?>

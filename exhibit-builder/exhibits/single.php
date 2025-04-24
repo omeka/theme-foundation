@@ -7,7 +7,7 @@
     <span class="secondary label"><?php echo __('Featured Exhibit'); ?></span>
     <?php endif; ?>
     <div class="record-meta">
-        <h3><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h3>
+        <h2><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h2>
         <p class="description"><?php echo snippet_by_word_count(metadata($exhibit, 'description', array('no_escape' => true))); ?></p>
     </div>
 </div>
