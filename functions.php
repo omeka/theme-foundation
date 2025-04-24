@@ -56,7 +56,7 @@ function foundation_exhibit_page_tree($exhibit, $currentPage = null) {
 }
 
 function foundation_homepage_intro_background() {
-    $backgroundImage = get_theme_option('Homepage Intro Background');
+    $backgroundImage = get_theme_option('homepage_background');
     if ($backgroundImage) {
         $storage = Zend_Registry::get('storage');
         $backgroundImage = $storage->getUri($storage->getPathByType($backgroundImage, 'theme_uploads'));

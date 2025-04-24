@@ -1,4 +1,18 @@
+<?php 
+$pageTitle = get_theme_option('Homepage Title');
+if (!isset($pageTitle) || $pageTitle == '') {
+  $pageTitle = sprintf(__('Welcome to %s'), option('site_title'));
+}
+$backgroundColor = ((get_theme_option('homepage_background_color') !== null) && (get_theme_option('homepage_background_color') !== '')) ? get_theme_option('homepage_background_color') : 'FFFFFF';
+$backgroundImage = ((get_theme_option('homepage_background') !== null) && get_theme_option('homepage_background') !== '') ? "url('" . foundation_homepage_intro_background() . "')" : '';
+queue_css_string("#intro { background: center/cover $backgroundImage $backgroundColor; }");
+?>
 <?php echo head(array('bodyid' => 'home')); ?>
+
+  <div id="intro">
+      <h1><?php echo $pageTitle; ?></h1>
+      <?php echo get_theme_option('Homepage Text'); ?>
+  </div>
 
   <div class="featured-records">
       <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? get_theme_option('home_main_featured') : 'item'; ?>
@@ -30,14 +44,8 @@
           <?php endif; ?>
       </div>
   </div>
-  
-  <?php if (get_theme_option('Homepage Text')): ?>
-      <?php $introBg = (get_theme_option('Homepage Intro Background') ? 'style="background-image:url(' . foundation_homepage_intro_background() . ')"' : '' ); ?>
-      <div id="intro" class="text-center" <?php echo $introBg; ?>>
-          <?php echo get_theme_option('Homepage Text'); ?>
-      </div>
-      <hr>
-  <?php endif; ?>
+
+  <hr>
   
   <?php
   $recentItems = get_theme_option('Homepage Recent Items');
