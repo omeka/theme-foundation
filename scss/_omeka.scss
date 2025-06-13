@@ -1145,7 +1145,7 @@ button.list:before {
 #item-tags h3,
 #item-citation h3,
 #item-output-formats h3,
-#itemfiles h3 {
+#omeka-lightgallery h3 {
   font-weight: bold;
 }
 
@@ -1177,7 +1177,7 @@ button.list:before {
   order: 2;
 }
 
-#itemfiles .media.resource {
+#omeka-lightgallery .media.resource {
   height: 0;
   overflow: hidden;
 }
