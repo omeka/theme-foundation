@@ -15,33 +15,19 @@ queue_css_string("#intro { background: center/cover $backgroundImage $background
   </div>
 
   <div class="featured-records">
-      <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? get_theme_option('home_main_featured') : 'item'; ?>
       <!-- Featured Collection -->
       <div class="main featured">
-          <?php if (($mainFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
-            <?php echo __('Exhibit Builder is not installed.'); ?>
-          <?php else: ?>
-            <?php echo foundation_random_featured_records_html($mainFeaturedRecordType); ?>
-          <?php endif; ?>
+          <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? ucfirst(get_theme_option('home_main_featured')) : 'item'; ?>
+          <?php echo display_records($mainFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize')); ?>
       </div><!-- end featured collection -->
       
       
       <div class="supporting featured">
-          <?php $secondFeaturedRecordType = (get_theme_option('home_second_featured') !== null) ? get_theme_option('home_second_featured') : 'item'; ?>
-          <!-- Featured Collection -->
-          <?php if (($secondFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
-            <?php echo __('Exhibit Builder is not installed.'); ?>
-          <?php else: ?>
-            <?php echo foundation_random_featured_records_html($secondFeaturedRecordType); ?>
-          <?php endif; ?>
+          <?php $secondFeaturedRecordType = (get_theme_option('home_second_featured') !== null) ? ucfirst(get_theme_option('home_second_featured')) : 'item'; ?>
+          <?php echo display_records($secondFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize')); ?>
 
-          <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? get_theme_option('home_third_featured') : 'item'; ?>
-          <!-- Featured Collection -->
-          <?php if (($thirdFeaturedRecordType == 'exhibit') && !plugin_is_active('ExhibitBuilder')): ?>
-            <?php echo __('Exhibit Builder is not installed.'); ?>
-          <?php else: ?>
-            <?php echo foundation_random_featured_records_html($thirdFeaturedRecordType); ?>
-          <?php endif; ?>
+          <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? ucfirst(get_theme_option('home_third_featured')) : 'item'; ?>
+          <?php echo display_records($thirdFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize')); ?>
       </div>
   </div>
 
