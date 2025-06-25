@@ -214,6 +214,11 @@ header {
   }
 }
 
+.title-bar .menu-toggle {
+  margin: (-.25 * $global-margin) $global-margin (-.25 * $global-margin) (-.5 * $global-margin);
+  padding: $global-padding;
+}
+
 .dropdown.menu > li.is-dropdown-submenu-parent.active > a:after {
   border-color: #fff transparent transparent;
   margin-right: .5 * $global-margin;
@@ -1495,7 +1500,7 @@ button.list:before {
     padding: $global-padding 0;
   }
     
-  h3 {
+  h2 {
     font-size: 1.25 * $global-font-size;
   }
   
