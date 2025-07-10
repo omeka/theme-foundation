@@ -18,16 +18,16 @@ queue_css_string("#intro { background: center/cover $backgroundImage $background
       <!-- Featured Collection -->
       <div class="main featured">
           <?php $mainFeaturedRecordType = (get_theme_option('home_main_featured') !== null) ? ucfirst(get_theme_option('home_main_featured')) : 'item'; ?>
-          <?php echo display_records($mainFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize')); ?>
+          <?php echo display_records($mainFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize', 'featured' => true)); ?>
       </div><!-- end featured collection -->
       
       
       <div class="supporting featured">
           <?php $secondFeaturedRecordType = (get_theme_option('home_second_featured') !== null) ? ucfirst(get_theme_option('home_second_featured')) : 'item'; ?>
-          <?php echo display_records($secondFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize')); ?>
+          <?php echo display_records($secondFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize', 'featured' => true)); ?>
 
           <?php $thirdFeaturedRecordType = (get_theme_option('home_third_featured') !== null) ? ucfirst(get_theme_option('home_third_featured')) : 'item'; ?>
-          <?php echo display_records($thirdFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize')); ?>
+          <?php echo display_records($thirdFeaturedRecordType, 1, null, array('thumbnailSize' => 'fullsize', 'featured' => true)); ?>
       </div>
   </div>
 
