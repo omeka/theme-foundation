@@ -64,6 +64,31 @@ function foundation_homepage_intro_background() {
     }
 }
 
+function foundation_get_featured_records() {
+    $recordTypes = ['exhibit', 'collection', 'item'];
+    $featuredAreasNames = ['main', 'second', 'third'];
+    $featuredAreas = [];
+    foreach ($featuredAreasNames as $featuredAreasName) {
+        $featuredAreas[] = (get_theme_option('home_' . $featuredAreasName . '_featured')) ? get_theme_option('home_' . $featuredAreasName . '_featured') : 'item';
+    }
+
+    $featuredHtmlArray = [];
+    $featuredTypeKeys = [];
+
+    foreach($recordTypes as $recordType) {
+        $featuredTypeKeys = array_keys($featuredAreas, $recordType);
+        $featuredTypeKeyCount = count($featuredTypeKeys);
+        $featuredRecordTypeHtml = get_display_records(ucfirst($recordType), $featuredTypeKeyCount, null, array('thumbnailSize' => 'fullsize', 'featured' => true));
+        if ($featuredTypeKeyCount > 0) {
+            foreach ($featuredTypeKeys as $key => $featuredTypeKey) {
+                $featuredHtmlArray[$featuredTypeKey] = (isset($featuredRecordTypeHtml[$key])) ? $featuredRecordTypeHtml[$key] : get_view()->partial('common/no-featured.php');
+            }
+        }
+    }
+
+    return $featuredHtmlArray;
+}
+
 /**
  * Returns a breadcrumb for a given page.
  *

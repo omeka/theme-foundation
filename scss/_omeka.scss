@@ -1407,6 +1407,11 @@ button.list:before {
     margin-bottom: $global-margin;
   }
 
+  .empty.record {
+    min-height: 10 * $global-padding;
+    background: $primary-color;
+  }
+
   .image {
     display: block;
     width: 100%;
