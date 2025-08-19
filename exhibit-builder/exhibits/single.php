@@ -1,6 +1,7 @@
-<div class="exhibit record">
+<?php $exhibitImage = record_image($exhibit, $thumbnailSize); ?>
+<div class="exhibit record <?php echo ($exhibitImage) ? '' : 'empty'; ?>">
     <?php $thumbnailSize = (isset($thumbnailSize)) ? $thumbnailSize : 'thumbnail'; ?>
-    <?php if ($exhibitImage = record_image($exhibit, $thumbnailSize)): ?>
+    <?php if ($exhibitImage): ?>
         <?php echo (isset($featured)) ? $exhibitImage : exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
     <?php endif; ?>
     <?php if (isset($featured)): ?>

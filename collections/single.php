@@ -4,7 +4,7 @@ $description = metadata($collection, array('Dublin Core', 'Description'), array(
 $thumbnailSize = (isset($thumbnailSize)) ? $thumbnailSize : 'thumbnail';
 $collectionImage = record_image($collection, $thumbnailSize);
 ?>
-<div class="collection record">
+<div class="collection record <?php echo ($collectionImage) ? '' : 'empty'; ?>">
     <?php if (isset($featured)): ?>
     <span class="secondary label"><?php echo __('Featured Collection'); ?></span>
     <?php endif; ?>
