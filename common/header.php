@@ -99,7 +99,7 @@
     </header>
 
 
-    <div id="content" role="main" aria-label="<?php echo __('Content'); ?>">
+    <main id="content" aria-label="<?php echo __('Content'); ?>">
         <?php echo link_to_home_page(theme_logo(), array('class' => 'site-title print-only', 'title' => "Logo")); ?>
         <div class="grid-container">
         <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>

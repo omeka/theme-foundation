@@ -1,7 +1,5 @@
-    </div><!-- end content -->
+    </main><!-- end content -->
 
-    
-    </div><!-- end grid-container -->
     <footer aria-label="<?php echo __('Footer'); ?>">
 
         <div id="footer-text">
