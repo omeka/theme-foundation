@@ -20,5 +20,9 @@
       $(document).on('click', '.advanced-toggle', function() {
         togglePanel($(this), '#advanced-form');
       });
+
+      if ($('body').hasClass('vertical-menu')) {
+        $('.advanced-toggle').insertBefore('#submit_search');
+      }
   });
 })(jQuery)

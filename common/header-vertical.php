@@ -2,6 +2,7 @@
 <div class="title-bar" data-responsive-toggle="primary-nav" data-hide-for="large">
     <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
     <?php echo $titleLink; ?>
+    <button type="button" class="search-toggle closed button" aria-controls="search-form" aria-expanded="false" aria-label="<?php echo __('Search'); ?>"><i class="fas fa-search"></i></button>
 </div>
 <div class="desktop">
   <?php echo $titleLink; ?>

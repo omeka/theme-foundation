@@ -116,6 +116,15 @@ body.vertical-menu #content {
 
 body.vertical-menu #search-container {
   border-bottom: 1px solid $light-gray;
+  position: relative;
+
+  form {
+    width: 100%;
+  }
+
+  a {
+    color: $primary-color;
+  }
 
   @include breakpoint(medium up) {
     break-before: always;
@@ -129,47 +138,70 @@ body.vertical-menu #search-container {
     border-bottom: 0;
 
     form {
-      margin-left: 0;
-      max-width: 100%;
+      margin: 0;
+    }
+
+    #advanced-form {
+      display: none;
+      padding-top: $global-padding;
+    }
+
+    #advanced-form ~ #query {
+      width: calc(80% - #{2.5 * $global-padding});
+    }
+
+    #advanced-form {
+      position: absolute;
+      left: 0;
+      top: 2.625rem;
+      margin: 0;
+      background: #fff;
+      flex-wrap: wrap;
     }
 
     #query {
       height: 100%;
     }
 
+    .button,
     #submit_search {
       background-color: $button-background-hover;
     }
-  }
 
-  .advanced-toggle {
-    display: block;
-    width: 2.5 * $global-padding;
-    background-color: transparent;
-    margin-left: -2.5 * $global-padding;
-    position: relative;
-    z-index: 1;
-    color: $dark-gray;
+    .advanced-toggle {
+      display: block;
+      width: 2.5 * $global-padding;
+      position: relative;
+      z-index: 1;
 
-    &:after {
-      content: "\f0da";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
+      &:after {
+        content: "\f0da";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+      }
+
+      &.open:after {
+      content: "\f0d7"; 
+      }
     }
 
-    &.open:after {
-     content: "\f0d7"; 
-    }
+    #record-types input + label {
+      width: 80%;
+    }      
   }
+
 
   #advanced-form {
     padding-bottom: 0;
-    display: none;
 
     &.open {
       display: flex;
     }
-    
+
+    #query-types {
+      flex-wrap: wrap;
+    }
+
     input {
       margin-bottom: 0;
     }
@@ -265,6 +297,10 @@ header .flex-fix {
   }
 }
 
+body.vertical-menu header .title-bar  {
+  padding: .25 * $global-padding; 
+}
+
 body.vertical-menu header .title-bar .site-title img {
   max-height: 2.5 * $global-padding;
 }
@@ -298,6 +334,7 @@ body.vertical-menu header {
   
   .title-bar {
     display: flex;
+    position: relative;
   }
   
   .title-bar button {
@@ -391,15 +428,15 @@ body.vertical-menu header .desktop {
   padding: $global-padding 0;
   border-bottom: 1px solid $light-gray;
   max-width: none;
-  
-  &.closed {
-    display: none;
-  }
-  
+    
   @include breakpoint(medium down) {
+    background-color: #fff;
     padding: $global-padding;
     border-bottom: 1px solid $medium-gray;
-    margin-bottom: $global-margin;
+
+    &.closed {
+      display: none;
+    }
   }
 
   .o-icon-search:before {
@@ -407,10 +444,6 @@ body.vertical-menu header .desktop {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
-}
-
-.vertical-menu #search-container.closed {
-  display: block;
 }
 
 #search-form button,

@@ -1,5 +1,6 @@
 <?php echo $this->form('search-form', $options['form_attributes']); ?>
     <?php if ($options['show_advanced']): ?>
+    <button type="button" class="advanced-toggle button" aria-controls="advanced-form" aria-expanded="false" aria-label="<?php echo __('Advanced options'); ?>"></button>
     <div id="advanced-form" class="closed">
         <fieldset id="query-types" aria-label="<?php echo __('Search using this query type:'); ?>">
             <?php echo $this->formRadio('query_type', $filters['query_type'], null, $query_types, ""); ?>
