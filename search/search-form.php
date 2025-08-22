@@ -22,5 +22,5 @@
         <?php endforeach; ?>
     <?php endif; ?>
     <?php echo $this->formText('query', $filters['query'], array('title' => __('Query'), 'aria-label' => __('Query'), 'placeholder' => __('Enter a search term'), 'class' => 'cell large-11')); ?>
-    <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit', 'class' => 'button cell large-1')); ?>
+    <button id="submit_search" class="button cell large-1" name="submit_search" type="submit" value="<?php echo $options['submit_value']; ?>"><span class="o-icon-search" aria-hidden="true"></span></button>
 </form>

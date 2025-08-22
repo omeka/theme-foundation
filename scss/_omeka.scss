@@ -99,27 +99,12 @@ body.vertical-menu {
 }
 
 body.vertical-menu .off-canvas-content {
-  overflow: hidden;
+  @include xy-grid();
 }
 
 body.vertical-menu #content {
-  position: relative;
-
-  @include breakpoint(medium up) {
-    background-color: $white;
-    float: right;
-    width: 100%;
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      height: 100vh;
-      background: #fff;
-    }
-  }
+  width: 100%;
+  background-color: $white;
 
   @include breakpoint(large up) {
     @include xy-cell(10, $gutters: 0);
@@ -140,11 +125,20 @@ body.vertical-menu #search-container {
     background-color: $white;
     max-width: none;
     margin: 0;
+    padding: 0;
+    border-bottom: 0;
 
     form {
-      @include xy-grid-container();
       margin-left: 0;
       max-width: 100%;
+    }
+
+    #query {
+      height: 100%;
+    }
+
+    #submit_search {
+      background-color: $button-background-hover;
     }
   }
 
@@ -407,6 +401,12 @@ body.vertical-menu header .desktop {
     border-bottom: 1px solid $medium-gray;
     margin-bottom: $global-margin;
   }
+
+  .o-icon-search:before {
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
 }
 
 .vertical-menu #search-container.closed {
@@ -518,6 +518,7 @@ body.vertical-menu footer {
   
   @include breakpoint(large up) {
     width: calc(100% - #{xy-cell-size(2)});
+    margin-left: xy-cell-size(2);
   }
 }
 
