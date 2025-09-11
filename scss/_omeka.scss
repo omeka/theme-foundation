@@ -1440,60 +1440,88 @@ button.list:before {
   align-items: center;
   margin: 0 #{-.5 * $global-margin};
   
+  .featured {
+    width: 100%;
+  }
+
+  .featured .label {
+    margin: 0 0 $global-margin (-.3125 * $global-margin);
+    width: min-content;
+  }
+
   .record {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
     position: relative;
     margin-bottom: $global-margin;
+    width: 100%;
+    min-height: 10 * $global-padding;
+    z-index: 0;
+    padding: $global-padding;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .empty.record {
-    min-height: 10 * $global-padding;
     background: $primary-color;
   }
 
-  .image {
-    display: block;
+  img {
     width: 100%;
-
-    img {
-      width: 100%;
-    }
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
   }
 }
 
-
 @include breakpoint(medium up) {
-  .main.featured {
+  .featured-records .main.featured {
     @include xy-cell(8, null, $global-margin);
   }
   
-  .supporting.featured {
+  .featured-records .supporting.featured {
     @include xy-cell(4, null, $global-margin);
   }  
-}
 
-.featured-records .label {
-  position: absolute;
-  top: $global-margin;
-  left: $global-margin;
-  max-width: calc(100% - #{2 * $global-margin});
+  .featured-records .record {
+    padding: 0;
+  }
+
+  .featured-records .label {
+    position: absolute;
+    top: $global-margin;
+    left: $global-margin;
+    max-width: calc(100% - #{2 * $global-margin});
+  }
+
+  .featured-records h2 {
+    position: absolute;
+    bottom: $global-margin;
+    left: $global-margin;
+    width: calc(100% - #{2 * $global-margin});
+    font-size: 1.25 * $global-font-size;
+  }
+
+  .featured-records img {
+    position: relative;
+  }
 }
 
 .featured-records h2 {
-  position: absolute;
-  bottom: $global-margin;
-  left: $global-margin;
-  width: calc(100% - #{2 * $global-margin});
-  font-size: 1.25 * $global-font-size;
-  line-height: 1.25;
-  
-  a {
-    color: #fff;
-    background-color: $primary-color;
-    display: inline;
-    box-shadow: 6px 0 0 $primary-color, -6px 0 0 $primary-color;
-    box-decoration-break: clone;
-  }
+    line-height: 1.25;
+
+    a {
+      color: #fff;
+      background-color: $primary-color;
+      display: inline;
+      box-shadow: 6px 0 0 $primary-color, -6px 0 0 $primary-color;
+      box-decoration-break: clone;
+    }
 }
+
 
 .featured-records .description {
   display: none;
