@@ -175,13 +175,13 @@ body.vertical-menu #search-container {
       z-index: 1;
 
       &:after {
-        content: "\f0da";
+        content: "\f0da" / "";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
       }
 
       &.open:after {
-      content: "\f0d7"; 
+      content: "\f0d7" / ""; 
       }
     }
 
@@ -440,7 +440,7 @@ body.vertical-menu header .desktop {
   }
 
   .o-icon-search:before {
-    content: "\f002";
+    content: "\f002" / "";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
@@ -523,11 +523,11 @@ body.vertical-menu header .desktop {
 }
 
 .fa-bars:before {
-  content: "\f0c9";
+  content: "\f0c9" / "";
 }
 
 .fa-search:before {
-  content: "\f002";
+  content: "\f002" / "";
 }
 
 // #. Footer
@@ -585,11 +585,11 @@ body.vertical-menu footer {
     }
     
     &.closed:after {
-      content: "\f055";
+      content: "\f055" / "";
     }
 
     &.open:after {
-      content: "\f056";
+      content: "\f056" / "";
     }
 }
 
@@ -708,7 +708,7 @@ body.vertical-menu footer {
   color: $medium-gray;
 
   &:after {
-    content: "\f302";
+    content: "\f302" / "";
     font-family: "Font Awesome 5 Free";
   }
 }
@@ -814,11 +814,11 @@ body.vertical-menu footer {
 }
 
 .pagination_next i:before {
-  content: "\f0da";
+  content: "\f0da" / "";
 }
 
 .pagination_previous i:before {
-  content: "\f0d9";
+  content: "\f0d9" / "";
 }
 
 .items-nav .navigation {
@@ -849,14 +849,14 @@ body.vertical-menu footer {
   font-weight: bold;
   
   &:after {
-    content: "\f0d7";
+    content: "\f0d7" / "";
     font-family: "Font Awesome 5 Free";
     margin-left: (.25 * $global-margin);
   }
 }
 
 .desc a:after {
-  content: "\f0d8";
+  content: "\f0d8" / "";
 }
 
 .item-file > a {
@@ -883,17 +883,18 @@ body.vertical-menu footer {
   margin-bottom: 0;
 }
 
-.grid:before {
+.o-icon-grid:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f009";
+    content: "\f009" / "";
     font-weight: 900;
 }
 
-button.list:before {
+.o-icon-list:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f03a";
+    content: "\f03a" / "";
     font-weight: 900;
 }
+
 
 .tags-label {
     font-weight: bold;
@@ -1043,7 +1044,7 @@ button.list:before {
   align-self: flex-end;
   
   &:before {
-    content: "\f1f8";
+    content: "\f1f8" / "";
     position: absolute;
     top: 0;
     right: 0;
@@ -1310,13 +1311,13 @@ button.list:before {
 
 #exhibit-page-navigation .previous-page:before {
   font-family: "Font Awesome 5 Free";
-  content: "\f053";
+  content: "\f053" / "";
   font-weight: 900;
 }
 
 #exhibit-page-navigation .next-page:before {
   font-family: "Font Awesome 5 Free";
-  content: "\f054";
+  content: "\f054" / "";
   font-weight: 900;
 }
 
