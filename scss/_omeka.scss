@@ -187,6 +187,7 @@ body.vertical-menu #search-container {
 
     #record-types input + label {
       width: 80%;
+      margin-right: 0;
     }      
   }
 
@@ -439,10 +440,6 @@ body.vertical-menu header .desktop {
     background-color: #fff;
     padding: $global-padding;
     border-bottom: 1px solid $medium-gray;
-
-    &.closed {
-      display: none;
-    }
   }
 
   .o-icon-search:before {
@@ -450,6 +447,10 @@ body.vertical-menu header .desktop {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
+}
+
+.top-bar #search-container.closed {
+  display: none;
 }
 
 #search-form button,
