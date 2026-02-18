@@ -6,7 +6,9 @@
 
 // Sea Foam Settings
 
+$dropdown-menu-item-color-active: #fff;
 $topbar-background: $primary-color;
+$topbar-submenu-background: #fff;
   
 $thumbnail-border: 4px solid $secondary-color;
 $thumbnail-shadow: none;
@@ -28,7 +30,6 @@ header .submenu a {
 #top-nav.dropdown.menu > li.is-active > a,
 #top-nav.dropdown.menu > li > a:hover {
   text-decoration: underline;
-  color: get-color(secondary);
 }
 
 .dropdown .is-dropdown-submenu a:hover {

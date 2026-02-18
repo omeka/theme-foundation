@@ -245,19 +245,20 @@ header {
   padding: $global-padding;
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent.active > a:after {
-  border-color: #fff transparent transparent;
-  margin-right: .5 * $global-margin;
+.dropdown.menu > li.active.is-active > a {
+  background-color: $menu-item-background-active;
+  color: $menu-item-color-active;
 }
 
 .dropdown.menu > li.is-dropdown-submenu-parent.active > a {
   padding-right: 2 * $global-padding;
+
+  &:after {
+    border-color: $menu-item-color-active transparent transparent;
+    right: .5rem;
+  }
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent.active:hover > a {
-  background-color: $primary-color;
-  color: #fff;
-}
 
 header .top-bar-right,
 header .top-bar-left {
@@ -310,17 +311,22 @@ body.vertical-menu header .title-bar .site-title img {
   justify-content: space-between;
 }
 
+header .submenu-toggle {
+    border-color: $anchor-color transparent transparent;
+}
+
 .vertical-menu .dropdown-toggle {
   width: 100%;
 }
 
-.submenu-toggle:after {
-  border-color: #fff transparent transparent;
-}
 
 body.vertical-menu header {
   background-color: $primary-color;
   width: 100%;
+
+  .submenu-toggle:after {
+    border-color: $menu-item-color-active transparent transparent;
+  }
 
   @include breakpoint(large up) {
     padding: $global-padding;     
@@ -822,7 +828,7 @@ body.vertical-menu footer {
 }
 
 .items-nav .navigation {
-  @extend .menu;
+  @include menu-base;
 }
 
 #sort-links {
@@ -1272,16 +1278,17 @@ body.vertical-menu footer {
 }
 
 #exhibit-pages ul {
-  @extend .vertical;
-  @extend .menu;
+  @include menu-base;
+  @include menu-direction(vertical);
 }
 
 #exhibit-pages ul ul {
-  @extend .nested;
+  @include menu-nested;
 }
 
-#exhibit-pages .current {
-  @extend .active;
+#exhibit-pages .current a {
+  color: $menu-item-color-active;
+  background-color: $menu-item-background-active;
 }
 
 #exhibit-page-navigation {

@@ -4,19 +4,36 @@
 @import 'globals-inkwell';
 @import 'settings';
 
-// Sea Foam Settings
+// Inkwell Settings
 
 $topbar-background: transparent;
-
+$topbar-submenu-background: #fff;
 $header-font-family: "Playfair Display", serif;
-  
 $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
-
+$anchor-color-hover: #000;
+$dropdownmenu-arrow-color: #000;
+$dropdown-menu-item-color-active: #000;
 $button-color: $black;
 
 @import 'foundation-core';
 @import 'omeka';
 @import 'print';
+
+a {
+  position: relative;
+}
+
+a:hover:before,
+a:active:before {
+  content: "";
+  width: 100%;
+  background-color: rgba($primary-color, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: .3125rem;
+  z-index: -1;
+}
 
 body {
   font-weight: 500;
@@ -38,9 +55,43 @@ header a {
   color: $black;
 }
 
+ul.dropdown > li > a:hover:before,
+ul.dropdown > li > a:active:before {
+  width: calc(100% - 2rem);
+  left: 1rem;
+  bottom: .5rem;
+}
+
+header ul.dropdown > li.is-dropdown-submenu-parent > a:hover:before,
+header ul.dropdown > li.is-dropdown-submenu-parent > a:active:before {
+  width: calc(100% - 2.5rem);
+}
+
+body.vertical-menu header .submenu-toggle:after {
+  border-color: $dropdownmenu-arrow-color transparent transparent;
+}
+
+header .is-submenu-item a:hover:before,
+header .is-submenu-item a:active:before {
+  content: none;
+}
+
 header .input-group-field {
   border: 1px solid #000;
   box-shadow: none;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent.active > a {
+  color: $black;
+
+  &:after {
+    border-color: $dropdownmenu-arrow-color transparent transparent;
+  }
+}
+
+.dropdown.menu > li.active.is-active > a {
+  background-color: $menu-item-background-active;
+  color: $dropdown-menu-item-color-active;
 }
 
 a,

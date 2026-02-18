@@ -2,9 +2,11 @@
 
 @import 'globals-default';
 @import 'settings';
-@import 'foundation-core';
 
+$topbar-submenu-background: #fff;
+$dropdown-menu-item-color-active: $anchor-color;
 $label-color-alt: #fff;
 
+@import 'foundation-core';
 @import 'omeka';
 @import 'print';
