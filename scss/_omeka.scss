@@ -242,7 +242,6 @@ header {
 }
 
 .title-bar .menu-toggle {
-  margin: (-.25 * $global-margin) $global-margin (-.25 * $global-margin) (-.5 * $global-margin);
   padding: $global-padding;
 }
 
@@ -270,7 +269,7 @@ header .top-bar-left {
 header .top-bar {
   padding: .25rem .5rem;
 
-  @include breakpoint(small down) {
+  @include breakpoint(medium down) {
     padding: 0;
     position: relative;
   }
@@ -312,22 +311,13 @@ body.vertical-menu header .title-bar .site-title img {
   justify-content: space-between;
 }
 
-header .submenu-toggle {
-    border-color: $anchor-color transparent transparent;
-}
-
-.vertical-menu .dropdown-toggle {
+.dropdown-toggle {
   width: 100%;
 }
-
 
 body.vertical-menu header {
   background-color: $primary-color;
   width: 100%;
-
-  .submenu-toggle:after {
-    border-color: $menu-item-color-active transparent transparent;
-  }
 
   @include breakpoint(large up) {
     padding: $global-padding;     
@@ -376,6 +366,10 @@ body.vertical-menu header {
   }
 }
 
+.vertical.menu .active > .submenu-toggle:after {
+  border-color: $menu-item-color-active transparent transparent;
+}
+
 body.vertical-menu .vertical.menu.nested .active > a {
   position: relative;
   
@@ -416,7 +410,7 @@ body.vertical-menu header .desktop {
 }
 
 .search-toggle {
-  margin: (-.25 * $global-margin) (-.5 * $global-margin);
+  margin: (-.25 * $global-margin) 0;
   margin-left: (2 * $global-margin);
   padding: $global-padding;
 
