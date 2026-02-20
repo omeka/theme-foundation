@@ -243,6 +243,7 @@ header {
 
 .title-bar .menu-toggle {
   padding: $global-padding;
+  margin: 0 $global-margin 0 0;
 }
 
 .dropdown.menu > li.active.is-active > a {
@@ -285,12 +286,7 @@ header .flex-fix {
   background-color: transparent;
   padding: 0;
   max-height: 3 * $global-padding;
-  
-  button {
-    margin: 0 $global-margin 0 0;
-    background-color: transparent;
-  }
-  
+    
   img {
     height: 100%;
     width: auto;
@@ -299,6 +295,10 @@ header .flex-fix {
 
 body.vertical-menu header .title-bar  {
   padding: .25 * $global-padding; 
+
+  @include breakpoint(medium down) {
+    padding: 0;
+  }
 }
 
 body.vertical-menu header .title-bar .site-title img {
@@ -365,7 +365,8 @@ body.vertical-menu header {
   }
 }
 
-.vertical.menu .active > .submenu-toggle:after {
+#offCanvas .vertical.menu .active > .submenu-toggle:after,
+.off-canvas-content .vertical.menu .submenu-toggle:after {
   border-color: $menu-item-color-active transparent transparent;
 }
 

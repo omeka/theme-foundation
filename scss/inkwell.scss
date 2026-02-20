@@ -10,10 +10,10 @@ $topbar-background: transparent;
 $topbar-submenu-background: #fff;
 $header-font-family: "Playfair Display", serif;
 $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
-$anchor-color-hover: #000;
-$dropdownmenu-arrow-color: #000;
-$dropdown-menu-item-color-active: #000;
 $button-color: $black;
+$anchor-color-hover: $button-color;
+$dropdownmenu-arrow-color: $button-color;
+$dropdown-menu-item-color-active: $button-color;
 
 @import 'foundation-core';
 @import 'omeka';
@@ -55,6 +55,11 @@ header a {
   color: $black;
 }
 
+.title-bar button,
+body.vertical-menu header .title-bar button {
+  color: $button-color;
+}
+
 ul.dropdown > li > a:hover:before,
 ul.dropdown > li > a:active:before {
   width: calc(100% - 2rem);
@@ -67,8 +72,8 @@ header ul.dropdown > li.is-dropdown-submenu-parent > a:active:before {
   width: calc(100% - 2.5rem);
 }
 
-body.vertical-menu header .submenu-toggle:after {
-  border-color: $dropdownmenu-arrow-color transparent transparent;
+.submenu-toggle:after {
+  border-color: $dropdownmenu-arrow-color transparent transparent !important;
 }
 
 header .is-submenu-item a:hover:before,

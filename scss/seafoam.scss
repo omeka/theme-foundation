@@ -32,9 +32,13 @@ header .submenu a {
   text-decoration: underline;
 }
 
+.dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+  border-color: $menu-item-color-active transparent transparent;
+}
+
 .dropdown .is-dropdown-submenu a:hover {
   background-color: get-color(primary);
-  color: get-color(secondary);
+  color: $dropdown-menu-item-color-active;
 }
 
 .tags.label {
