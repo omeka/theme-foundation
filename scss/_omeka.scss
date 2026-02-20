@@ -126,7 +126,7 @@ body.vertical-menu #search-container {
     color: $primary-color;
   }
 
-  @include breakpoint(medium up) {
+  @include breakpoint(large up) {
     break-before: always;
     min-height: 0;
     flex: 1;
@@ -136,6 +136,10 @@ body.vertical-menu #search-container {
     margin: 0;
     padding: 0;
     border-bottom: 0;
+
+  &.closed {
+    display: block;
+  }
 
     form {
       margin: 0;
@@ -242,7 +246,6 @@ header {
 }
 
 .title-bar .menu-toggle {
-  padding: $global-padding;
   margin: 0 $global-margin 0 0;
 }
 
@@ -443,7 +446,7 @@ body.vertical-menu header .desktop {
   }
 }
 
-.top-bar #search-container.closed {
+#search-container.closed {
   display: none;
 }
 
