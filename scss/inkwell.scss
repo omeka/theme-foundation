@@ -76,6 +76,8 @@ header ul.dropdown > li.is-dropdown-submenu-parent > a:active:before {
   border-color: $dropdownmenu-arrow-color transparent transparent !important;
 }
 
+#offCanvas a:hover:before,
+#offCanvas a:active:before,
 header .is-submenu-item a:hover:before,
 header .is-submenu-item a:active:before {
   content: none;
