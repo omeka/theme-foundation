@@ -375,16 +375,6 @@ body.vertical-menu header {
 
 body.vertical-menu .vertical.menu.nested .active > a {
   position: relative;
-  
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -1 * $global-padding;
-    width: $global-padding;
-    bottom: 0;
-    background-color: $primary-color;
-  }
 }
 
 body.vertical-menu header .desktop {
