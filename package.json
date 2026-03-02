@@ -1,6 +1,6 @@
 {
   "name": "foundation-classic-theme",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Omeka Classic theme using the Foundation toolkit.",
   "main": "gulpfile.js",
   "scripts": {
@@ -16,6 +16,7 @@
   "dependencies": {
     "foundation-sites": "^6.8.1",
     "gulp-cli": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
     "jquery": "^3.5.1",
     "motion-ui": "~2.0.0",
     "sass": "^1.49.8",
