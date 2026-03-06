@@ -1228,9 +1228,11 @@ body.vertical-menu footer {
   display: flex;
   margin: $global-margin 0;
   order: 3;
+  gap: $global-margin;
 
-  & > div:not(:last-child) {
-    margin-right: $global-margin;
+  .next a,
+  .previous a {
+    @include button;
   }
 }
 
