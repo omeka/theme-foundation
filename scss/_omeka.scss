@@ -1225,6 +1225,7 @@ body.vertical-menu footer {
 }
 
 .item-pagination {
+  list-style: none;
   display: flex;
   margin: $global-margin 0;
   order: 3;

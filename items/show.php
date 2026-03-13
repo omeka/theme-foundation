@@ -62,14 +62,16 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
        <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
     </div>
 
-    <div class="item-pagination navigation">
-        <?php if ($prevLink = link_to_previous_item_show(null, array('class' => 'button'))): ?>
-        <div id="previous-item" class="previous"><?php echo $prevLink; ?></div>
-        <?php endif; ?>
-        <?php if ($nextLink = link_to_next_item_show(null, array('class' => 'button'))): ?>
-        <div id="next-item" class="next"><?php echo $nextLink; ?></div>
-        <?php endif; ?>
-    </div>
+    <nav aria-label="<?php echo __('Item pagination'); ?>">
+        <ul class="item-pagination navigation">
+            <?php if ($prevLink = link_to_previous_item_show(null, array('class' => 'button'))): ?>
+            <li id="previous-item" class="previous"><?php echo $prevLink; ?></li>
+            <?php endif; ?>
+            <?php if ($nextLink = link_to_next_item_show(null, array('class' => 'button'))): ?>
+            <li id="next-item" class="next"><?php echo $nextLink; ?></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
 </div> <!-- End of Primary. -->
 
  <?php echo foot(); ?>
