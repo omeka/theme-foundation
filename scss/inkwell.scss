@@ -8,6 +8,8 @@
 
 $topbar-background: transparent;
 $topbar-submenu-background: #fff;
+$offcanvas-background: $primary-color;
+
 $header-font-family: "Playfair Display", serif;
 $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
 $button-color: $black;
@@ -49,10 +51,19 @@ body {
   header .top-bar {
     background-color: $primary-color;
   }
+
+  header .top-bar a {
+    color: $black;
+  }
 }
 
 header a {
   color: $black;
+}
+
+.site-title {
+  font-family: $header-font-family;
+  font-weight: normal !important;
 }
 
 .title-bar button,
@@ -109,6 +120,20 @@ a,
 body.vertical-menu header a {
   color: #000;
   text-decoration: underline;
+}
+
+#offCanvas a,
+body.vertical-menu header a {
+  color: #000 !important;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+.vertical.menu .submenu-toggle:after {
+  border-color: $black transparent transparent !important;
 }
 
 label,

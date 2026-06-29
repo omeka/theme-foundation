@@ -34,7 +34,13 @@ body {
 
 body:not(.vertical-menu) header {
   border-top: ($global-padding) solid $primary-color;
-}  
+}
+
+@include breakpoint(medium down) {
+  body:not(.vertical-menu) header {
+    border-top: 0;
+  }
+}
 
 body.vertical-menu #content,
 body.vertical-menu #content:after,
