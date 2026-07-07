@@ -1441,6 +1441,14 @@ body.vertical-menu footer {
   margin-right: 0;
 }
 
+.exhibit-items .card {
+  display: inline-flex;
+}
+
+.exhibit-items .card .exhibit-item-caption {
+  font-size: $global-font-size;
+}
+
 // #. Search
 // -----------
 
