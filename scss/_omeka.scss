@@ -1301,6 +1301,39 @@ body.vertical-menu footer {
   width: 100%;
 }
 
+.centered {
+  text-align: center;
+}
+
+.centered #exhibit-pages {
+  border-top: 1px solid $light-gray;
+  margin: $global-margin 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & > ul > li {
+    font-weight: bold;
+    border-bottom: 1px solid $light-gray;
+    padding: $global-padding 0;
+  }
+
+  & > ul > li > ul {
+    font-weight: normal;
+  }
+
+  ul ul ul {
+    display: none;
+  }
+
+  .exhibit-credits {
+    margin: $global-margin 0;
+  }
+}
+
 @include breakpoint(medium down) {
   .exhibits.show #content > .grid-x {
     flex-wrap: wrap;
@@ -1319,18 +1352,22 @@ body.vertical-menu footer {
   }
 }
 
-#exhibit-pages ul {
+#exhibit-pages > ul.vertical.menu {
   @include menu-base;
   @include menu-direction(vertical);
 }
 
-#exhibit-pages ul ul {
+#exhibit-pages > ul.vertical.menu ul {
   @include menu-nested;
 }
 
-#exhibit-pages .current > a {
+#exhibit-pages > ul.vertical.menu .current > a {
   color: $menu-item-color-active;
   background-color: $menu-item-background-active;
+}
+
+#exhibit-pages ul.dropdown.menu {
+  margin-left: 0;
 }
 
 #exhibit-page-navigation {

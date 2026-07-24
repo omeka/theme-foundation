@@ -10,48 +10,48 @@ function use_foundation_navigation($ulClass) {
     return $html;
 }
 
-function foundation_exhibit_page_tree($exhibit, $currentPage = null) {
+function foundation_exhibit_builder_page_tree($exhibit, $currentPage = null, $layout = null) {
     $view = get_view();
     $pages = $exhibit->PagesByParent;
     if (!($pages && isset($pages[0]))) {
         return '';
     }
 
-    $view->_exhibit = $exhibit;
-    $view->_pages = $pages;
+    $view->exhibit = $exhibit;
+    $view->pages = $pages;
 
     $ancestorIds = array();
-    if ($currentPage) {
-        $pagesById = $view->_exhibit->PagesById;
-        $currentId = $currentPage->parent_id;
-        while ($currentId) {
-            $currentPage = $pagesById[$currentId];
-            $ancestorIds[$currentPage->id] = $currentPage->id;
-            $currentId = $currentPage->parent_id;
-        }
-    }
-        
-    $html = '<ul class="vertical menu"';
-    foreach ($pages[0] as $topPage) {
-        if ($currentPage && $topPage->id === $currentPage->id) {
-            $html = '<li class="current">';
-        } else if ($ancestorIds && isset($ancestorIds[$topPage->id])) {
-            $html = '<li class="parent">';
-        } else {
-            $html = '<li>';
-        }
+    
+    $layoutAttrs = ($layout == 'horizontal') ? 'class="dropdown menu" data-dropdown-menu' : 'class="vertical menu"';
 
-        $html .= '<a href="' . exhibit_builder_exhibit_uri($view->_exhibit, $topPage) . '">'
-              . metadata($topPage, 'menu_title') .'</a>';
-        if (isset($view->_pages[$page->id])) {
-            $html .= '<ul>';
-            foreach ($view->_pages[$page->id] as $childPage) {
-                $html .= $view->_renderPageBranch($childPage, $currentPage, $ancestorIds);
-            }
-            $html .= '</ul>';
-        }
-        $html .= '</li>';    }
+    $html = "<ul $layoutAttrs>";
+    foreach ($pages[0] as $topPage) {
+        $html .= foundation_exhibit_builder_render_page_branch($topPage, $currentPage, $ancestorIds);
+    }
     $html .= '</ul>';
+    return $html;
+}
+
+function foundation_exhibit_builder_render_page_branch($page, $currentPage, $ancestorIds ) {
+    $view = get_view();
+    if ($currentPage && $page->id === $currentPage->id) {
+        $html = '<li class="current">';
+    } else if ($ancestorIds && isset($ancestorIds[$page->id])) {
+        $html = '<li class="parent">';
+    } else {
+        $html = '<li>';
+    }
+
+    $html .= '<a href="' . exhibit_builder_exhibit_uri($view->exhibit, $page) . '">'
+            . metadata($page, 'menu_title') .'</a>';
+    if (isset($view->pages[$page->id])) {
+        $html .= '<ul class="menu">';
+        foreach ($view->pages[$page->id] as $childPage) {
+            $html .= foundation_exhibit_builder_render_page_branch($childPage, $currentPage, $ancestorIds);
+        }
+        $html .= '</ul>';
+    }
+    $html .= '</li>';
     return $html;
 }
 
