@@ -1301,13 +1301,45 @@ body.vertical-menu footer {
   width: 100%;
 }
 
-.centered {
+#exhibit-pages ul {
+  list-style: none;
+}
+
+#exhibit-pages .exhibit-title {
+  display: block;
+  font-weight: bold;
+  border-bottom: 1px solid $medium-gray;
+  padding-bottom: .5 * $global-padding;
+  margin-bottom: .5 * $global-margin;
+}
+
+.horizontal-nav #exhibit-pages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 0 (-1 * $global-menu-nested-margin) (2 * $global-margin);
+}
+
+.horizontal-nav #exhibit-pages ul {
+  margin: 0;
+}
+
+.horizontal-nav #exhibit-pages .exhibit-title {
+  border-bottom: 0;
+  padding: $dropdownmenu-padding;
+  line-height: 1;
+}
+
+.centered h1,
+.centered .exhibit-credits {
   text-align: center;
 }
 
 .centered #exhibit-pages {
   border-top: 1px solid $light-gray;
   margin: $global-margin 0;
+  text-align: center;
 
   ul {
     list-style: none;
@@ -1340,13 +1372,11 @@ body.vertical-menu footer {
   }
   
   #exhibit-pages {
-    order: 2;
     width: 100%;
     margin: 0;
   }
-  
+
   #exhibit-content {
-    order: 1;
     width: 100%;
     margin: 0;
   }
@@ -1527,7 +1557,7 @@ body.vertical-menu footer {
 // -------
 
 .vertical-menu .grid-container {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .featured-records {

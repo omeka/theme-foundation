@@ -83,3 +83,8 @@ body.vertical-menu #search-container {
 .inline .element .element-text:not(:first-of-type) {
   border-top-color: lighten(desaturate($gold, 10%), 10%);
 }
+
+#exhibit-pages,
+#exhibit-pages li {
+  border-color: lighten(desaturate($gold, 10%), 10%) !important;
+}

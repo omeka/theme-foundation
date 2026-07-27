@@ -3,7 +3,7 @@
 <div class="grid-x">
 
 
-<div id="exhibit-content" class="cell small-6 small-offset-2">
+<div id="exhibit-content" class="cell small-6 small-offset-3">
 
 <h1><?php echo metadata('exhibit', 'title'); ?></h1>
 

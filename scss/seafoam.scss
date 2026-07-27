@@ -28,21 +28,33 @@ header .submenu a {
   color: get-color(primary);
 }
 
-#top-nav.dropdown.menu > li.is-active > a,
-#top-nav.dropdown.menu > li > a:hover {
-  text-decoration: underline;
-}
-
 .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
   border-color: $menu-item-color-active transparent transparent;
 }
 
-.dropdown .is-dropdown-submenu a:hover {
+.dropdown .is-dropdown-submenu a:hover,
+.dropdown .is-dropdown-submenu .is-active > a {
   background-color: get-color(primary);
   color: $dropdown-menu-item-color-active;
+}
+
+.dropdown .is-dropdown-submenu .is-active.opens-right > a:after {
+    border-color: transparent transparent transparent $dropdown-menu-item-color-active;
+}
+
+.dropdown .is-dropdown-submenu .is-active.opens-left > a:after {
+    border-color: transparent $dropdown-menu-item-color-active transparent transparent;
 }
 
 .tags.label {
   background-color: $secondary-color;
   color: #000;
+}
+
+#exhibit-pages .dropdown.menu > li.is-dropdown-submenu-parent.is-active > a {
+  color: $primary-color;
+}
+
+#exhibit-pages .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+  border-color: $primary-color transparent transparent;
 }

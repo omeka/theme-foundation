@@ -1,7 +1,7 @@
 <?php
 echo head(array(
     'title' => metadata('exhibit_page', 'title') . ' &middot; ' . metadata('exhibit', 'title'),
-    'bodyclass' => 'exhibits show'));
+    'bodyclass' => 'exhibits show horizontal-nav'));
 ?>
 
 <div class="grid-x">
@@ -11,7 +11,7 @@ echo head(array(
         <?php echo foundation_exhibit_builder_page_tree($exhibit, $exhibit_page, 'horizontal'); ?>
     </nav>
     
-    <div id="exhibit-content" class="cell small-8 right small-offset-1">
+    <div id="exhibit-content" class="cell small-12">
     
         <h1><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
         
