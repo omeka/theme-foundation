@@ -8,7 +8,9 @@
         <?php if ($record_types): ?>
         <fieldset id="record-types" aria-label="<?php echo __('Search only these record types:'); ?>">
             <?php foreach ($record_types as $key => $value): ?>
-            <?php echo $this->formCheckbox('record_types[]', $key, array('checked' => in_array($key, $filters['record_types']), 'id' => 'record_types-' . $key)); ?> <?php echo $this->formLabel('record_types-' . $key, $value);?>
+                <div class="record-type-option">
+                    <?php echo $this->formCheckbox('record_types[]', $key, array('checked' => in_array($key, $filters['record_types']), 'id' => 'record_types-' . $key)); ?> <?php echo $this->formLabel('record_types-' . $key, $value);?>
+                </div>
             <?php endforeach; ?>
         </fieldset>
         <?php elseif (is_admin_theme()): ?>

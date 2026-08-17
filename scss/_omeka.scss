@@ -162,6 +162,7 @@ body.vertical-menu #search-container {
       margin: 0;
       background: #fff;
       flex-wrap: wrap;
+      gap: .5 * $global-padding;
     }
 
     #query {
@@ -190,10 +191,20 @@ body.vertical-menu #search-container {
       }
     }
 
-    #record-types input + label {
-      width: 80%;
-      margin-right: 0;
-    }      
+    #record-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: (.5 * $global-padding) $global-padding;
+    }
+
+    #record-types .record-type-option {
+      display: inline-flex;
+      gap: .5 * $global-padding;
+    }
+
+    .record-type-option input[type="checkbox"] + label {
+      margin: 0;
+    }
   }
 
 
