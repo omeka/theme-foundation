@@ -194,11 +194,16 @@ body.vertical-menu #search-container {
     #record-types {
       display: flex;
       flex-wrap: wrap;
-      gap: (.5 * $global-padding) $global-padding;
+      gap: 0 $global-padding;
+    }
+
+    #query-types label,
+    #record-types .record-type-option {
+      width: 100%;
+      display: flex;
     }
 
     #record-types .record-type-option {
-      display: inline-flex;
       gap: .5 * $global-padding;
     }
 
