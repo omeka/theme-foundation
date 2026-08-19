@@ -37,10 +37,11 @@ header .submenu a {
   border-color: $menu-item-color-active transparent transparent;
 }
 
-.dropdown .is-dropdown-submenu a:hover {
-  background-color: get-color(primary);
-  color: $dropdown-menu-item-color-active;
+.is-dropdown-submenu .active > a {
+  background-color: $white;
+  color: $primary-color;
 }
+
 
 .tags.label {
   background-color: $secondary-color;

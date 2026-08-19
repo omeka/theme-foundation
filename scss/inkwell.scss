@@ -132,6 +132,11 @@ body.vertical-menu header a {
   }
 }
 
+.is-dropdown-submenu .active > a {
+  background-color: $white;
+  color: #000;
+}
+
 .vertical.menu .submenu-toggle:after {
   border-color: $black transparent transparent !important;
 }
