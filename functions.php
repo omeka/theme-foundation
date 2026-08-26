@@ -203,4 +203,22 @@ function foundation_theme_banner()
     return $uri;
 }
 
+function foundation_recent_items($count = 10)
+{
+    $items = get_recent_items($count);
+    if ($items) {
+        $html = '';
+        foreach ($items as $item) {
+            $html .= get_view()->partial('items/single.php', [
+                'item' => $item,
+                'headingLevel' => '3'
+            ]);
+            release_object($item);
+        }
+    } else {
+        $html = '<p>' . __('No recent items available.') . '</p>';
+    }
+    return $html;
+}
+
 add_translation_source(dirname(__FILE__) . '/languages');

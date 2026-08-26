@@ -43,7 +43,7 @@ queue_css_string("#intro { background: center/cover $backgroundImage $background
       <h2 class="text-center"><?php echo __('Recently Added Items'); ?></h2>
       <hr>
       <div class="recent-items">
-          <?php echo recent_items($recentItems); ?>
+          <?php echo foundation_recent_items($recentItems); ?>
           <p class="view-items-link"><a href="<?php echo html_escape(url('items')); ?>"><?php echo __('View All Items'); ?></a></p>
       </div>
       <div class="other">
