@@ -14,7 +14,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
     <h3 class="label"><?php echo __('Item'); ?></h3>
 </div>
 <div class="wrap">
-    <?php if (metadata('item', 'has files') && (($mediaPosition == 'top') || ($layout == 'double'))): ?>
+    <?php if (metadata('item', 'has files') && (($mediaPosition == 'top') && ($layout == 'single'))): ?>
         <?php echo foundation_display_attached_media($item, $mediaDisplay); ?>
     <?php endif; ?>
 
@@ -61,6 +61,10 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
 
        <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
     </div>
+
+    <?php if (metadata('item', 'has files') && ($layout == 'double')): ?>
+        <?php echo foundation_display_attached_media($item, $mediaDisplay); ?>
+    <?php endif; ?>
 
     <nav aria-label="<?php echo __('Item pagination'); ?>">
         <ul class="item-pagination navigation">
