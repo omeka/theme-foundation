@@ -81,10 +81,12 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 <div class="browse-controls">
 <?php echo pagination_links(); ?>
 </div>
+<?php if (get_theme_option('show_output_formats')): ?>
 <div id="outputs">
     <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
     <?php echo output_format_list(false); ?>
 </div>
+<?php endif; ?>
 
 <?php fire_plugin_hook('public_items_browse', array('items' => $items, 'view' => $this)); ?>
 
