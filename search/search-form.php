@@ -2,15 +2,15 @@
     <?php if ($options['show_advanced']): ?>
     <button type="button" class="advanced-toggle button" aria-controls="advanced-form" aria-expanded="false" aria-label="<?php echo __('Advanced options'); ?>"></button>
     <div id="advanced-form" class="closed">
-        <fieldset id="query-types" aria-label="<?php echo __('Search using this query type:'); ?>">
+        <fieldset id="query-types">
+            <legend><?php echo __('Search using this query type:'); ?></legend>
             <?php echo $this->formRadio('query_type', $filters['query_type'], null, $query_types, ""); ?>
         </fieldset>
         <?php if ($record_types): ?>
-        <fieldset id="record-types" aria-label="<?php echo __('Search only these record types:'); ?>">
+        <fieldset id="record-types">
+            <legend><?php echo __('Search only these record types:'); ?></legend>
             <?php foreach ($record_types as $key => $value): ?>
-                <div class="record-type-option">
-                    <?php echo $this->formCheckbox('record_types[]', $key, array('checked' => in_array($key, $filters['record_types']), 'id' => 'record_types-' . $key)); ?> <?php echo $this->formLabel('record_types-' . $key, $value);?>
-                </div>
+                <label class="record-type-option"><?php echo $this->formCheckbox('record_types[]', $key, array('checked' => in_array($key, $filters['record_types']), 'id' => 'record_types-' . $key)); ?> <?php echo $value; ?></label>
             <?php endforeach; ?>
         </fieldset>
         <?php elseif (is_admin_theme()): ?>

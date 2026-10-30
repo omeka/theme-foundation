@@ -516,6 +516,7 @@ body.vertical-menu header .desktop {
 #search-form {
   @include xy-grid;
   margin: 0 auto;
+  width: 100%;
 }
 
 #query {
@@ -529,9 +530,10 @@ body.vertical-menu header .desktop {
 
 #advanced-form {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 $global-padding;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $global-margin (2 * $global-margin);
+  margin-bottom: $global-margin;
   
   @include breakpoint(medium down) {
     flex-wrap: wrap;
@@ -543,12 +545,24 @@ body.vertical-menu header .desktop {
   margin-bottom: $global-padding;
 }
 
-#query-types {
-  display: flex;
+#advanced-form input {
+  margin: 0;
 }
 
-#query-types label {
-  margin-right: $global-margin;
+#advanced-form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 $global-margin;
+  align-content: flex-start;
+}
+
+#advanced-form legend {
+  width: 100%;
+}
+
+#advanced-form label {
+  display: flex;
+  gap: .25 * $global-margin;
 }
 
 #submit_search {
