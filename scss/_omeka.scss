@@ -64,10 +64,6 @@ select {
   width: auto;
 }
 
-.advanced-toggle {
-  display: none;
-}
-
 #content {
   padding: (2 * $global-padding) $global-padding;
 
@@ -121,6 +117,7 @@ body.vertical-menu #search-container {
 
   form {
     width: 100%;
+    flex-wrap: nowrap;
   }
 
   a {
@@ -138,17 +135,12 @@ body.vertical-menu #search-container {
     padding: 0;
     border-bottom: 0;
 
-  &.closed {
-    display: block;
-  }
+    &.closed {
+      display: block;
+    }
 
     form {
       margin: 0;
-    }
-
-    #advanced-form {
-      display: none;
-      padding-top: $global-padding;
     }
 
     #advanced-form ~ #query {
@@ -157,37 +149,44 @@ body.vertical-menu #search-container {
 
     #advanced-form {
       position: absolute;
+      padding: $global-padding;
       left: 0;
       top: 2.625rem;
       margin: 0;
       background: #fff;
       flex-wrap: wrap;
       gap: .5 * $global-padding;
+      display: flex;
+    }
+
+    #advanced-form.closed {
+      display: none;
     }
 
     #query {
       height: 100%;
+      flex: 2;
     }
 
     .button,
     #submit_search {
       background-color: $button-background-hover;
+      width: 2.5 * $global-padding;
     }
 
     .advanced-toggle {
       display: block;
-      width: 2.5 * $global-padding;
       position: relative;
       z-index: 1;
 
       &:after {
-        content: "\f0da" / "";
+        content: "\f0d7" / ""; 
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
       }
 
-      &.open:after {
-      content: "\f0d7" / ""; 
+      &.closed:after {
+        content: "\f0da" / "";
       }
     }
 
@@ -209,23 +208,6 @@ body.vertical-menu #search-container {
 
     .record-type-option input[type="checkbox"] + label {
       margin: 0;
-    }
-  }
-
-
-  #advanced-form {
-    padding-bottom: 0;
-
-    &.open {
-      display: flex;
-    }
-
-    #query-types {
-      flex-wrap: wrap;
-    }
-
-    input {
-      margin-bottom: 0;
     }
   }
 } 
@@ -516,7 +498,6 @@ body.vertical-menu header .desktop {
 #search-form {
   @include xy-grid;
   margin: 0 auto;
-  width: 100%;
 }
 
 #query {
@@ -652,19 +633,19 @@ body.vertical-menu footer {
 .browse-toggle {
     font-size: .875 * $global-font-size;
     padding: (.5 * $global-padding);
+    display: inline-flex;
+    gap: .25 * $global-margin;
 
     &:after {
+      content: "\f0d7" / ""; 
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
-      margin-left: (.5 * $global-margin);
-    }
-    
-    &.closed:after {
-      content: "\f055" / "";
+      display: block;
+      width: $global-padding;
     }
 
-    &.open:after {
-      content: "\f056" / "";
+    &.closed:after {
+      content: "\f0da" / "";
     }
 }
 

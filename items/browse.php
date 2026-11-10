@@ -24,7 +24,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse ' . $layout)
 </nav>
 
 <div class="browse-control-mobile">
-<button type="button" class="browse-toggle closed">Tools</button>
+<button type="button" class="browse-toggle closed" aria-expanded="false">Tools</button>
 </div>
 
 <div class="browse-controls closed">

@@ -9,8 +9,14 @@
         });
         
         $('.browse-toggle').click(function() {
-            $('.browse-controls').toggleClass('open closed');
-            $(this).toggleClass('open closed');
+            var browseToggle = $(this);
+            $('.browse-controls').toggleClass('closed');
+            browseToggle.toggleClass('closed');
+            if (browseToggle.attr('aria-expanded') == 'true') {
+                browseToggle.attr('aria-expanded', 'false');
+            } else {
+                browseToggle.attr('aria-expanded', 'true');
+            }
         });
     });
 })(jQuery)

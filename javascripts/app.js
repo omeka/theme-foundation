@@ -1,28 +1,45 @@
 (function ($) {
-  var togglePanel = function(toggleButton, targetSelector) {
+  var togglePanel = function(event, toggleButton, targetSelector) {
     var targetElement = $(targetSelector);
-    targetElement.toggleClass('open').toggleClass('closed');
-    toggleButton.toggleClass('open').toggleClass('closed');
+    targetElement.toggleClass('closed');
+    toggleButton.toggleClass('closed');
 
-    if (targetElement.hasClass('open')) {
-      toggleButton.attr('aria-expanded', 'true');
-      targetElement.find(':focusable').first().focus();
-    } else {
+    if (targetElement.hasClass('closed')) {
       toggleButton.attr('aria-expanded', 'false');
+    } else {
+      toggleButton.attr('aria-expanded', 'true');
+      targetElement.find(':focusable').first().trigger('focus');
     }
+
+    event.stopPropagation();
+
+    $(document).on('click focusin', function(e) {
+        if (!$.contains(targetElement[0], e.target) && (e.target !== toggleButton[0])) {
+            if (e.type !== 'focusin') {
+                toggleButton.trigger('focus');
+            }
+            toggleButton.attr('aria-expanded', 'false').addClass('closed');
+            targetElement.addClass('closed');
+            $(document).off(e);
+        }
+    });
+
+    $(document).on('keydown', function(e) {
+        if (e.key == 'Escape') {
+            toggleButton.attr('aria-expanded', 'false').trigger('focus');
+            targetElement.addClass('closed');
+            $(document).off(e);
+        };
+    });
   };
 
   $(document).ready(function() {
-      $(document).on('click', '.search-toggle', function() {
-        togglePanel($(this), '#search-container');
+      $('.horizontal-menu header').on('click', '.search-toggle', function(e) {
+          togglePanel(e, $(this), '#search-container');
       });
 
-      $(document).on('click', '.advanced-toggle', function() {
-        togglePanel($(this), '#advanced-form');
+      $('.vertical-menu header').on('click', '.advanced-toggle', function(e) {
+          togglePanel(e, $(this), '#advanced-form');
       });
-
-      if ($('body').hasClass('vertical-menu')) {
-        $('.advanced-toggle').insertBefore('#submit_search');
-      }
   });
 })(jQuery)

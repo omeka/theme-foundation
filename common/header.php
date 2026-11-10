@@ -91,7 +91,7 @@
         <?php endif; ?>
         <div id="search-container" class="grid-x closed">
             <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-            <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search'))); ?>
+            <?php echo search_form(array('show_advanced' => true, 'foundation_layout' => $navLayout, 'form_attributes' => array('role' => 'search'))); ?>
             <?php else: ?>
             <?php echo search_form(array('form_attributes' => array('role' => 'search'))); ?>
             <?php endif; ?>
