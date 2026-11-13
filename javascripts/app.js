@@ -34,7 +34,7 @@
   };
 
   $(document).ready(function() {
-      $('.horizontal-menu header').on('click', '.search-toggle', function(e) {
+      $('header').on('click', '.search-toggle', function(e) {
           togglePanel(e, $(this), '#search-container');
       });
 

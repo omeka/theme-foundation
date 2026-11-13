@@ -113,15 +113,22 @@ body.vertical-menu #content {
 
 body.vertical-menu #search-container {
   border-bottom: 1px solid $light-gray;
-  position: relative;
-
-  form {
-    width: 100%;
-    flex-wrap: nowrap;
-  }
 
   a {
     color: $primary-color;
+  }
+
+  #search-form {
+    position: relative;
+  }
+
+  .advanced-toggle {
+    display: none;
+  }
+
+  #advanced-form {
+    display: flex;
+    margin-bottom: 0;
   }
 
   @include breakpoint(large up) {
@@ -140,6 +147,8 @@ body.vertical-menu #search-container {
     }
 
     form {
+      width: 100%;
+      flex-wrap: nowrap;
       margin: 0;
     }
 
@@ -166,12 +175,14 @@ body.vertical-menu #search-container {
     #query {
       height: 100%;
       flex: 2;
+      margin: 0;
     }
 
     .button,
     #submit_search {
       background-color: $button-background-hover;
       width: 2.5 * $global-padding;
+      position: relative;
     }
 
     .advanced-toggle {
@@ -498,6 +509,7 @@ body.vertical-menu header .desktop {
 #search-form {
   @include xy-grid;
   margin: 0 auto;
+  position: relative;
 }
 
 #query {
@@ -506,7 +518,6 @@ body.vertical-menu header .desktop {
 
 #search-form button {
   width: 20%;
-  padding: 0;
 }
 
 #advanced-form {
@@ -548,6 +559,17 @@ body.vertical-menu header .desktop {
 
 #submit_search {
   @include button();
+}
+
+#submit_search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+#query {
+  margin-bottom: $global-margin;
 }
 
 .banner {
