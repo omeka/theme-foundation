@@ -13,22 +13,23 @@
 
     event.stopPropagation();
 
-    $(document).on('click focusin', function(e) {
+    var autocloseEvents = 'click.autoclose keydown.autoclose focusin.autoclose';
+    $(document).on('click.autoclose focusin.autoclose', function(e) {
         if (!$.contains(targetElement[0], e.target) && (e.target !== toggleButton[0])) {
             if (e.type !== 'focusin') {
                 toggleButton.trigger('focus');
             }
             toggleButton.attr('aria-expanded', 'false').addClass('closed');
             targetElement.addClass('closed');
-            $(document).off(e);
+            $(document).off(autocloseEvents);
         }
     });
 
-    $(document).on('keydown', function(e) {
+    $(document).on('keydown.autoclose', function(e) {
         if (e.key == 'Escape') {
             toggleButton.attr('aria-expanded', 'false').trigger('focus');
             targetElement.addClass('closed');
-            $(document).off(e);
+            $(document).off(autocloseEvents);
         };
     });
   };

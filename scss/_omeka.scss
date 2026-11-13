@@ -148,6 +148,7 @@ body.vertical-menu #search-container {
 
     form {
       width: 100%;
+      display: flex;
       flex-wrap: nowrap;
       margin: 0;
     }
@@ -183,6 +184,7 @@ body.vertical-menu #search-container {
       background-color: $button-background-hover;
       width: 2.5 * $global-padding;
       position: relative;
+      height: auto;
     }
 
     .advanced-toggle {
@@ -507,9 +509,11 @@ body.vertical-menu header .desktop {
 }
 
 #search-form {
-  @include xy-grid;
   margin: 0 auto;
   position: relative;
+  width: 100%;
+  max-width: $global-width;
+  margin: 0 $global-margin;
 }
 
 #query {
@@ -566,6 +570,7 @@ body.vertical-menu header .desktop {
   top: 0;
   right: 0;
   border: 0;
+  height: ($input-font-size * unitless-calc($input-line-height)) + (get-side($input-padding, 'top') + get-side($input-padding, 'bottom')) - rem-calc(1);
 }
 
 #query {
