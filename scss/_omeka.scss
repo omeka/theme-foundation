@@ -174,7 +174,6 @@ body.vertical-menu #search-container {
     }
 
     #query {
-      height: 100%;
       flex: 2;
       margin: 0;
     }
@@ -185,6 +184,7 @@ body.vertical-menu #search-container {
       width: 2.5 * $global-padding;
       position: relative;
       height: auto;
+      padding: 0;
     }
 
     .advanced-toggle {
