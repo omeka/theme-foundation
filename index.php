@@ -5,14 +5,18 @@ if (!isset($pageTitle) || $pageTitle == '') {
 }
 $backgroundColor = ((get_theme_option('homepage_background_color') !== null) && (get_theme_option('homepage_background_color') !== '')) ? get_theme_option('homepage_background_color') : 'FFFFFF';
 $backgroundImage = ((get_theme_option('homepage_background') !== null) && get_theme_option('homepage_background') !== '') ? "url('" . foundation_homepage_intro_background() . "')" : '';
-queue_css_string("#intro { background: center/cover $backgroundImage $backgroundColor; }");
+queue_css_string("#intro { background: center/cover $backgroundImage #$backgroundColor; }");
 ?>
 <?php echo head(array('bodyid' => 'home')); ?>
 
+  <?php if ($intro = get_theme_option('Homepage Text')): ?>
   <div id="intro">
       <h1><?php echo $pageTitle; ?></h1>
-      <?php echo get_theme_option('Homepage Text'); ?>
+      <?php echo $intro; ?>
   </div>
+  <?php else: ?>
+      <h1><?php echo $pageTitle; ?></h1>
+  <?php endif; ?>
 
   <div class="featured-records">
       <?php $featuredRecordHtml = foundation_get_featured_records(); ?>
