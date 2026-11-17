@@ -20,11 +20,11 @@ $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
 @import 'print';
 
 
-header a:not(.is-active) {
+#primary-nav a:not(.is-active) {
   color: $white;
 }
 
-header .submenu a {
+#primary-nav .submenu a {
   color: get-color(primary);
 }
 
